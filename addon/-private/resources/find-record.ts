@@ -2,7 +2,7 @@ import { tracked } from '@glimmer/tracking';
 import { isDestroyed, isDestroying } from '@ember/destroyable';
 import { action } from '@ember/object';
 
-import { Request, WrappedFun } from './request';
+import { Request } from './request';
 
 import type Store from '@ember-data/store';
 import type { Named } from 'ember-resources';
@@ -19,7 +19,7 @@ export class FindRecord<Args extends Named<NamedArgs>> extends Request<Args> {
   @tracked _record: unknown;
 
   @action
-  async [WrappedFun]() {
+  async __WRAPPED_FUNCTION__() {
     let { id, modelName, options } = this.args.named;
 
     let record = await this.store.findRecord(modelName as never, id, options);

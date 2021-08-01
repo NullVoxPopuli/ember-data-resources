@@ -9,10 +9,6 @@ import type Store from '@ember-data/store';
 
 export type FindRecordOptions = Parameters<Store['findRecord']>[2];
 
-const RequestFun = Symbol('__REQUEST_FUNCTION__');
-
-export const WrappedFun = Symbol('__Wrapped_FUNCTION__');
-
 export class Request<Args> extends Resource<Args> {
   @service declare store: Store;
 
@@ -23,10 +19,10 @@ export class Request<Args> extends Resource<Args> {
   constructor(owner: unknown, args: Args, previous?: Request<Args>) {
     super(owner, args, previous);
 
-    this[RequestFun]();
+    this.__REQUEST_FUNCTION__();
   }
 
-  async [WrappedFun]() {
+  async __WRAPPED_FUNCTION__() {
     throw new Error('Not Implemented');
   }
 
@@ -53,10 +49,10 @@ export class Request<Args> extends Resource<Args> {
   }
 
   @action async retry() {
-    return this[RequestFun]();
+    return this.__WRAPPED_FUNCTION__();
   }
 
-  @action async [RequestFun]() {
+  @action async __REQUEST_FUNCTION__() {
     await Promise.resolve();
 
     this.error = undefined;
