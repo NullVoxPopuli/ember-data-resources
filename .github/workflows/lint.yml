@@ -34,34 +34,34 @@ jobs:
         run: yarn lint:hbs
 
 
-  docs:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
-    name: Docs
-    runs-on: ubuntu-latest
+  # docs:
+  #   if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+  #   name: Docs
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - uses: volta-cli/action@v1
-    - uses: actions/cache@v2
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-    - run: yarn lint:docs
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: volta-cli/action@v1
+  #   - uses: actions/cache@v2
+  #     with:
+  #       path: '**/node_modules'
+  #       key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+  #   - run: yarn lint:docs
 
 
-  docs-js-code:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
-    name: Docs (JS Code Samples)
-    runs-on: ubuntu-latest
+  # docs-js-code:
+  #   if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+  #   name: Docs (JS Code Samples)
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - uses: volta-cli/action@v1
-    - uses: actions/cache@v2
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-    - run: yarn lint:docs-js
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: volta-cli/action@v1
+  #   - uses: actions/cache@v2
+  #     with:
+  #       path: '**/node_modules'
+  #       key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+  #   - run: yarn lint:docs-js
 
   commits:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
