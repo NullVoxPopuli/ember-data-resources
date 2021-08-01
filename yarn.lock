@@ -2031,6 +2031,22 @@
   resolved "https://registry.npmjs.org/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
   integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
 
+"@types/ember-data@*":
+  version "3.16.15"
+  resolved "https://registry.npmjs.org/@types/ember-data/-/ember-data-3.16.15.tgz#48f29e9cb93c0c587f25ddb8bb5e1d83809ec85c"
+  integrity sha512-6zT2+x+R7HnqEeZpRYMK8MjQB+HKKruPu5nxX6UsW27QlnOaWc37Q5bBbD7xOGZX3DwgMe6uV3OV3dQikUp7GA==
+  dependencies:
+    "@types/ember" "*"
+    "@types/ember__object" "*"
+    "@types/rsvp" "*"
+
+"@types/ember-data__store@^3.16.1":
+  version "3.16.1"
+  resolved "https://registry.npmjs.org/@types/ember-data__store/-/ember-data__store-3.16.1.tgz#34c454a8e551099e6b4aa9de12088e4af9da2977"
+  integrity sha512-rH13Bz0HUr9hy/8SyRcVfRJ80iOaaTHec9ZEIDfL6A4IRHvZidw4MH7exitSqz1SDCgNP1qwn6qRswfrpG1drA==
+  dependencies:
+    "@types/ember-data" "*"
+
 "@types/ember-qunit@^3.4.14":
   version "3.4.14"
   resolved "https://registry.npmjs.org/@types/ember-qunit/-/ember-qunit-3.4.14.tgz#4c10ce71e1eb6618ef7c680616beff8358e9c486"
@@ -6443,10 +6459,10 @@ ember-resolver@^8.0.2:
     ember-cli-version-checker "^5.1.1"
     resolve "^1.17.0"
 
-ember-resources@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/ember-resources/-/ember-resources-3.1.0.tgz#2e30aa36577a5ffb2c8d628a2f0ad286c11a92fb"
-  integrity sha512-Y2R0YMkIS8u+hco1IANmgttzL+5g1tqezRqVmuB8z/leSWHibPZd5jZenYFCk58hn7JG8twafO4z25YkwwGdYQ==
+ember-resources@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/ember-resources/-/ember-resources-3.1.1.tgz#bffbbadd057b57b7c339c30f45c941cbfb9eb95b"
+  integrity sha512-d4zTYbqtH/6brUKr8ybGg0d5lxliW8XhsDBq+0JzyO8KUfkw4sGehWi6c0ESZhxj4pmi7YiOAyz/4p18Xil4XA==
   dependencies:
     "@ember/test-waiters" "^2.4.5"
     ember-cli-babel "^7.26.6"
