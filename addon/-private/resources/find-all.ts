@@ -9,7 +9,7 @@ import type { Named } from 'ember-resources';
 
 export type FindAllOptions = Parameters<Store['findAll']>[1];
 
-interface NamedArgs {
+export interface NamedArgs {
   modelName: string;
   options: FindAllOptions;
 }

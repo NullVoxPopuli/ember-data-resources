@@ -11,7 +11,7 @@ type QueryParams = Parameters<Store['query']>;
 export type QueryQuery = QueryParams[1];
 export type QueryOptions = QueryParams[2];
 
-interface NamedArgs {
+export interface NamedArgs {
   modelName: string;
   query: QueryQuery;
   options: QueryOptions;

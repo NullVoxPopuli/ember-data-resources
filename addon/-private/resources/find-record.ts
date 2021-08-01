@@ -9,7 +9,7 @@ import type { Named } from 'ember-resources';
 
 export type FindRecordOptions = Parameters<Store['findRecord']>[2];
 
-interface NamedArgs {
+export interface NamedArgs {
   id: string | number;
   modelName: string;
   options: FindRecordOptions;
