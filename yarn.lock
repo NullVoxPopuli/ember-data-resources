@@ -1010,7 +1010,7 @@
     ember-cli-htmlbars "^5.7.1"
     ember-destroyable-polyfill "^2.0.3"
 
-"@ember/test-waiters@^2.4.4":
+"@ember/test-waiters@^2.4.4", "@ember/test-waiters@^2.4.5":
   version "2.4.5"
   resolved "https://registry.npmjs.org/@ember/test-waiters/-/test-waiters-2.4.5.tgz#6e8e34d1bc46a9b0cc22cb11cc5936046e926031"
   integrity sha512-833JvHtHdEfBfKXgvmw+6oziFOpVfD4NQrc04Ztj59A11K9FPNfZ3P8YydL7LFTtdd7UfJ/cYCLAm+OwUxbotQ==
@@ -4735,7 +4735,7 @@ ember-cli-typescript@^2.0.2:
     stagehand "^1.0.0"
     walk-sync "^1.0.0"
 
-ember-cli-typescript@^4.1.0:
+ember-cli-typescript@^4.1.0, ember-cli-typescript@^4.2.1:
   version "4.2.1"
   resolved "https://registry.npmjs.org/ember-cli-typescript/-/ember-cli-typescript-4.2.1.tgz#54d08fc90318cc986f3ea562f93ce58a6cc4c24d"
   integrity sha512-0iKTZ+/wH6UB/VTWKvGuXlmwiE8HSIGcxHamwNhEC5x1mN3z8RfvsFZdQWYUzIWFN2Tek0gmepGRPTwWdBYl/A==
@@ -4962,6 +4962,16 @@ ember-resolver@^8.0.2:
     ember-cli-babel "^7.22.1"
     ember-cli-version-checker "^5.1.1"
     resolve "^1.17.0"
+
+ember-resources@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/ember-resources/-/ember-resources-3.1.0.tgz#2e30aa36577a5ffb2c8d628a2f0ad286c11a92fb"
+  integrity sha512-Y2R0YMkIS8u+hco1IANmgttzL+5g1tqezRqVmuB8z/leSWHibPZd5jZenYFCk58hn7JG8twafO4z25YkwwGdYQ==
+  dependencies:
+    "@ember/test-waiters" "^2.4.5"
+    ember-cli-babel "^7.26.6"
+    ember-cli-htmlbars "^5.7.1"
+    ember-cli-typescript "^4.2.1"
 
 ember-rfc176-data@^0.3.13, ember-rfc176-data@^0.3.15, ember-rfc176-data@^0.3.17:
   version "0.3.17"
