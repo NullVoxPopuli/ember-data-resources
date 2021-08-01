@@ -1,13 +1,13 @@
 {
   "name": "ember-data-resources",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Resource helpers for reactively (re)fetching data with ember-data",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/NullVoxPopuli/ember-data-resources",
   "license": "MIT",
-  "author": "",
+  "author": "NullVoxPopuli",
   "directories": {
     "doc": "doc",
     "test": "tests"
