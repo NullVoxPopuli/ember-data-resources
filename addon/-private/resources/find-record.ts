@@ -15,8 +15,11 @@ export interface NamedArgs {
   options: FindRecordOptions;
 }
 
-export class FindRecord<Args extends Named<NamedArgs>> extends Request<Args> {
-  @tracked _record: unknown;
+export class FindRecord<
+  Model,
+  Args extends Named<NamedArgs> = Named<NamedArgs>
+> extends Request<Args> {
+  @tracked private _record: Model | undefined;
 
   @action
   async __WRAPPED_FUNCTION__() {
@@ -29,7 +32,7 @@ export class FindRecord<Args extends Named<NamedArgs>> extends Request<Args> {
     this._record = record;
   }
 
-  get record() {
+  get record(): Model | undefined {
     return this._record;
   }
 }

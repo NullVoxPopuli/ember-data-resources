@@ -17,8 +17,11 @@ export interface NamedArgs {
   options: QueryRecordOptions;
 }
 
-export class QueryRecord<Args extends Named<NamedArgs>> extends Request<Args> {
-  @tracked _record: unknown;
+export class QueryRecord<
+  Model,
+  Args extends Named<NamedArgs> = Named<NamedArgs>
+> extends Request<Args> {
+  @tracked private _record: Model | undefined;
 
   @action
   async __WRAPPED_FUNCTION__() {
@@ -31,7 +34,7 @@ export class QueryRecord<Args extends Named<NamedArgs>> extends Request<Args> {
     this._record = record;
   }
 
-  get record() {
+  get record(): Model | undefined {
     return this._record;
   }
 }
