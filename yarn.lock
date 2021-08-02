@@ -1279,9 +1279,9 @@
   dependencies:
     ember-cli-babel "^7.4.0"
 
-"@ember/test-helpers@^2.2.5":
+"@ember/test-helpers@^2.2.9":
   version "2.2.9"
-  resolved "https://registry.npmjs.org/@ember/test-helpers/-/test-helpers-2.2.9.tgz#68cceb50ad5b8adedad5d8bf73b39ff71a07f4a6"
+  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-2.2.9.tgz#68cceb50ad5b8adedad5d8bf73b39ff71a07f4a6"
   integrity sha512-QLwV2ASk7XB9+SLCNKFu+y9iNbTsH2Ah3eaJiHZ01uDgVsYZZfJCINhUB9/sY19VagBQnP5Te3QowI6qw3XeLA==
   dependencies:
     "@ember/test-waiters" "^2.4.4"
@@ -6250,9 +6250,9 @@ ember-cli-htmlbars@^5.7.1:
     strip-bom "^4.0.0"
     walk-sync "^2.2.0"
 
-ember-cli-inject-live-reload@^2.0.2:
+ember-cli-inject-live-reload@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.npmjs.org/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-2.1.0.tgz#ef63c733c133024d5726405a3c247fa12e88a385"
+  resolved "https://registry.yarnpkg.com/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-2.1.0.tgz#ef63c733c133024d5726405a3c247fa12e88a385"
   integrity sha512-YV5wYRD5PJHmxaxaJt18u6LE6Y+wo455BnmcpN+hGNlChy2piM9/GMvYgTAz/8Vin8RJ5KekqP/w/NEaRndc/A==
   dependencies:
     clean-base-url "^1.0.0"
