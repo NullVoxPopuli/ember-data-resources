@@ -16,12 +16,12 @@ import type { Id } from './-private/resources/types';
 
 type FindRecordThunkResult = Id | [Id] | [Id, FindRecordOptions];
 
-export function findRecord(
+export function findRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
   thunk: () => FindRecordThunkResult
 ) {
-  return useResource(destroyable, FindRecord, () => {
+  return useResource<FindRecord<Model>>(destroyable, FindRecord, () => {
     let reified = thunk();
     let id: Id | undefined = undefined;
     let options: FindRecordOptions;
@@ -46,8 +46,12 @@ export function findRecord(
 
 type FindAllThunkResult = FindAllOptions | void;
 
-export function findAll(destroyable: object, modelName: string, thunk: () => FindAllThunkResult) {
-  return useResource(destroyable, FindAll, () => {
+export function findAll<Model = unknown>(
+  destroyable: object,
+  modelName: string,
+  thunk?: () => FindAllThunkResult
+) {
+  return useResource<FindAll<Model>>(destroyable, FindAll, () => {
     let reified = thunk?.();
 
     return {
@@ -59,8 +63,12 @@ export function findAll(destroyable: object, modelName: string, thunk: () => Fin
 
 type QueryThunkResult = QueryQuery | [QueryQuery] | [QueryQuery, QueryOptions];
 
-export function query(destroyable: object, modelName: string, thunk: () => QueryThunkResult) {
-  return useResource(destroyable, Query, () => {
+export function query<Model = unknown>(
+  destroyable: object,
+  modelName: string,
+  thunk: () => QueryThunkResult
+) {
+  return useResource<Query<Model>>(destroyable, Query, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {
@@ -86,12 +94,12 @@ type QueryRecordThunkResult =
   | [QueryRecordQuery]
   | [QueryRecordQuery, QueryRecordOptions];
 
-export function queryRecord(
+export function queryRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
   thunk: () => QueryRecordThunkResult
 ) {
-  return useResource(destroyable, QueryRecord, () => {
+  return useResource<QueryRecord<Model>>(destroyable, QueryRecord, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {

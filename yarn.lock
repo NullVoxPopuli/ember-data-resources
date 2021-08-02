@@ -1279,7 +1279,7 @@
   dependencies:
     ember-cli-babel "^7.4.0"
 
-"@ember/test-helpers@^2.2.5":
+"@ember/test-helpers@^2.2.9":
   version "2.2.9"
   resolved "https://registry.npmjs.org/@ember/test-helpers/-/test-helpers-2.2.9.tgz#68cceb50ad5b8adedad5d8bf73b39ff71a07f4a6"
   integrity sha512-QLwV2ASk7XB9+SLCNKFu+y9iNbTsH2Ah3eaJiHZ01uDgVsYZZfJCINhUB9/sY19VagBQnP5Te3QowI6qw3XeLA==
@@ -2052,6 +2052,13 @@
     "@types/ember" "*"
     "@types/ember__object" "*"
     "@types/rsvp" "*"
+
+"@types/ember-data__model@^3.16.2":
+  version "3.16.2"
+  resolved "https://registry.npmjs.org/@types/ember-data__model/-/ember-data__model-3.16.2.tgz#12b692835afa6cd7eeab99357e4b6c5a5ce8c2d4"
+  integrity sha512-M5q4I7qsTRPl4hIA0htVj+1jyVJRsScucPUlNuxi36MxXsRj4v1y1nxywt8PRxlsz5umL+yJSrBpL3z3jBPwbA==
+  dependencies:
+    "@types/ember-data" "*"
 
 "@types/ember-data__store@^3.16.1":
   version "3.16.1"
