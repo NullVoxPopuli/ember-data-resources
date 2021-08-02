@@ -67,10 +67,11 @@ jobs:
       fail-fast: true
       matrix:
         ember-try-scenario:
-          - ember-lts-3.25
+          - ember-3.25
           - ember-release
           - ember-beta
-          - ember-canary
+          # disabled because @ember/string does not support ember 4.0 yet
+          # - ember-canary
           - embroider-safe
           - embroider-optimized
     steps:
@@ -79,7 +80,7 @@ jobs:
         with:
           node-version: 12.x
       - name: install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
       - name: test
         run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
 
