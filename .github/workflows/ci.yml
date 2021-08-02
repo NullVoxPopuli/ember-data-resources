@@ -70,7 +70,8 @@ jobs:
           - ember-3.25
           - ember-release
           - ember-beta
-          - ember-canary
+          # disabled because @ember/string does not support ember 4.0 yet
+          # - ember-canary
           - embroider-safe
           - embroider-optimized
     steps:
