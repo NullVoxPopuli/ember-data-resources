@@ -1,55 +1,86 @@
 import { tracked } from '@glimmer/tracking';
 import { setOwner } from '@ember/application';
+import { render } from '@ember/test-helpers';
 import settled from '@ember/test-helpers/settled';
 import Model, { attr } from '@ember-data/model';
-import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
+import { hbs } from 'ember-cli-htmlbars';
+import { module, skip, test } from 'qunit';
+import { setupRenderingTest, setupTest } from 'ember-qunit';
 
 import { findRecord } from 'ember-data-resources';
 
 import { setupMockData } from './-mock-data';
 
 module('findRecord', function (hooks) {
-  setupTest(hooks);
   setupMockData(hooks);
 
-  test('it works', async function (assert) {
-    class Blog extends Model {
-      @attr name: string | undefined;
-    }
+  module('in js', function (hooks) {
+    setupTest(hooks);
 
-    this.owner.register('model:blog', Blog);
+    test('it works', async function (assert) {
+      class Blog extends Model {
+        @attr name: string | undefined;
+      }
 
-    class Test {
-      @tracked id = 1;
-      blog = findRecord<Blog>(this, 'blog', () => this.id);
-    }
+      this.owner.register('model:blog', Blog);
 
-    let instance = new Test();
+      class Test {
+        @tracked id = 1;
+        blog = findRecord<Blog>(this, 'blog', () => this.id);
+      }
 
-    setOwner(instance, this.owner);
+      let instance = new Test();
 
-    assert.equal(instance.blog.record, undefined);
-    await settled();
+      setOwner(instance, this.owner);
 
-    assert.false(instance.blog.isLoading, 'isLoading');
-    assert.false(instance.blog.isError, 'isError');
-    assert.true(instance.blog.hasRan, 'hasRan');
-    assert.notOk(instance.blog.error, 'error');
-    assert.ok(instance.blog.record instanceof Blog);
-    assert.equal(instance.blog.record?.name, 'name:1');
+      assert.equal(instance.blog.record, undefined);
+      await settled();
 
-    instance.id = 2;
-    assert.false(instance.blog.hasRan, 'hasRan');
-    await settled();
+      assert.false(instance.blog.isLoading, 'isLoading');
+      assert.false(instance.blog.isError, 'isError');
+      assert.true(instance.blog.hasRan, 'hasRan');
+      assert.notOk(instance.blog.error, 'error');
+      assert.ok(instance.blog.record instanceof Blog);
+      assert.equal(instance.blog.record?.name, 'name:1');
 
-    assert.false(instance.blog.isLoading, 'isLoading');
-    assert.false(instance.blog.isError, 'isError');
-    assert.true(instance.blog.hasRan, 'hasRan');
-    assert.notOk(instance.blog.error, 'error');
-    assert.ok(instance.blog.record instanceof Blog);
-    await settled();
+      instance.id = 2;
+      assert.false(instance.blog.hasRan, 'hasRan');
+      await settled();
 
-    assert.equal(instance.blog.record?.name, 'name:2');
+      assert.false(instance.blog.isLoading, 'isLoading');
+      assert.false(instance.blog.isError, 'isError');
+      assert.true(instance.blog.hasRan, 'hasRan');
+      assert.notOk(instance.blog.error, 'error');
+      assert.ok(instance.blog.record instanceof Blog);
+      await settled();
+
+      assert.equal(instance.blog.record?.name, 'name:2');
+    });
+  });
+  module('in a template', function (hooks) {
+    setupRenderingTest(hooks);
+
+    skip('it works', async function (assert) {
+      class Blog extends Model {
+        @attr name: string | undefined;
+      }
+
+      this.owner.register('model:blog', Blog);
+
+      this.setProperties({ id: 1 });
+
+      await render(hbs`
+        {{#let (find-record 'blog' id=this.id) as |data|}}
+          {{data.record.name}}
+        {{/let}}
+      `);
+
+      assert.dom().hasText('name:1');
+
+      this.setProperties({ id: 1 });
+      await settled();
+
+      assert.dom().hasText('name:2');
+    });
   });
 });
