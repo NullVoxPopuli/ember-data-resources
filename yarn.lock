@@ -6647,10 +6647,10 @@ ember-resolver@^8.0.2:
     ember-cli-version-checker "^5.1.1"
     resolve "^1.17.0"
 
-ember-resources@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.npmjs.org/ember-resources/-/ember-resources-3.1.1.tgz#bffbbadd057b57b7c339c30f45c941cbfb9eb95b"
-  integrity sha512-d4zTYbqtH/6brUKr8ybGg0d5lxliW8XhsDBq+0JzyO8KUfkw4sGehWi6c0ESZhxj4pmi7YiOAyz/4p18Xil4XA==
+ember-resources@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/ember-resources/-/ember-resources-3.1.2.tgz#62df22eb6d385c96594fcd6570e77e18b52d4086"
+  integrity sha512-xnmPIXC46KBO1DwbAh3s1ydYb4mHmYfixGQXk9+kCnkE2RrPfPhcC2gVF2m/XvptJ+O9zWkel2za7mxUAvGcgw==
   dependencies:
     "@ember/test-waiters" "^2.4.5"
     ember-cli-babel "^7.26.6"
