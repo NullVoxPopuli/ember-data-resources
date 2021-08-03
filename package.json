@@ -35,8 +35,8 @@
     "ember-resources": "^3.1.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.3.0",
     "@embroider/test-setup": "^0.43.3",
