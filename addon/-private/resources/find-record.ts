@@ -4,26 +4,28 @@ import { action } from '@ember/object';
 
 import { Request } from './request';
 
+import type { Id } from './types';
 import type Store from '@ember-data/store';
-import type { Named } from 'ember-resources';
 
 export type FindRecordOptions = Parameters<Store['findRecord']>[2];
 
+type PositionalArgs = [string, Id];
 export interface NamedArgs {
-  id: string | number;
-  modelName: string;
   options: FindRecordOptions;
 }
 
-export class FindRecord<
-  Model,
-  Args extends Named<NamedArgs> = Named<NamedArgs>
-> extends Request<Args> {
+interface Args {
+  named: NamedArgs;
+  positional: PositionalArgs;
+}
+
+export class FindRecord<Model, LocalArgs extends Args = Args> extends Request<LocalArgs> {
   @tracked private _record: Model | undefined;
 
   @action
   async __WRAPPED_FUNCTION__() {
-    let { id, modelName, options } = this.args.named;
+    let [modelName, id] = this.args.positional;
+    let { options } = this.args.named;
 
     let record = await this.store.findRecord(modelName as never, id, options);
 

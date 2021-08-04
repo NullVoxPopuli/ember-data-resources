@@ -37,9 +37,10 @@ export function findRecord<Model = unknown>(
     assert(`Expected an ID to be specified from the thunk passed to findRecord`, id);
 
     return {
-      id,
-      modelName,
-      options,
+      positional: [modelName, id],
+      named: {
+        options,
+      },
     };
   });
 }

@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { tracked } from '@glimmer/tracking';
 import { setOwner } from '@ember/application';
+import { helper } from '@ember/component/helper';
 import { render } from '@ember/test-helpers';
 import settled from '@ember/test-helpers/settled';
 import Model, { attr } from '@ember-data/model';
 import { hbs } from 'ember-cli-htmlbars';
-import { module, skip, test } from 'qunit';
+import { module, test } from 'qunit';
 import { setupRenderingTest, setupTest } from 'ember-qunit';
 
 import { findRecord } from 'ember-data-resources';
@@ -57,10 +59,11 @@ module('findRecord', function (hooks) {
       assert.equal(instance.blog.record?.name, 'name:2');
     });
   });
+
   module('in a template', function (hooks) {
     setupRenderingTest(hooks);
 
-    skip('it works', async function (assert) {
+    test('it works', async function (assert) {
       class Blog extends Model {
         @attr name: string | undefined;
       }
@@ -69,16 +72,40 @@ module('findRecord', function (hooks) {
 
       this.setProperties({ id: 1 });
 
+      let yielded: any;
+
+      this.owner.register(
+        'helper:capture',
+        helper(([data]) => {
+          yielded = data;
+
+          return;
+        })
+      );
+
       await render(hbs`
-        {{#let (find-record 'blog' id=this.id) as |data|}}
+        {{#let (find-record 'blog' this.id) as |data|}}
+          {{capture data}}
           {{data.record.name}}
         {{/let}}
       `);
 
+      assert.false(yielded.isLoading, 'isLoading');
+      assert.equal(yielded.error, undefined);
+      assert.true(yielded.hasRan, 'hasRan');
+      assert.false(yielded.isError, 'isError');
+      assert.equal(yielded.record.name, 'name:1');
+
       assert.dom().hasText('name:1');
 
-      this.setProperties({ id: 1 });
+      this.setProperties({ id: 2 });
       await settled();
+
+      assert.false(yielded.isLoading, 'isLoading');
+      assert.equal(yielded.error, undefined);
+      assert.true(yielded.hasRan, 'hasRan');
+      assert.false(yielded.isError, 'isError');
+      assert.equal(yielded.record.name, 'name:2');
 
       assert.dom().hasText('name:2');
     });
