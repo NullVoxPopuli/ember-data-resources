@@ -16,5 +16,9 @@ module.exports = function (defaults) {
 
   const { maybeEmbroider } = require('@embroider/test-setup');
 
-  return maybeEmbroider(app);
+  return maybeEmbroider(app, {
+    // Embroider does not know how to resolve local helpers
+    // https://github.com/embroider-build/embroider/issues/894
+    staticHelpers: false,
+  });
 };

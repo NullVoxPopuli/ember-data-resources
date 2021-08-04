@@ -45,7 +45,7 @@ export function findRecord<Model = unknown>(
   });
 }
 
-type FindAllThunkResult = FindAllOptions | void;
+type FindAllThunkResult = { options: FindAllOptions } | FindAllOptions | void;
 
 export function findAll<Model = unknown>(
   destroyable: object,
@@ -53,11 +53,14 @@ export function findAll<Model = unknown>(
   thunk?: () => FindAllThunkResult
 ) {
   return useResource<FindAll<Model>>(destroyable, FindAll, () => {
-    let reified = thunk?.();
+    let reified = thunk?.() || {};
+    let options = 'options' in reified ? reified.options : reified;
 
     return {
-      modelName,
-      options: reified || {},
+      positional: [modelName],
+      named: {
+        options,
+      },
     };
   });
 }
@@ -76,16 +79,18 @@ export function query<Model = unknown>(
       let [query, options] = reified;
 
       return {
-        modelName,
-        query,
-        options: options || {},
+        positional: [modelName, query],
+        named: {
+          options: options || {},
+        },
       };
     }
 
     return {
-      modelName,
-      query: reified,
-      options: {},
+      positional: [modelName, reified],
+      named: {
+        options: {},
+      },
     };
   });
 }
@@ -107,16 +112,18 @@ export function queryRecord<Model = unknown>(
       let [query, options] = reified;
 
       return {
-        modelName,
-        query,
-        options: options || {},
+        positional: [modelName, query],
+        named: {
+          options: options || {},
+        },
       };
     }
 
     return {
-      modelName,
-      query: reified,
-      options: {},
+      positional: [modelName, reified],
+      named: {
+        options: {},
+      },
     };
   });
 }
