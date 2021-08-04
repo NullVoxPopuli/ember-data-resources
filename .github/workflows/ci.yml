@@ -73,6 +73,8 @@ jobs:
           # disabled because @ember/string does not support ember 4.0 yet
           # - ember-canary
           # disabled because support will be added later, and it doesn't work yet
+          #  - ember-data does not support embroider(optimized) yet
+          #    - store service is missing
           # - embroider-safe
           # - embroider-optimized
     steps:
