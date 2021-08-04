@@ -14,7 +14,7 @@ export interface NamedArgs {
   options: FindRecordOptions;
 }
 
-interface Args {
+export interface Args {
   named: NamedArgs;
   positional: PositionalArgs;
 }

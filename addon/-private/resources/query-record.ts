@@ -15,7 +15,7 @@ export interface NamedArgs {
   options: QueryRecordOptions;
 }
 
-interface Args {
+export interface Args {
   named: NamedArgs;
   positional: PositionalArgs;
 }
