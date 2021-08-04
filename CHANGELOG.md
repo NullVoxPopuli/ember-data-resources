@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/NullVoxPopuli/ember-data-resources/compare/v1.0.1...v1.1.0) (2021-08-04)
+
+
+### Bug Fixes
+
+* add tests, template-only support, use better type signature for JS-resource helpers ([ee4838d](https://github.com/NullVoxPopuli/ember-data-resources/commit/ee4838db65f3378549d4da2709590772db6d1495))
+* **internal:** add tests and fix allow generic types to be passed ([796abf6](https://github.com/NullVoxPopuli/ember-data-resources/commit/796abf66c6d35e64fe9e7f4029c6272e35b5b91b))
+* **request:** add waitForPromise to .retry ([81b3d6b](https://github.com/NullVoxPopuli/ember-data-resources/commit/81b3d6b764a5fa57a5890a2629d729ffd8aa0475))
+
+
+### Features
+
+* **helpers:** add helpers for finding records ([b439460](https://github.com/NullVoxPopuli/ember-data-resources/commit/b439460905affc4b4cbbb64030de936269d9231b))
+
 ## [1.0.1](https://github.com/NullVoxPopuli/ember-data-resources/compare/v1.0.0...v1.0.1) (2021-08-03)
 
 
