@@ -9,9 +9,13 @@ let worker: SetupWorkerApi;
 QUnit.begin(async () => {
   worker = setupWorker();
   await worker.start();
+  // artificial timeout "just in case" worker takes a bit to boot
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  worker.printHandlers();
 });
 
 QUnit.done(async () => {
+  worker.printHandlers();
   worker?.stop();
 });
 
@@ -22,6 +26,11 @@ export function setupMockData(hooks: NestedHooks) {
       { id: '2', type: 'blogs', attributes: { name: `name:2` } },
       { id: '3', type: 'blogs', attributes: { name: `name:3` } },
     ];
+
+    // Remove handlers that were maybe added during a previous a test
+    // this is useless now, but eventually I want setupMockData to pass
+    // handlers
+    worker.resetHandlers();
 
     worker.use(
       rest.get('/blogs', (req, res, ctx) => {
@@ -51,5 +60,9 @@ export function setupMockData(hooks: NestedHooks) {
         );
       })
     );
+  });
+
+  hooks.afterEach(function () {
+    worker?.resetHandlers();
   });
 }
