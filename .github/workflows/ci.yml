@@ -72,8 +72,11 @@ jobs:
           - ember-beta
           # disabled because @ember/string does not support ember 4.0 yet
           # - ember-canary
-          - embroider-safe
-          - embroider-optimized
+          # disabled because support will be added later, and it doesn't work yet
+          #  - ember-data does not support embroider(optimized) yet
+          #    - store service is missing
+          # - embroider-safe
+          # - embroider-optimized
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1

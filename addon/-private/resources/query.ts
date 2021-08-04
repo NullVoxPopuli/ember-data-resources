@@ -4,25 +4,30 @@ import { action } from '@ember/object';
 
 import { Request } from './request';
 
+import type ArrayProxy from '@ember/array/proxy';
 import type Store from '@ember-data/store';
-import type { Named } from 'ember-resources';
 
 type QueryParams = Parameters<Store['query']>;
 export type QueryQuery = QueryParams[1];
 export type QueryOptions = QueryParams[2];
 
+type PositionalArgs = [string, QueryQuery];
 export interface NamedArgs {
-  modelName: string;
-  query: QueryQuery;
   options: QueryOptions;
 }
 
-export class Query<Args extends Named<NamedArgs>> extends Request<Args> {
-  @tracked _records: unknown;
+export interface Args {
+  named: NamedArgs;
+  positional: PositionalArgs;
+}
+
+export class Query<Model, LocalArgs extends Args = Args> extends Request<LocalArgs> {
+  @tracked private _records: ArrayProxy<Model> | undefined;
 
   @action
   async __WRAPPED_FUNCTION__() {
-    let { modelName, query, options } = this.args.named;
+    let [modelName, query] = this.args.positional;
+    let { options } = this.args.named;
 
     let records = await this.store.query(modelName as never, query, options);
 
@@ -31,7 +36,7 @@ export class Query<Args extends Named<NamedArgs>> extends Request<Args> {
     this._records = records;
   }
 
-  get records() {
+  get records(): ArrayProxy<Model> | undefined {
     return this._records;
   }
 }

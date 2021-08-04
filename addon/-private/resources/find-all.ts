@@ -4,22 +4,28 @@ import { action } from '@ember/object';
 
 import { Request } from './request';
 
+import type ArrayProxy from '@ember/array/proxy';
 import type Store from '@ember-data/store';
-import type { Named } from 'ember-resources';
 
 export type FindAllOptions = Parameters<Store['findAll']>[1];
 
+type PositionalArgs = [string];
 export interface NamedArgs {
-  modelName: string;
   options: FindAllOptions;
 }
 
-export class FindAll<Args extends Named<NamedArgs>> extends Request<Args> {
-  @tracked _records: unknown;
+export interface Args {
+  named: NamedArgs;
+  positional: PositionalArgs;
+}
+
+export class FindAll<Model, LocalArgs extends Args = Args> extends Request<LocalArgs> {
+  @tracked private _records: ArrayProxy<Model> | undefined;
 
   @action
   async __WRAPPED_FUNCTION__() {
-    let { modelName, options } = this.args.named;
+    let [modelName] = this.args.positional;
+    let { options } = this.args.named;
 
     let records = await this.store.findAll(modelName as never, options);
 
@@ -28,7 +34,7 @@ export class FindAll<Args extends Named<NamedArgs>> extends Request<Args> {
     this._records = records;
   }
 
-  get records() {
+  get records(): ArrayProxy<Model> | undefined {
     return this._records;
   }
 }

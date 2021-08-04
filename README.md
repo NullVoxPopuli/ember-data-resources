@@ -42,6 +42,31 @@ Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
 ```
 
+**in a template**
+
+```hbs
+{{#let (find-all 'blog') as |blogs|}}
+  {{#if blogs.isLoading}}
+      ...
+  {{else if blogs.isError}}
+    {{blogs.error}}
+  {{else}}
+    {{blogs.records}}
+  {{/if}}
+
+  Available properties:
+   - {{blog.records}}
+   - {{blog.error}}
+   - {{blog.isLoading}}
+   - {{blog.isSuccess}}
+   - {{blog.isError}}
+   - {{blog.hasRun}}
+
+  Available methods:
+   - <button {{on 'click' blog.retry}}>Retry</button>
+{{/let}}
+```
+
 ### `findRecord`
 
 ```js
@@ -66,6 +91,32 @@ Available properties:
 
 Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
+```
+
+**in a template**
+
+```hbs
+{{#let (find-record 'blog' @id) as |blog|}}
+{{!-- or: (find-record 'blog' @id options=...) --}}
+  {{#if blog.isLoading}}
+      ...
+  {{else if blog.isError}}
+    {{blog.error}}
+  {{else}}
+    {{blog.record}}
+  {{/if}}
+
+  Available properties:
+   - {{blog.record}}
+   - {{blog.error}}
+   - {{blog.isLoading}}
+   - {{blog.isSuccess}}
+   - {{blog.isError}}
+   - {{blog.hasRun}}
+
+  Available methods:
+   - <button {{on 'click' blog.retry}}>Retry</button>
+{{/let}}
 ```
 
 
@@ -93,6 +144,31 @@ Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
 ```
 
+**in a template**
+
+```hbs
+{{#let (query 'blog' query=(hash ...)) as |blogs|}}
+  {{#if blogs.isLoading}}
+      ...
+  {{else if blogs.isError}}
+    {{blogs.error}}
+  {{else}}
+    {{blogs.records}}
+  {{/if}}
+
+  Available properties:
+   - {{blog.records}}
+   - {{blog.error}}
+   - {{blog.isLoading}}
+   - {{blog.isSuccess}}
+   - {{blog.isError}}
+   - {{blog.hasRun}}
+
+  Available methods:
+   - <button {{on 'click' blog.retry}}>Retry</button>
+{{/let}}
+```
+
 ### `queryRecord`
 
 ```js
@@ -117,6 +193,32 @@ Available properties:
 
 Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
+```
+
+**in a template**
+
+```hbs
+{{#let (query-record 'blog' query=(hash ...)) as |blog|}}
+  {{#if blog.isLoading}}
+      ...
+  {{else if blog.isError}}
+    {{blog.error}}
+  {{else}}
+    {{blog.record}}
+  {{/if}}
+
+  Available properties:
+   - {{blog.record}}
+   - {{blog.error}}
+   - {{blog.isLoading}}
+   - {{blog.isSuccess}}
+   - {{blog.isError}}
+   - {{blog.hasRun}}
+
+  Available methods:
+   - <button {{on 'click' blog.retry}}>Retry</button>
+
+{{/let}}
 ```
 
 Contributing

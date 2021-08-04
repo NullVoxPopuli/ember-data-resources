@@ -5,24 +5,28 @@ import { action } from '@ember/object';
 import { Request } from './request';
 
 import type Store from '@ember-data/store';
-import type { Named } from 'ember-resources';
 
 type QueryParams = Parameters<Store['queryRecord']>;
 export type QueryRecordQuery = QueryParams[1];
 export type QueryRecordOptions = QueryParams[2];
 
+type PositionalArgs = [string, QueryRecordQuery];
 export interface NamedArgs {
-  modelName: string;
-  query: QueryRecordQuery;
   options: QueryRecordOptions;
 }
 
-export class QueryRecord<Args extends Named<NamedArgs>> extends Request<Args> {
-  @tracked _record: unknown;
+export interface Args {
+  named: NamedArgs;
+  positional: PositionalArgs;
+}
+
+export class QueryRecord<Model, LocalArgs extends Args = Args> extends Request<LocalArgs> {
+  @tracked private _record: Model | undefined;
 
   @action
   async __WRAPPED_FUNCTION__() {
-    let { modelName, query, options } = this.args.named;
+    let [modelName, query] = this.args.positional;
+    let { options } = this.args.named;
 
     let record = await this.store.queryRecord(modelName as never, query, options);
 
@@ -31,7 +35,7 @@ export class QueryRecord<Args extends Named<NamedArgs>> extends Request<Args> {
     this._record = record;
   }
 
-  get record() {
+  get record(): Model | undefined {
     return this._record;
   }
 }

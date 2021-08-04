@@ -16,12 +16,12 @@ import type { Id } from './-private/resources/types';
 
 type FindRecordThunkResult = Id | [Id] | [Id, FindRecordOptions];
 
-export function findRecord(
+export function findRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
   thunk: () => FindRecordThunkResult
 ) {
-  return useResource(destroyable, FindRecord, () => {
+  return useResource<FindRecord<Model>>(destroyable, FindRecord, () => {
     let reified = thunk();
     let id: Id | undefined = undefined;
     let options: FindRecordOptions;
@@ -37,46 +37,60 @@ export function findRecord(
     assert(`Expected an ID to be specified from the thunk passed to findRecord`, id);
 
     return {
-      id,
-      modelName,
-      options,
+      positional: [modelName, id],
+      named: {
+        options,
+      },
     };
   });
 }
 
-type FindAllThunkResult = FindAllOptions | void;
+type FindAllThunkResult = { options: FindAllOptions } | FindAllOptions | void;
 
-export function findAll(destroyable: object, modelName: string, thunk: () => FindAllThunkResult) {
-  return useResource(destroyable, FindAll, () => {
-    let reified = thunk?.();
+export function findAll<Model = unknown>(
+  destroyable: object,
+  modelName: string,
+  thunk?: () => FindAllThunkResult
+) {
+  return useResource<FindAll<Model>>(destroyable, FindAll, () => {
+    let reified = thunk?.() || {};
+    let options = 'options' in reified ? reified.options : reified;
 
     return {
-      modelName,
-      options: reified || {},
+      positional: [modelName],
+      named: {
+        options,
+      },
     };
   });
 }
 
 type QueryThunkResult = QueryQuery | [QueryQuery] | [QueryQuery, QueryOptions];
 
-export function query(destroyable: object, modelName: string, thunk: () => QueryThunkResult) {
-  return useResource(destroyable, Query, () => {
+export function query<Model = unknown>(
+  destroyable: object,
+  modelName: string,
+  thunk: () => QueryThunkResult
+) {
+  return useResource<Query<Model>>(destroyable, Query, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {
       let [query, options] = reified;
 
       return {
-        modelName,
-        query,
-        options: options || {},
+        positional: [modelName, query],
+        named: {
+          options: options || {},
+        },
       };
     }
 
     return {
-      modelName,
-      query: reified,
-      options: {},
+      positional: [modelName, reified],
+      named: {
+        options: {},
+      },
     };
   });
 }
@@ -86,28 +100,30 @@ type QueryRecordThunkResult =
   | [QueryRecordQuery]
   | [QueryRecordQuery, QueryRecordOptions];
 
-export function queryRecord(
+export function queryRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
   thunk: () => QueryRecordThunkResult
 ) {
-  return useResource(destroyable, QueryRecord, () => {
+  return useResource<QueryRecord<Model>>(destroyable, QueryRecord, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {
       let [query, options] = reified;
 
       return {
-        modelName,
-        query,
-        options: options || {},
+        positional: [modelName, query],
+        named: {
+          options: options || {},
+        },
       };
     }
 
     return {
-      modelName,
-      query: reified,
-      options: {},
+      positional: [modelName, reified],
+      named: {
+        options: {},
+      },
     };
   });
 }
