@@ -41,7 +41,7 @@ module('queryRecord', function (hooks) {
       assert.false(instance.blog.isLoading, 'isLoading');
       assert.false(instance.blog.isError, 'isError');
       assert.true(instance.blog.hasRan, 'hasRan');
-      assert.notOk(instance.blog.error, 'error');
+      assert.notOk(instance.blog.error?.message, 'error');
       assert.ok(instance.blog.record instanceof Blog);
       assert.equal(instance.blog.record?.name, 'name:1');
 
@@ -52,7 +52,7 @@ module('queryRecord', function (hooks) {
       assert.false(instance.blog.isLoading, 'isLoading');
       assert.false(instance.blog.isError, 'isError');
       assert.true(instance.blog.hasRan, 'hasRan');
-      assert.notOk(instance.blog.error, 'error');
+      assert.notOk(instance.blog.error?.message, 'error');
       assert.ok(instance.blog.record instanceof Blog);
       await settled();
 
@@ -90,7 +90,7 @@ module('queryRecord', function (hooks) {
       `);
 
       assert.false(yielded.isLoading, 'isLoading');
-      assert.equal(yielded.error, undefined);
+      assert.equal(yielded.error?.message, undefined);
       assert.true(yielded.hasRan, 'hasRan');
       assert.false(yielded.isError, 'isError');
       assert.equal(yielded.record.name, 'name:1');
@@ -101,7 +101,7 @@ module('queryRecord', function (hooks) {
       assert.false(yielded.isLoading, 'isLoading');
       assert.false(yielded.isError, 'isError');
       assert.true(yielded.hasRan, 'hasRan');
-      assert.notOk(yielded.error, 'error');
+      assert.notOk(yielded.error?.message, 'error');
 
       assert.equal(yielded.record?.name, 'name:2');
     });
