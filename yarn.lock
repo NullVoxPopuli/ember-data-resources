@@ -1784,10 +1784,10 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
 
-"@nullvoxpopuli/eslint-configs@^1.3.19":
-  version "1.3.19"
-  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-1.3.19.tgz#b921c9bbdd950bf195b669d1094b21b9dd6c1cfb"
-  integrity sha512-ngEmGnqUXu/rJMfvMGD1xItKbA9wVudbIiiy2diPinwjdQAE9Aqn9JjxDLOkZRAta4pOVa3+gTh5oP8UyfzVQQ==
+"@nullvoxpopuli/eslint-configs@^1.3.20":
+  version "1.3.20"
+  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-1.3.20.tgz#91e3738fbe434cc2948e880bf08cec4dccc5f05c"
+  integrity sha512-BaNLz+oB1HibopX7iaGdnd/C2/4Fa8eU87d2+mX8or+LWoxJieVfi9yXikeZWlGqGPFLj+4TGQyqs3dgOzf/Fw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4.29.0"
     "@typescript-eslint/parser" "4.29.0"
@@ -1797,7 +1797,7 @@
     eslint-plugin-decorator-position "2.2.29"
     eslint-plugin-ember "10.5.1"
     eslint-plugin-import "^2.23.4"
-    eslint-plugin-json "^3.0.0"
+    eslint-plugin-json "^3.1.0"
     eslint-plugin-node "11.1.0"
     eslint-plugin-prettier "3.4.0"
     eslint-plugin-qunit "6.2.0"
@@ -7126,13 +7126,13 @@ eslint-plugin-import@^2.23.4:
     resolve "^1.20.0"
     tsconfig-paths "^3.9.0"
 
-eslint-plugin-json@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/eslint-plugin-json/-/eslint-plugin-json-3.0.0.tgz#49599a2412868604117be71f2b9eb29e80ce06ee"
-  integrity sha512-7qoY5pbzBLEttJWy4/cDtULK3EKglgIwfXk5Yqp3StJaQ4Bu4Jmp0n2fJN5vBe/hLGaECupq3edn1j/k7O0bFA==
+eslint-plugin-json@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-json/-/eslint-plugin-json-3.1.0.tgz#251108ba1681c332e0a442ef9513bd293619de67"
+  integrity sha512-MrlG2ynFEHe7wDGwbUuFPsaT2b1uhuEFhJ+W1f1u+1C2EkXmTYJp4B1aAdQQ8M+CC3t//N/oRKiIVw14L2HR1g==
   dependencies:
     lodash "^4.17.21"
-    vscode-json-languageservice "^4.0.2"
+    vscode-json-languageservice "^4.1.6"
 
 eslint-plugin-node@11.1.0, eslint-plugin-node@^11.1.0:
   version "11.1.0"
@@ -14564,9 +14564,9 @@ vm-browserify@^1.0.1:
   resolved "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vscode-json-languageservice@^4.0.2:
+vscode-json-languageservice@^4.1.6:
   version "4.1.6"
-  resolved "https://registry.npmjs.org/vscode-json-languageservice/-/vscode-json-languageservice-4.1.6.tgz#4275e8daf1cba80273c318f33fbf7a2ede307053"
+  resolved "https://registry.yarnpkg.com/vscode-json-languageservice/-/vscode-json-languageservice-4.1.6.tgz#4275e8daf1cba80273c318f33fbf7a2ede307053"
   integrity sha512-DIKb3tcfRtb3tIE6g9SLOl5E9tNSt6kljH08Wa5RwFlVshtXGrDDzttchze4CYy9pJpE9mBtCbRHmLvY1Z1ZXA==
   dependencies:
     jsonc-parser "^3.0.0"
