@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/NullVoxPopuli/ember-data-resources/compare/v1.1.1...v1.1.2) (2021-09-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @ember/test-waiters to v3 ([2666dfc](https://github.com/NullVoxPopuli/ember-data-resources/commit/2666dfce187e02b664afdbfe7d6fb93be8b17721))
+
 ## [1.1.1](https://github.com/NullVoxPopuli/ember-data-resources/compare/v1.1.0...v1.1.1) (2021-09-06)
 
 
