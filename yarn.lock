@@ -6264,10 +6264,10 @@ ember-source@~3.28.1:
     semver "^7.3.4"
     silent-error "^1.1.1"
 
-ember-template-lint@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.6.0.tgz#cb5bf92648f9fcca1cd67e8dd42d431a92ac2255"
-  integrity sha512-t3tzOTqYi0+Fphj35i8uHB5wwrPcBcSh+YnzaVAz+kNwVO2adiUlKn8+ZIUSJg/pIMMrZjcIu+GJzd5g2T9SHg==
+ember-template-lint@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.7.0.tgz#e0565102b291974afeb65de6933f0d154be508d3"
+  integrity sha512-C3oFFdB+g14CvFKZrnAS8Yt0IojTpOhdU5KZoLUs6hOgQjkEF4l/OCBNPtBmL8Nm/dxmc5iTsd5TL98CCcnK+w==
   dependencies:
     "@ember-template-lint/todo-utils" "^10.0.0"
     chalk "^4.1.2"
@@ -11397,15 +11397,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@2.4.0:
+prettier@2.4.0, prettier@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.0.tgz#85bdfe0f70c3e777cf13a4ffff39713ca6f64cba"
   integrity sha512-DsEPLY1dE5HF3BxCRBmD4uYZ+5DCbvatnolqTqcxEgKVZnL2kUfyu7b8pPQ5+hTBkdhU9SLUmK0/pHb07RE4WQ==
-
-prettier@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
-  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
 printf@^0.6.1:
   version "0.6.1"
