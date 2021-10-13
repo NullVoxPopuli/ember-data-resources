@@ -1777,10 +1777,10 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
 
-"@nullvoxpopuli/eslint-configs@^1.5.4":
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-1.5.4.tgz#087c8da6c317bf9ef4fbaf22023d0ddebcab65aa"
-  integrity sha512-zzv8nHG0lHiAX0h9iQYWLSTl7Zp1rG4yfIubc9f8iKCas8LEPdwZKgfnvTKr+t7dZGQGUSaIEI664kdNMA0D2Q==
+"@nullvoxpopuli/eslint-configs@^1.5.5":
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-1.5.5.tgz#60a8c68e9e65353a3e359df4aae0262411198ae2"
+  integrity sha512-+zsOplk69BvPmgZvTdb6r70+lkePa/AZee9oETxRaw9KNeUBK1/M3nMLgbsm0mF4unyg3I5SJ1luXxiqvRF2+A==
   dependencies:
     "@typescript-eslint/eslint-plugin" "5.0.0"
     "@typescript-eslint/parser" "5.0.0"
@@ -1788,7 +1788,7 @@
     eslint "7.32.0"
     eslint-config-prettier "8.3.0"
     eslint-plugin-decorator-position "4.0.1"
-    eslint-plugin-ember "10.5.6"
+    eslint-plugin-ember "10.5.7"
     eslint-plugin-import "^2.25.2"
     eslint-plugin-json "^3.1.0"
     eslint-plugin-node "11.1.0"
@@ -6655,10 +6655,10 @@ eslint-plugin-decorator-position@4.0.1:
     ember-rfc176-data "^0.3.12"
     snake-case "^3.0.3"
 
-eslint-plugin-ember@10.5.6:
-  version "10.5.6"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.5.6.tgz#2f44fc4bfd8b9bfc80d3956c29cd9cc0380fca42"
-  integrity sha512-07R1wxKQ8otuD6k0dEOvahztgsFt2tnGV1V8Uj0d2SX0KsGGrpAIQRiEmlaQ1nd0DpgpszbhOBvsMLV4F/CtIQ==
+eslint-plugin-ember@10.5.7:
+  version "10.5.7"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.5.7.tgz#132dcd139fc9e830b707910d1ee4a458b83ab9d4"
+  integrity sha512-PTnZxbexrvRgEUtiuTaRjcFIIezzNsaJLUkvOoKhmxXTZnWgSPV36PGv5ml0BOallWYAOocefjTgv9SWvlmEdw==
   dependencies:
     "@ember-data/rfc395-data" "^0.0.4"
     css-tree "^1.0.0-alpha.39"
