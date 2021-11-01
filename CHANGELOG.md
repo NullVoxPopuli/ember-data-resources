@@ -1,3 +1,28 @@
+# [2.0.0](https://github.com/NullVoxPopuli/ember-data-resources/compare/v1.1.4...v2.0.0) (2021-11-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-resources to v4 ([9abbece](https://github.com/NullVoxPopuli/ember-data-resources/commit/9abbecedac3cae0bb2800ed60acf2a65415166e5))
+
+
+### Features
+
+* **readme:** declare ember-auto-import compatibility ([0cbc7a7](https://github.com/NullVoxPopuli/ember-data-resources/commit/0cbc7a73616e2439514d026f4807db9ae9d3f135))
+
+
+### BREAKING CHANGES
+
+* **readme:** ember-auto-import compatibility was not declared.
+
+If any projects that previously used ember-auto-import@1,
+this addon will no longer work for those projects until those projects
+upgrade to either ember-auto-import@v2 or embroider.
+
+For projects that already were using ember-auto-import@v2, there is no
+breaking change. There is no behavioral difference in this addon's
+features.
+
 ## [1.1.4](https://github.com/NullVoxPopuli/ember-data-resources/compare/v1.1.3...v1.1.4) (2021-10-21)
 
 
