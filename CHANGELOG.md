@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.1...v2.0.2) (2021-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-resources to ^4.0.1 ([646873f](https://github.com/NullVoxPopuli/ember-data-resources/commit/646873fb897c5a42f9ba6a5e6b1a3806a54f971b))
+
 ## [2.0.1](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.0...v2.0.1) (2021-11-01)
 
 
