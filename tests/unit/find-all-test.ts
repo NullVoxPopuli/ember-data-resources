@@ -32,14 +32,14 @@ module('findAll', function (hooks) {
 
       setOwner(instance, this.owner);
 
-      assert.equal(instance.blog.records, undefined);
+      assert.strictEqual(instance.blog.records, undefined);
       await settled();
 
       assert.false(instance.blog.isLoading, 'isLoading');
       assert.notOk(instance.blog.error?.message, 'error');
       assert.false(instance.blog.isError, 'isError');
       assert.true(instance.blog.hasRan, 'hasRan');
-      assert.equal(instance.blog.records?.length, 3);
+      assert.strictEqual(instance.blog.records?.length, 3);
     });
   });
 
@@ -74,7 +74,7 @@ module('findAll', function (hooks) {
       assert.notOk(yielded.error?.message, 'error');
       assert.true(yielded.hasRan, 'hasRan');
       assert.false(yielded.isError, 'isError');
-      assert.equal(yielded.records.length, 3);
+      assert.strictEqual(yielded.records.length, 3);
     });
   });
 });

@@ -33,14 +33,14 @@ module('query', function (hooks) {
 
       setOwner(instance, this.owner);
 
-      assert.equal(instance.blog.records, undefined);
+      assert.strictEqual(instance.blog.records, undefined);
       await settled();
 
       assert.false(instance.blog.isLoading, 'isLoading');
       assert.false(instance.blog.isError, 'isError');
       assert.true(instance.blog.hasRan, 'hasRan');
       assert.notOk(instance.blog.error?.message, 'error');
-      assert.equal(instance.blog.records?.length, 3);
+      assert.strictEqual(instance.blog.records?.length, 3);
     });
   });
 
@@ -72,10 +72,10 @@ module('query', function (hooks) {
       `);
 
       assert.false(yielded.isLoading, 'isLoading');
-      assert.equal(yielded.error?.message, undefined);
+      assert.strictEqual(yielded.error?.message, undefined);
       assert.true(yielded.hasRan, 'hasRan');
       assert.false(yielded.isError, 'isError');
-      assert.equal(yielded.records.length, 3);
+      assert.strictEqual(yielded.records.length, 3);
     });
   });
 });
