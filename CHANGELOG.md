@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.3...v2.0.4) (2021-11-20)
+
+
+### Bug Fixes
+
+* **findRecord:** id falsey errors are now on the error property ([fc6e3f6](https://github.com/NullVoxPopuli/ember-data-resources/commit/fc6e3f67cc2978324056699f42d66cf67bd10fcf))
+
 ## [2.0.3](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.2...v2.0.3) (2021-11-15)
 
 
