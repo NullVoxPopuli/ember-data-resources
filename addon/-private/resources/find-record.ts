@@ -2,6 +2,7 @@ import { tracked } from '@glimmer/tracking';
 import { isDestroyed, isDestroying } from '@ember/destroyable';
 import { action } from '@ember/object';
 
+import { IdRequiredError } from './errors';
 import { Request } from './request';
 
 import type { Id } from './types';
@@ -26,6 +27,17 @@ export class FindRecord<Model, LocalArgs extends Args = Args> extends Request<Lo
   async __WRAPPED_FUNCTION__() {
     let [modelName, id] = this.args.positional;
     let { options } = this.args.named;
+
+    /**
+     * ember-data forbids usage of invalid arguments
+     * in JS, this is typically fine as we can also try-catch, but
+     * since this *might* be used in a template as well as JS, we need to instead
+     * throw our own error that gives a bit more context to the user so
+     * they can pass in the correct arguments
+     */
+    if (id === null || id === undefined) {
+      throw new IdRequiredError(modelName);
+    }
 
     let record = await this.store.findRecord(modelName as never, id, options);
 

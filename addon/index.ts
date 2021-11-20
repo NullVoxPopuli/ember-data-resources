@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { assert } from '@ember/debug';
-
 import { useResource } from 'ember-resources';
 
 import { FindAll } from './-private/resources/find-all';
@@ -33,8 +31,6 @@ export function findRecord<Model = unknown>(
       id = options[0];
       options = options[1] || {};
     }
-
-    assert(`Expected an ID to be specified from the thunk passed to findRecord`, id);
 
     return {
       positional: [modelName, id],

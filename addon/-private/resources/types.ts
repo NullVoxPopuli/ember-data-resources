@@ -1,1 +1,1 @@
-export type Id = string | number;
+export type Id = string | number | null | undefined;
