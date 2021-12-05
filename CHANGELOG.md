@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.4...v2.0.5) (2021-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-htmlbars to ^6.0.1 ([df29e7f](https://github.com/NullVoxPopuli/ember-data-resources/commit/df29e7fca3c18d30c956d373553e24c46622151c))
+
 ## [2.0.4](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.3...v2.0.4) (2021-11-20)
 
 
