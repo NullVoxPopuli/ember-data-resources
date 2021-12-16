@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.6...v2.0.7) (2021-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to ^7.26.8 ([20c8339](https://github.com/NullVoxPopuli/ember-data-resources/commit/20c8339d53c33cf8348701f6f8863df5a5db8536))
+
 ## [2.0.6](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.5...v2.0.6) (2021-12-06)
 
 
