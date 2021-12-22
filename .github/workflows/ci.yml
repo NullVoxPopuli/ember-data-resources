@@ -68,15 +68,12 @@ jobs:
       matrix:
         ember-try-scenario:
           - ember-3.25
+          - ember-3.28-lts
           - ember-release
           - ember-beta
-          # disabled because @ember/string does not support ember 4.0 yet
-          # - ember-canary
-          # disabled because support will be added later, and it doesn't work yet
-          #  - ember-data does not support embroider(optimized) yet
-          #    - store service is missing
-          # - embroider-safe
-          # - embroider-optimized
+          - ember-canary
+          - embroider-safe
+          - embroider-optimized
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
@@ -86,22 +83,6 @@ jobs:
         run: yarn install
       - name: test
         run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
-
-  ember-cli-update:
-    if: "github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && ( ! contains(toJSON(github.event.commits.*.message), '[skip ci]') )"
-    runs-on: ubuntu-latest
-    needs: [tests, try-scenarios]
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: volta-cli/action@v1
-      - uses: kellyselden/ember-cli-update-action@v3
-        with:
-          autofix_command: yarn lint:fix
-          ignore_to: true
 
   publish:
     name: Release
