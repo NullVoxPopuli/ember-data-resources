@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.1.0...v3.0.0) (2022-01-08)
+
+
+### chore
+
+* change node support, add 16, drop 12 ([a4b4404](https://github.com/NullVoxPopuli/ember-data-resources/commit/a4b44042341d462afc9a2271fd90e5d824f7c06d))
+
+
+### BREAKING CHANGES
+
+* node 12 is no longer supported
+
 # [2.1.0](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.8...v2.1.0) (2022-01-08)
 
 
