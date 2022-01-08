@@ -68,6 +68,20 @@ Available methods:
 {{/let}}
 ```
 
+**in strict mode**
+
+See: [First-class Component Templates](https://github.com/emberjs/rfcs/pull/779)
+
+```jsx
+import { FindAll } from 'ember-data-resources';
+
+<template>
+  {{#let (FindAll 'blog') as |blogs|}}
+    ...
+  {{/let}}
+</template>
+```
+
 ### `findRecord`
 
 ```js
@@ -120,6 +134,19 @@ Available methods:
 {{/let}}
 ```
 
+**in strict mode**
+
+See: [First-class Component Templates](https://github.com/emberjs/rfcs/pull/779)
+
+```jsx
+import { FindRecord } from 'ember-data-resources';
+
+<template>
+  {{#let (FindRecord 'blog' @id) as |blog|}}
+    ...
+  {{/let}}
+</template>
+```
 
 ### `query`
 
@@ -169,6 +196,21 @@ Available methods:
    - <button {{on 'click' blog.retry}}>Retry</button>
 {{/let}}
 ```
+
+**in strict mode**
+
+See: [First-class Component Templates](https://github.com/emberjs/rfcs/pull/779)
+
+```jsx
+import { Query } from 'ember-data-resources';
+
+<template>
+  {{#let (Query 'blog' query=(hash ...)) as |blogs|}}
+    ...
+  {{/let}}
+</template>
+```
+
 
 ### `queryRecord`
 
@@ -220,6 +262,20 @@ Available methods:
    - <button {{on 'click' blog.retry}}>Retry</button>
 
 {{/let}}
+```
+
+**in strict mode**
+
+See: [First-class Component Templates](https://github.com/emberjs/rfcs/pull/779)
+
+```jsx
+import { QueryRecord } from 'ember-data-resources';
+
+<template>
+  {{#let (QueryRecord 'blog' query=(hash ...)) as |blog|}}
+    ...
+  {{/let}}
+</template>
 ```
 
 Contributing
