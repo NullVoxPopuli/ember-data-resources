@@ -1,3 +1,17 @@
+# [2.1.0](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.8...v2.1.0) (2022-01-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @ember/test-waiters to ^3.0.1 ([eea91c5](https://github.com/NullVoxPopuli/ember-data-resources/commit/eea91c55e07ed3860321883309645ace99b86e9a))
+* **deps:** update dependency ember-cli-babel to ^7.26.11 ([89688e2](https://github.com/NullVoxPopuli/ember-data-resources/commit/89688e2d74e8ccbc50f4040c9a4b11f86be0f82c))
+* **deps:** update dependency ember-resources to ^4.1.3 ([d76e599](https://github.com/NullVoxPopuli/ember-data-resources/commit/d76e599b5c153009fed52ac7aa739b51cd52fad7))
+
+
+### Features
+
+* support strict-mode ([33c3411](https://github.com/NullVoxPopuli/ember-data-resources/commit/33c341116947bb3466c296a94a7b0ff71c8d0de0))
+
 ## [2.0.8](https://github.com/NullVoxPopuli/ember-data-resources/compare/v2.0.7...v2.0.8) (2021-12-17)
 
 
