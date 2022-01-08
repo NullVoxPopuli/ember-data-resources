@@ -71,6 +71,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
+        with:
+          node-version: 14
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'

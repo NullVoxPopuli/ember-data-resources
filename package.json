@@ -133,7 +133,7 @@
     "yarn": "1.22.17"
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": "14.* || >= 16"
   },
   "ember": {
     "edition": "octane"
