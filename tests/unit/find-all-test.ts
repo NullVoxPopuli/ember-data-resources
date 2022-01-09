@@ -17,6 +17,7 @@ module('findAll', function (hooks) {
 
   module('in js', function (hooks) {
     setupTest(hooks);
+
     test('it works', async function (assert) {
       class Blog extends Model {
         @attr name: string | undefined;
@@ -40,6 +41,33 @@ module('findAll', function (hooks) {
       assert.false(instance.blog.isError, 'isError');
       assert.true(instance.blog.hasRan, 'hasRan');
       assert.strictEqual(instance.blog.records?.length, 3);
+    });
+
+    test('Array.prototype.filter works', async function (assert) {
+      class Blog extends Model {
+        @attr name: string | undefined;
+      }
+
+      this.owner.register('model:blog', Blog);
+
+      class Test {
+        blog = findAll<Blog>(this, 'blog');
+      }
+
+      let instance = new Test();
+
+      setOwner(instance, this.owner);
+
+      assert.strictEqual(instance.blog.records, undefined);
+      await settled();
+
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      let odd = instance.blog.records!.filter(
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        (record) => parseInt(record.name!.split(':')[1]) % 2 === 1
+      );
+
+      assert.strictEqual(odd.length, 2);
     });
   });
 
@@ -75,6 +103,37 @@ module('findAll', function (hooks) {
       assert.true(yielded.hasRan, 'hasRan');
       assert.false(yielded.isError, 'isError');
       assert.strictEqual(yielded.records.length, 3);
+    });
+
+    test('Array.prototype.filter works', async function (assert) {
+      class Blog extends Model {
+        @attr name: string | undefined;
+      }
+
+      this.owner.register('model:blog', Blog);
+
+      let yielded: any;
+
+      this.owner.register(
+        'helper:capture',
+        helper(([data]) => {
+          yielded = data;
+
+          return;
+        })
+      );
+
+      await render(hbs`
+        {{#let (find-all 'blog') as |data|}}
+          {{capture data}}
+        {{/let}}
+      `);
+
+      let odd = yielded.records.filter(
+        (record: any) => parseInt(record.name.split(':')[1]) % 2 === 1
+      );
+
+      assert.strictEqual(odd.length, 2);
     });
   });
 });
