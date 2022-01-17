@@ -2,7 +2,7 @@ import { tracked } from '@glimmer/tracking';
 import { isDestroyed, isDestroying } from '@ember/destroyable';
 import { action } from '@ember/object';
 
-import { IdRequiredError } from './errors';
+import { IdRequiredError, IdTypeError } from './errors';
 import { Request } from './request';
 
 import type { Id } from './types';
@@ -37,6 +37,8 @@ export class FindRecord<Model, LocalArgs extends Args = Args> extends Request<Lo
      */
     if (id === null || id === undefined) {
       throw new IdRequiredError(modelName);
+    } else if (typeof id !== 'string' && typeof id !== 'number') {
+      throw new IdTypeError(modelName, id);
     }
 
     let record = await this.store.findRecord(modelName as never, id, options);
