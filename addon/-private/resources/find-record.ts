@@ -38,7 +38,7 @@ export class FindRecord<Model, LocalArgs extends Args = Args> extends Request<Lo
     if (id === null || id === undefined) {
       throw new IdRequiredError(modelName);
     } else if (typeof id !== 'string' && typeof id !== 'number') {
-      throw new IdTypeError(modelName);
+      throw new IdTypeError(modelName, id);
     }
 
     let record = await this.store.findRecord(modelName as never, id, options);
