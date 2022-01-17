@@ -21,15 +21,15 @@ export function findRecord<Model = unknown>(
 ) {
   return useResource<FindRecord<Model>>(destroyable, FindRecord, () => {
     let reified = thunk();
-    let id: Id | undefined = undefined;
+    let id: Id;
     let options: FindRecordOptions;
 
-    if (typeof reified === 'number') {
-      id = reified;
+    if (Array.isArray(reified)) {
+      id = reified[0];
+      options = reified[1] ?? {};
+    } else {
+      id = reified as Id;
       options = {};
-    } else if (Array.isArray(options)) {
-      id = options[0];
-      options = options[1] || {};
     }
 
     return {

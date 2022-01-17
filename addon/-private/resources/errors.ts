@@ -5,3 +5,11 @@ export class IdRequiredError extends Error {
     );
   }
 }
+
+export class IdTypeError extends TypeError {
+  constructor(modelName: string) {
+    super(
+      `While trying to request a resource from ${modelName}, the ID was of invalid type: only string and number are supported`
+    );
+  }
+}
