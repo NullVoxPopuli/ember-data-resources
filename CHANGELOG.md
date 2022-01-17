@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.1...v3.0.2) (2022-01-17)
+
+
+### Bug Fixes
+
+* **findRecord:** allow string ids, and fix array thunk usage ([1eeafb4](https://github.com/NullVoxPopuli/ember-data-resources/commit/1eeafb4a73791f7a0dba9bc82787cabee82f604b)), closes [PR#227](https://github.com/PR/issues/227)
+
 ## [3.0.1](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.0...v3.0.1) (2022-01-15)
 
 
