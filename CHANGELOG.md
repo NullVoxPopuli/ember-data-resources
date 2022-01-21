@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.2...v3.0.3) (2022-01-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-auto-import to ^2.4.0 ([b867f76](https://github.com/NullVoxPopuli/ember-data-resources/commit/b867f7669c79aff6eeb92e12dfde2614420b921a))
+
 ## [3.0.2](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.1...v3.0.2) (2022-01-17)
 
 
