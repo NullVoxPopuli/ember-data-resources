@@ -6678,10 +6678,10 @@ ember-resolver@^8.0.3:
     ember-cli-version-checker "^5.1.2"
     resolve "^1.20.0"
 
-ember-resources@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ember-resources/-/ember-resources-4.2.0.tgz#6a999f0e812181e0c57a50e2090360b61372017a"
-  integrity sha512-ItUOiov4cSPvavA7pG+sl3QZ8GG5D1Fss2Vyv6ychbD+CEiNtXWoBFvV6dfdPZ6GENU8Si8mHoLIcBTgK6BayA==
+ember-resources@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/ember-resources/-/ember-resources-4.3.0.tgz#9211b10703b2f8286fd92da1b7069fac43ffcc10"
+  integrity sha512-uxgDGW8N1rMBOlgU8MsNREt7y011b+vVeSUI1K0i1EudoBPHuM0kv+7thv1Nj6Gm5ejbAVfJovAKByqqPwutaQ==
   dependencies:
     "@embroider/addon-shim" "^1.0.0"
 
