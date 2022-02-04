@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.5...v3.0.6) (2022-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to v5 ([58e4e91](https://github.com/NullVoxPopuli/ember-data-resources/commit/58e4e91bec621274658801435aaa1fc19b0e20f9))
+
 ## [3.0.5](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.4...v3.0.5) (2022-02-03)
 
 
