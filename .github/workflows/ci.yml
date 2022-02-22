@@ -28,6 +28,7 @@ jobs:
     strategy:
       matrix:
         node:
+          - "12"
           - "14"
           - "16"
     steps:
@@ -50,6 +51,7 @@ jobs:
     strategy:
       matrix:
         node:
+          - "12"
           - "14"
           - "16"
     steps:
@@ -74,8 +76,8 @@ jobs:
       fail-fast: true
       matrix:
         ember-try-scenario:
-          - ember-3.27
-          - ember-3.28
+          - ember-3.25
+          - ember-3.28-lts
           - ember-4.0
           - ember-release
           - ember-beta
