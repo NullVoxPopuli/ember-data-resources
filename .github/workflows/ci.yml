@@ -11,6 +11,13 @@ on:
 
 env:
   CI: true
+  CACHE_PATH: '**/node_modules'
+  LIBRARY_DIR: './ember-data-resources'
+  TEST_DIR: './test-app'
+
+concurrency:
+   group: ci-${{ github.head_ref || github.ref }}
+   cancel-in-progress: true
 
 jobs:
   tests:
@@ -32,29 +39,29 @@ jobs:
       - run: yarn install
 
       - name: Test with ${{ matrix.node }}
-        run: yarn ember test
+        run: node_modules/.bin/ember test
+        working-directory: ${{ env.TEST_DIR }}
 
-#  floating-dependencies:
-#    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
-#    name: Floating Dependencies
-#    timeout-minutes: 5
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        node:
-#          - "12"
-#          - "14"
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: volta-cli/action@v1
-#        with:
-#          node-version: ${{ matrix.node }}
-#
-#      - run: yarn install --no-lockfile
-#
-#      - name: Test with Node ${{ matrix.node }}
-#        run: yarn ember test
+  floating-dependencies:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+    name: Floating Dependencies
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - "14"
+          - "16"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: yarn install --no-lockfile
+
+      - name: Test with Node ${{ matrix.node }}
+        run: npm exec ember test
 
   try-scenarios:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
@@ -67,13 +74,14 @@ jobs:
       fail-fast: true
       matrix:
         ember-try-scenario:
-          - ember-3.25
-          - ember-3.28-lts
+          - ember-3.27
+          - ember-3.28
+          - ember-4.0
           - ember-release
           - ember-beta
           - ember-canary
-          # - embroider-safe
-          # - embroider-optimized
+          - embroider-safe
+          - embroider-optimized
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
@@ -82,13 +90,18 @@ jobs:
       - name: install dependencies
         run: yarn install
       - name: test
-        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
-
+        run: |
+          cd ${{ env.LIBRARY_DIR }}
+          yarn build
+          yarn link
+          cd ../${{ env.TEST_DIR }}
+          yarn link ember-statechart-component
+          yarn ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
   publish:
     name: Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    needs: [tests, try-scenarios]
+    needs: [tests, try-scenarios, floating-dependencies]
 
     steps:
       - uses: actions/checkout@v2
@@ -98,7 +111,8 @@ jobs:
       - run: yarn install
 
       - name: Release
-        run: yarn semantic-release
+        run: node_modules/.bin/semantic-release
+        working-directory: ${{ env.LIBRARY_DIR }}
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
