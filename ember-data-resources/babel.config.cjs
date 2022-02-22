@@ -28,6 +28,5 @@ module.exports = {
         loose: true,
       },
     ],
-    resolve('@embroider/addon-dev/template-colocation-plugin'),
   ],
 };
