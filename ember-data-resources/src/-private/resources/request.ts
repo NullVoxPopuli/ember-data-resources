@@ -71,10 +71,10 @@ export class Request<Args> extends Resource<Args> {
 
     try {
       await this.retry();
-    } catch (e) {
+    } catch (e: unknown) {
       if (isDestroyed(this) || isDestroying(this)) return;
 
-      this.error = e;
+      this.error = e as Error;
     }
 
     if (isDestroyed(this) || isDestroying(this)) {
