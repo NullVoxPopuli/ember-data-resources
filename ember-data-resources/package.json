@@ -30,9 +30,9 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
-    "@ember/test-waiters": "^3.0.1",
+    "@ember/test-waiters": "^3.0.0",
     "@embroider/addon-shim": "1.2.0",
-    "ember-resources": "^4.3.0"
+    "ember-resources": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
