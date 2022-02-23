@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useResource } from 'ember-resources';
 
 import { FindAll } from './-private/resources/find-all';

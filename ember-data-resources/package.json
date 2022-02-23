@@ -32,7 +32,7 @@
   "dependencies": {
     "@ember/test-waiters": "^3.0.0",
     "@embroider/addon-shim": "1.2.0",
-    "ember-resources": "^4.3.2"
+    "ember-resources": "^4.3.3"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
@@ -42,7 +42,7 @@
     "@babel/plugin-transform-typescript": "7.16.8",
     "@babel/preset-typescript": "7.16.7",
     "@embroider/addon-dev": "1.2.0",
-    "@nullvoxpopuli/eslint-configs": "2.1.25",
+    "@nullvoxpopuli/eslint-configs": "2.2.0",
     "@types/ember__destroyable": "^4.0.0",
     "babel-eslint": "10.1.0",
     "concurrently": "7.0.0",
@@ -69,7 +69,12 @@
     "version": 2,
     "type": "addon",
     "main": "./addon-main.cjs",
-    "app-js": {}
+    "app-js": {
+      "./helpers/find-all.js": "./dist/_app_/helpers/find-all.js",
+      "./helpers/find-record.js": "./dist/_app_/helpers/find-record.js",
+      "./helpers/query-record.js": "./dist/_app_/helpers/query-record.js",
+      "./helpers/query.js": "./dist/_app_/helpers/query.js"
+    }
   },
   "engines": {
     "node": "14.* || >= 16"
