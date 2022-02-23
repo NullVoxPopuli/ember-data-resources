@@ -1,1 +1,1 @@
-export { QueryRecord } from '../-private/resources/query-record';
+export { QueryRecord as default } from '../-private/resources/query-record';

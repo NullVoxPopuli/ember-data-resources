@@ -10,11 +10,23 @@ const addon = new Addon({
 });
 
 export default defineConfig({
-  output: { ...addon.output(), sourcemap: true },
+  output: {
+    ...addon.output(),
+    sourcemap: true,
+    // https://rollupjs.org/guide/en/#outputhoisttransitiveimports
+    // Without this we get a bunch of hoisted transitive imports
+    // which include the @ember/* modules, which then breaks things
+    // due to how many of those modules are fake.
+    hoistTransitiveImports: false,
+  },
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
-    addon.publicEntrypoints(['index.ts', 'js-helpers.ts', 'helpers/*.ts']),
+    addon.publicEntrypoints([
+      '**/*.ts',
+      // 'index.ts',
+      // 'helpers/**/*.ts',
+    ]),
 
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
@@ -42,7 +54,7 @@ export default defineConfig({
     addon.dependencies(),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
-    addon.hbs(),
+    // addon.hbs(),
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.

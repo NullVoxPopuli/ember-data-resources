@@ -1,1 +1,1 @@
-export { Query } from '../-private/resources/query';
+export { Query as default } from '../-private/resources/query';

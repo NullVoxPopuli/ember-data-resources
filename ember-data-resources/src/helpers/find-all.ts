@@ -1,1 +1,1 @@
-export { FindAll } from '../-private/resources/find-all';
+export { FindAll as default } from '../-private/resources/find-all';
