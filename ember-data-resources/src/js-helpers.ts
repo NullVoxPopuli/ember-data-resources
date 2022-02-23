@@ -14,12 +14,17 @@ import type { Id } from './-private/resources/types';
 
 type FindRecordThunkResult = Id | [Id] | [Id, FindRecordOptions];
 
+export interface Constructable<T = unknown> {
+  new (...args: unknown[]): T;
+}
+
 export function findRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
   thunk: () => FindRecordThunkResult
 ) {
-  return useResource<FindRecord<Model>>(destroyable, FindRecord, () => {
+  // Passing the resource here is hard to type -- help wanted
+  return useResource<FindRecord<Model>>(destroyable, FindRecord as any, () => {
     let reified = thunk();
     let id: Id;
     let options: FindRecordOptions;
@@ -48,7 +53,8 @@ export function findAll<Model = unknown>(
   modelName: string,
   thunk?: () => FindAllThunkResult
 ) {
-  return useResource<FindAll<Model>>(destroyable, FindAll, () => {
+  // Passing the resource here is hard to type -- help wanted
+  return useResource<FindAll<Model>>(destroyable, FindAll as any, () => {
     let reified = thunk?.() || {};
     let options = 'options' in reified ? reified.options : reified;
 
@@ -68,7 +74,8 @@ export function query<Model = unknown>(
   modelName: string,
   thunk: () => QueryThunkResult
 ) {
-  return useResource<Query<Model>>(destroyable, Query, () => {
+  // Passing the resource here is hard to type -- help wanted
+  return useResource<Query<Model>>(destroyable, Query as any, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {
@@ -101,7 +108,8 @@ export function queryRecord<Model = unknown>(
   modelName: string,
   thunk: () => QueryRecordThunkResult
 ) {
-  return useResource<QueryRecord<Model>>(destroyable, QueryRecord, () => {
+  // Passing the resource here is hard to type -- help wanted
+  return useResource<QueryRecord<Model>>(destroyable, QueryRecord as any, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {
