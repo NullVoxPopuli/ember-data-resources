@@ -32,7 +32,7 @@
   "dependencies": {
     "@ember/test-waiters": "^3.0.0",
     "@embroider/addon-shim": "1.2.0",
-    "ember-resources": "^4.3.3"
+    "ember-resources": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",

@@ -23,9 +23,9 @@ export default defineConfig({
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
     addon.publicEntrypoints([
-      '**/*.ts',
-      // 'index.ts',
-      // 'helpers/**/*.ts',
+      // '**/*.ts',
+      'index.ts',
+      'helpers/**/*.ts',
     ]),
 
     // These are the modules that should get reexported into the traditional
@@ -44,7 +44,12 @@ export default defineConfig({
       browserslist: ['last 2 firefox versions', 'last 2 chrome versions'],
       tsconfig: {
         fileName: 'tsconfig.json',
-        hook: (config) => ({ ...config, declaration: true }),
+        hook: (config) => ({
+          ...config,
+          declaration: true,
+          declarationDir: 'dist',
+          declarationMap: true,
+        }),
       },
     }),
 
