@@ -30,9 +30,12 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@ember/test-waiters": "^3.0.0",
     "@embroider/addon-shim": "1.2.0",
     "ember-resources": "^4.4.0"
+  },
+  "peerDependencies": {
+    "ember-data": "^3.25.0",
+    "@ember/test-waiters": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
@@ -95,9 +98,6 @@
       "@semantic-release/github",
       "@semantic-release/git"
     ]
-  },
-  "peerDependencies": {
-    "ember-data": "^3.25.0"
   },
   "types": "dist"
 }
