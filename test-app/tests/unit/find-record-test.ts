@@ -10,11 +10,11 @@ import { module, test } from 'qunit';
 import { setupRenderingTest, setupTest } from 'ember-qunit';
 
 import { findRecord } from 'ember-data-resources';
-import { IdRequiredError, IdTypeError } from 'ember-data-resources/-private/resources/errors';
+import { IdRequiredError, IdTypeError } from 'ember-data-resources';
 
 import { setupMockData } from './-mock-data';
 
-import type { Id } from 'ember-data-resources/-private/resources/types';
+import type { Id } from 'ember-data-resources';
 
 module('findRecord', function (hooks) {
   setupMockData(hooks);

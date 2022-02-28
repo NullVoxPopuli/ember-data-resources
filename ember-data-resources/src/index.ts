@@ -8,3 +8,9 @@ export { QueryRecord } from './-private/resources/query-record';
 
 // Resource wrappers in JS/TS classes
 export { findAll, findRecord, query, queryRecord } from './js-helpers';
+
+// Errors
+export { IdRequiredError, IdTypeError } from './-private/resources/errors';
+
+// Types
+export type { Id } from './-private/resources/types';
