@@ -24,10 +24,7 @@ export class FindRecord<Model, LocalArgs extends Args = Args> extends Request<Lo
   @tracked private _record: Model | undefined;
 
   @action
-  async __WRAPPED_FUNCTION__() {
-    let [modelName, id] = this.args.positional;
-    let { options } = this.args.named;
-
+  async __WRAPPED_FUNCTION__([modelName, id]: PositionalArgs, { options }: NamedArgs) {
     /**
      * ember-data forbids usage of invalid arguments
      * in JS, this is typically fine as we can also try-catch, but

@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { useResource } from 'ember-resources';
-
 import { FindAll } from './-private/resources/find-all';
 import { FindRecord } from './-private/resources/find-record';
 import { Query } from './-private/resources/query';
@@ -19,7 +17,7 @@ export function findRecord<Model = unknown>(
   modelName: string,
   thunk: () => FindRecordThunkResult
 ) {
-  return useResource<FindRecord<Model>>(destroyable, FindRecord, () => {
+  return FindRecord.from(destroyable, () => {
     let reified = thunk();
     let id: Id;
     let options: FindRecordOptions;
@@ -38,7 +36,8 @@ export function findRecord<Model = unknown>(
         options,
       },
     };
-  });
+    // Cast needed Until min-supported TS is 4.7
+  }) as FindRecord<Model>;
 }
 
 type FindAllThunkResult = { options: FindAllOptions } | FindAllOptions | void;
@@ -48,7 +47,7 @@ export function findAll<Model = unknown>(
   modelName: string,
   thunk?: () => FindAllThunkResult
 ) {
-  return useResource<FindAll<Model>>(destroyable, FindAll, () => {
+  return FindAll.from(destroyable, () => {
     let reified = thunk?.() || {};
     let options = 'options' in reified ? reified.options : reified;
 
@@ -58,7 +57,8 @@ export function findAll<Model = unknown>(
         options,
       },
     };
-  });
+    // Cast needed Until min-supported TS is 4.7
+  }) as FindAll<Model>;
 }
 
 type QueryThunkResult = QueryQuery | [QueryQuery] | [QueryQuery, QueryOptions];
@@ -68,7 +68,7 @@ export function query<Model = unknown>(
   modelName: string,
   thunk: () => QueryThunkResult
 ) {
-  return useResource<Query<Model>>(destroyable, Query, () => {
+  return Query.from(destroyable, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {
@@ -88,7 +88,8 @@ export function query<Model = unknown>(
         options: {},
       },
     };
-  });
+    // Cast needed Until min-supported TS is 4.7
+  }) as Query<Model>;
 }
 
 type QueryRecordThunkResult =
@@ -101,7 +102,7 @@ export function queryRecord<Model = unknown>(
   modelName: string,
   thunk: () => QueryRecordThunkResult
 ) {
-  return useResource<QueryRecord<Model>>(destroyable, QueryRecord, () => {
+  return QueryRecord.from(destroyable, () => {
     let reified = thunk();
 
     if (Array.isArray(reified)) {
@@ -121,5 +122,6 @@ export function queryRecord<Model = unknown>(
         options: {},
       },
     };
-  });
+    // Cast needed Until min-supported TS is 4.7
+  }) as QueryRecord<Model>;
 }

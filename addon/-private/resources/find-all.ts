@@ -23,10 +23,7 @@ export class FindAll<Model, LocalArgs extends Args = Args> extends Request<Local
   @tracked private _records: ArrayProxy<Model> | undefined;
 
   @action
-  async __WRAPPED_FUNCTION__() {
-    let [modelName] = this.args.positional;
-    let { options } = this.args.named;
-
+  async __WRAPPED_FUNCTION__([modelName]: PositionalArgs, { options }: NamedArgs) {
     let records = await this.store.findAll(modelName as never, options);
 
     if (isDestroyed(this) || isDestroying(this)) return;

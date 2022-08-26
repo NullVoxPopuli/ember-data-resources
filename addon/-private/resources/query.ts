@@ -25,10 +25,7 @@ export class Query<Model, LocalArgs extends Args = Args> extends Request<LocalAr
   @tracked private _records: ArrayProxy<Model> | undefined;
 
   @action
-  async __WRAPPED_FUNCTION__() {
-    let [modelName, query] = this.args.positional;
-    let { options } = this.args.named;
-
+  async __WRAPPED_FUNCTION__([modelName, query]: PositionalArgs, { options }: NamedArgs) {
     let records = await this.store.query(modelName as never, query, options);
 
     if (isDestroyed(this) || isDestroying(this)) return;
