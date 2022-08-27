@@ -22,9 +22,9 @@ QUnit.done(async () => {
 export function setupMockData(hooks: NestedHooks) {
   hooks.beforeEach(async function () {
     let data = [
-      { id: '1', type: 'blogs', attributes: { name: `name:1` } },
-      { id: '2', type: 'blogs', attributes: { name: `name:2` } },
-      { id: '3', type: 'blogs', attributes: { name: `name:3` } },
+      { id: '1', type: 'blog', attributes: { name: `name:1` } },
+      { id: '2', type: 'blog', attributes: { name: `name:2` } },
+      { id: '3', type: 'blog', attributes: { name: `name:3` } },
     ];
 
     // Remove handlers that were maybe added during a previous a test
