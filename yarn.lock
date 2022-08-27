@@ -2205,7 +2205,7 @@
   dependencies:
     "@types/ember__object" "*"
 
-"@types/ember@*", "@types/ember@^4.0.0":
+"@types/ember@*", "@types/ember@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/ember/-/ember-4.0.1.tgz#5fe3dc8219b7e0391b2c97d8db945a9e0881badc"
   integrity sha512-fYCZtkGq1UqD1rWjvdY4bVQpdZvxkHqVx/B6p2M0cUdyheLNjQgwXfx3o1UU0Bk99mls5Or4ZCnW7s1yliABiw==
