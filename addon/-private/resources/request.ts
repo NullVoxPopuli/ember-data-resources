@@ -29,7 +29,15 @@ export class Request<Args> extends Resource<Args> {
     this.positional = positional;
     this.named = named;
 
-    this.__REQUEST_FUNCTION__(positional, named);
+    /**
+     * We need to consume all arguments here so that we correctly respond to updates to
+     * dirtied source data.
+     *
+     * e.g.: when an id changes that is passed to findRecord, we re-fetch.
+     */
+    this.__REQUEST_FUNCTION__([...(positional as unknown[])] as ExpandArgs<Args>['Positional'], {
+      ...named,
+    });
   }
 
   async __WRAPPED_FUNCTION__(

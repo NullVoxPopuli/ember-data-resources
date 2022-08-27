@@ -1,6 +1,7 @@
 import { tracked } from '@glimmer/tracking';
 import { isDestroyed, isDestroying } from '@ember/destroyable';
 import { action } from '@ember/object';
+import { waitFor } from '@ember/test-waiters';
 
 import { IdRequiredError, IdTypeError } from './errors';
 import { Request } from './request';
@@ -24,6 +25,7 @@ export class FindRecord<Model, LocalArgs extends Args = Args> extends Request<Lo
   @tracked private _record: Model | undefined;
 
   @action
+  @waitFor
   async __WRAPPED_FUNCTION__([modelName, id]: PositionalArgs, { options }: NamedArgs) {
     /**
      * ember-data forbids usage of invalid arguments
