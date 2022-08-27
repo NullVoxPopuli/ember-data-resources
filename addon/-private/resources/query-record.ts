@@ -24,10 +24,7 @@ export class QueryRecord<Model, LocalArgs extends Args = Args> extends Request<L
   @tracked private _record: Model | undefined;
 
   @action
-  async __WRAPPED_FUNCTION__() {
-    let [modelName, query] = this.args.positional;
-    let { options } = this.args.named;
-
+  async __WRAPPED_FUNCTION__([modelName, query]: PositionalArgs, { options }: NamedArgs) {
     let record = await this.store.queryRecord(modelName as never, query, options);
 
     if (isDestroyed(this) || isDestroying(this)) return;

@@ -61,13 +61,11 @@ module('findAll', function (hooks) {
       assert.strictEqual(instance.blog.records, undefined);
       await settled();
 
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      let odd = instance.blog.records!.filter(
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        (record) => parseInt(record.name!.split(':')[1]) % 2 === 1
+      let odd = instance.blog.records?.filter(
+        (record) => parseInt(record.name?.split(':')[1] || '') % 2 === 1
       );
 
-      assert.strictEqual(odd.length, 2);
+      assert.strictEqual(odd?.length, 2);
     });
   });
 

@@ -8,26 +8,42 @@ import { waitFor, waitForPromise } from '@ember/test-waiters';
 import { Resource } from 'ember-resources';
 
 import type Store from '@ember-data/store';
-import type { ArgsWrapper } from 'ember-resources';
+import type { ExpandArgs } from 'ember-resources';
 
 export type FindRecordOptions = Parameters<Store['findRecord']>[2];
 
 export class Request<Args> extends Resource<Args> {
-  declare args: Args;
-
   @service declare store: Store;
 
   @tracked error: Error | undefined;
   @tracked isLoading = false;
   @tracked hasRan = false;
 
-  constructor(owner: unknown, args: Args, previous?: Request<Args>) {
-    super(owner, args, previous);
+  /**
+   * Args saved, untracked, for retrying
+   */
+  declare positional: ExpandArgs<Args>['Positional'];
+  declare named: ExpandArgs<Args>['Named'];
 
-    this.__REQUEST_FUNCTION__();
+  modify(positional: ExpandArgs<Args>['Positional'], named: ExpandArgs<Args>['Named']) {
+    this.positional = positional;
+    this.named = named;
+
+    /**
+     * We need to consume all arguments here so that we correctly respond to updates to
+     * dirtied source data.
+     *
+     * e.g.: when an id changes that is passed to findRecord, we re-fetch.
+     */
+    this.__REQUEST_FUNCTION__([...(positional as unknown[])] as ExpandArgs<Args>['Positional'], {
+      ...named,
+    });
   }
 
-  async __WRAPPED_FUNCTION__() {
+  async __WRAPPED_FUNCTION__(
+    _positional: ExpandArgs<Args>['Positional'],
+    _named: ExpandArgs<Args>['Named']
+  ) {
     throw new Error('Not Implemented');
   }
 
@@ -54,14 +70,19 @@ export class Request<Args> extends Resource<Args> {
   }
 
   @action async retry() {
-    return waitForPromise(this.__WRAPPED_FUNCTION__());
+    return waitForPromise(this.__WRAPPED_FUNCTION__(this.positional, this.named));
   }
 
   @action
   @waitFor
-  async __REQUEST_FUNCTION__() {
-    consumeEverything(this.args);
-
+  async __REQUEST_FUNCTION__(
+    _positional: ExpandArgs<Args>['Positional'],
+    _named: ExpandArgs<Args>['Named']
+  ) {
+    /**
+     * Args are already consumed, but let's delay doing anything
+     * until we can get out of a tracking frame.
+     */
     await Promise.resolve();
 
     if (isDestroyed(this) || isDestroying(this)) return;
@@ -74,7 +95,12 @@ export class Request<Args> extends Resource<Args> {
     } catch (e) {
       if (isDestroyed(this) || isDestroying(this)) return;
 
-      this.error = e;
+      if (e instanceof Error) {
+        this.error = e;
+      } else {
+        // How likely is this to happen?
+        throw e;
+      }
     }
 
     if (isDestroyed(this) || isDestroying(this)) {
@@ -83,18 +109,5 @@ export class Request<Args> extends Resource<Args> {
 
     this.isLoading = false;
     this.hasRan = true;
-  }
-}
-
-/**
- * Helper function to bind all arguments to the lifecycle of the resource
- */
-function consumeEverything(args: ArgsWrapper) {
-  for (let i = 0; i < (args.positional?.length || 0); i++) {
-    args.positional?.[i];
-  }
-
-  for (let key in args.named || {}) {
-    args.named?.[key];
   }
 }

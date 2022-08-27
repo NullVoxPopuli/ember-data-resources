@@ -46,7 +46,7 @@ module('queryRecord', function (hooks) {
       assert.strictEqual(instance.blog.record?.name, 'name:1');
 
       instance.id = 2;
-      assert.false(instance.blog.hasRan, 'hasRan');
+      assert.true(instance.blog.hasRan, 'hasRan is true, because we only changed the id');
       await settled();
 
       assert.false(instance.blog.isLoading, 'isLoading');

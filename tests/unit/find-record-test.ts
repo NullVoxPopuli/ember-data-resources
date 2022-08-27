@@ -49,7 +49,7 @@ module('findRecord', function (hooks) {
       assert.strictEqual(instance.blog.record?.name, 'name:1', 'record name');
 
       instance.id = '2';
-      assert.false(instance.blog.hasRan, 'hasRan 2');
+      assert.true(instance.blog.hasRan, 'hasRan 2 (true, because we only changed the id)');
       await settled();
 
       assert.false(instance.blog.isLoading, 'isLoading 2');
@@ -89,7 +89,7 @@ module('findRecord', function (hooks) {
       assert.strictEqual(instance.blog.record?.name, 'name:1', 'record name');
 
       instance.id = '2';
-      assert.false(instance.blog.hasRan, 'hasRan 2');
+      assert.true(instance.blog.hasRan, 'hasRan 2 (true, because we only changed the id)');
       await settled();
 
       assert.false(instance.blog.isLoading, 'isLoading 2');
