@@ -1830,7 +1830,7 @@
     read-package-json-fast "^2.0.3"
     which "^2.0.2"
 
-"@nullvoxpopuli/eslint-configs@^2.2.7":
+"@nullvoxpopuli/eslint-configs@^2.2.51":
   version "2.2.51"
   resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-2.2.51.tgz#74b0bbff68c773cb8784bda3d2d5fdadfb1641b6"
   integrity sha512-U8qCWPBEt2Q26Ih7JsH9ws8nzmT/0/3uZx9H2kiWj2DL3oZAydZC1/6f/g8gfx1dydf+qnfofmTJh6+R8PcLqg==
