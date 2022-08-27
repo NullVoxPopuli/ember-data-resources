@@ -1,6 +1,6 @@
 {
   "name": "ember-data-resources",
-  "version": "3.0.6",
+  "version": "4.0.0",
   "description": "Resource helpers for reactively (re)fetching data with ember-data",
   "keywords": [
     "ember-addon"

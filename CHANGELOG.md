@@ -1,3 +1,18 @@
+# [4.0.0](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.6...v4.0.0) (2022-08-27)
+
+
+### chore
+
+* upgrade to ember-resources v5 ([0ffab7a](https://github.com/NullVoxPopuli/ember-data-resources/commit/0ffab7aa8b9d018942540c7d7d25138f89368dfa))
+
+
+### BREAKING CHANGES
+
+*  - minimum version of `@glimmer/component` is now `1.1.2`
+ - minimum version of `ember-source` is now `3.28`
+ - `@glint/template` is required for type-checking (if you use
+   typescript)
+
 ## [3.0.6](https://github.com/NullVoxPopuli/ember-data-resources/compare/v3.0.5...v3.0.6) (2022-02-04)
 
 
