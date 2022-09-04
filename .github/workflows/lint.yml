@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: volta-cli/action@v1
+      - uses: volta-cli/action@v3
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
@@ -70,7 +70,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: volta-cli/action@v1
+      - uses: volta-cli/action@v3
         with:
           node-version: 14
       - uses: actions/cache@v2
@@ -97,5 +97,5 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: volta-cli/action@v1
+    - uses: volta-cli/action@v3
     - uses: wagoid/commitlint-github-action@v4.1.15
