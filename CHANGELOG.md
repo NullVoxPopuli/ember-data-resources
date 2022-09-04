@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/NullVoxPopuli/ember-data-resources/compare/v4.0.2...v4.0.3) (2022-09-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @ember/test-waiters to ^3.0.2 ([2cf515b](https://github.com/NullVoxPopuli/ember-data-resources/commit/2cf515ba094c8bd5d34c1c9c70a0f7b93fd94b24))
+
 ## [4.0.2](https://github.com/NullVoxPopuli/ember-data-resources/compare/v4.0.1...v4.0.2) (2022-08-31)
 
 
