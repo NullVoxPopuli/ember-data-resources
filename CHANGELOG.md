@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/NullVoxPopuli/ember-data-resources/compare/v4.0.3...v4.0.4) (2022-10-14)
+
+
+### Bug Fixes
+
+* **support:** allow ember-data v4 when using strict peer checking ([e41c551](https://github.com/NullVoxPopuli/ember-data-resources/commit/e41c5517218bb04e39ed4524f2c8bfd9a913fec5))
+
 ## [4.0.3](https://github.com/NullVoxPopuli/ember-data-resources/compare/v4.0.2...v4.0.3) (2022-09-04)
 
 
