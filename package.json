@@ -119,7 +119,7 @@
     "webpack": "^5.74.0"
   },
   "peerDependencies": {
-    "ember-data": "^3.25.0"
+    "ember-data": "^3.25.0 || ^4.0.0"
   },
   "release": {
     "branches": [
