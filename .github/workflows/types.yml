@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 15
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: volta-cli/action@v3
     - uses: actions/cache@v2
       with:
@@ -34,7 +34,7 @@ jobs:
     needs: [install_dependencies]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: volta-cli/action@v3
     - uses: actions/cache@v2
       with:
