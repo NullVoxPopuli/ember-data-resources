@@ -1516,10 +1516,10 @@
   dependencies:
     babel-plugin-debug-macros "^0.3.4"
 
-"@glint/template@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@glint/template/-/template-0.9.3.tgz#91f2ea4865bddf5e4b2ce0711689363d63da6d55"
-  integrity sha512-f83JfOn4qZe/r36IpGK1toqOeU6fMCFWmBSj6ppPKAV4tqc21y25u+cTgeI92r9ggHpfx/GwxFgkxu+X+IVyiw==
+"@glint/template@^0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@glint/template/-/template-0.9.7.tgz#8736f357482841962bc66e75831f189f33677165"
+  integrity sha512-MCp8GxQDIbH8ZzfNxHhVqCSKlydBgQfBEwJLDpN81lgFRCldSDPueIbk8sz3EhpGiZJVdNQbpGeYIDsUXe1ocg==
 
 "@handlebars/parser@~2.0.0":
   version "2.0.0"
