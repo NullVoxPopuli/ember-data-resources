@@ -1,0 +1,4 @@
+packages:
+  - 'ember-data-resources'
+  - 'test-app'
+  - 'dev'
