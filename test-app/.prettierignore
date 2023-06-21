@@ -3,6 +3,9 @@
 /vendor/
 dist/
 node_modules/
+public/
+*.json
+*.md
 
 # compiled output
 /dist/

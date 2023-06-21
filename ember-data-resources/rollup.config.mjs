@@ -20,7 +20,7 @@ export default {
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
-    addon.appReexports(['helpers/**/*.js'], {
+    addon.appReexports(['loose-mode-compat/**/*.js'], {
       mapFilename(fileName) {
         return fileName.replace('loose-mode-compat/', '');
       },

@@ -30,12 +30,13 @@
     "prepack": "pnpm run build"
   },
   "dependencies": {
+    "@ember/string": "^3.1.1",
     "@ember/test-waiters": "^3.0.2",
     "@embroider/addon-shim": "^1.0.0",
     "ember-resources": "^5.3.0 || >= 6.0.0"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.1.0",
+    "@arethetypeswrong/cli": "^0.2.0",
     "@babel/core": "^7.22.5",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.22.5",
@@ -43,6 +44,7 @@
     "@babel/runtime": "^7.22.5",
     "@ember-data/store": "^5.0.0",
     "@embroider/addon-dev": "^3.1.1",
+    "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "@glint/core": "^1.0.2",
     "@glint/environment-ember-loose": "^1.0.2",
@@ -52,7 +54,7 @@
     "@types/ember": "^4.0.0",
     "@types/ember-data__store": "^4.0.3",
     "@types/ember__application": "^4.0.0",
-    "@types/ember__array": "^4.0.0",
+    "@types/ember__array": "^4.0.4",
     "@types/ember__component": "^4.0.0",
     "@types/ember__controller": "^4.0.0",
     "@types/ember__debug": "^4.0.0",
@@ -71,6 +73,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "concurrently": "^8.2.0",
+    "ember-source": "~4.10.0",
     "ember-template-lint": "^5.10.3",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
@@ -80,7 +83,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-ember-template-tag": "^0.3.2",
     "publint": "^0.1.12",
-    "rollup": "^3.21.8",
+    "rollup": "^3.25.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-ts": "^3.2.0",
     "typescript": "^5.0.4"
@@ -95,7 +98,12 @@
     "version": 2,
     "type": "addon",
     "main": "addon-main.cjs",
-    "app-js": {}
+    "app-js": {
+      "./helpers/find-all.js": "./dist/_app_/helpers/find-all.js",
+      "./helpers/find-record.js": "./dist/_app_/helpers/find-record.js",
+      "./helpers/query-record.js": "./dist/_app_/helpers/query-record.js",
+      "./helpers/query.js": "./dist/_app_/helpers/query.js"
+    }
   },
   "exports": {
     ".": "./dist/index.js",

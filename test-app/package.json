@@ -25,7 +25,10 @@
     "_syncPnpm": "pnpm sync-dependencies-meta-injected"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
+    "@ember-data/store": "^5.0.0",
+    "@ember-data/tracking": "^5.0.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.1.1",
     "@ember/test-helpers": "^2.9.3",
@@ -43,8 +46,6 @@
     "@types/ember-data__model": "^4.0.1",
     "@types/ember-data__serializer": "^4.0.2",
     "@types/ember-data__store": "^4.0.3",
-    "@types/ember-qunit": "^6.1.1",
-    "@types/ember-resolver": "^9.0.0",
     "@types/ember__application": "^4.0.6",
     "@types/ember__array": "^4.0.4",
     "@types/ember__component": "^4.0.14",
@@ -91,6 +92,7 @@
     "ember-resolver": "^10.1.1",
     "ember-source": "~4.10.0",
     "ember-source-channel-url": "^3.0.0",
+    "ember-template-imports": "^3.4.2",
     "ember-template-lint": "^5.10.3",
     "ember-try": "^2.0.0",
     "eslint": "^8.43.0",

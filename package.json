@@ -34,7 +34,8 @@
         "ember-source"
       ],
       "ignoreMissing": [
-        "webpack"
+        "webpack",
+        "@ember-data/tracking"
       ]
     }
   },

@@ -2,9 +2,7 @@ import * as QUnit from 'qunit';
 
 import { rest, setupWorker } from 'msw';
 
-import type { SetupWorkerApi } from 'msw';
-
-let worker: SetupWorkerApi;
+let worker: ReturnType<typeof setupWorker>;
 
 QUnit.begin(async () => {
   worker = setupWorker();
