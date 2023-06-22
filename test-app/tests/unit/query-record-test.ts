@@ -4,7 +4,9 @@ import { setOwner } from '@ember/application';
 import { helper } from '@ember/component/helper';
 import { render } from '@ember/test-helpers';
 import settled from '@ember/test-helpers/settled';
+import Adapter from '@ember-data/adapter/json-api';
 import Model, { attr } from '@ember-data/model';
+import JSONAPISerializer from '@ember-data/serializer/json-api';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 import { setupRenderingTest, setupTest } from 'ember-qunit';
@@ -25,6 +27,8 @@ module('queryRecord', function (hooks) {
       }
 
       this.owner.register('model:blog', Blog);
+      this.owner.register('serializer:blog', JSONAPISerializer);
+      this.owner.register('adapter:blog', Adapter);
 
       class Test {
         @tracked id = 1;
@@ -69,23 +73,24 @@ module('queryRecord', function (hooks) {
       }
 
       this.owner.register('model:blog', Blog);
+      this.owner.register('serializer:blog', JSONAPISerializer);
+      this.owner.register('adapter:blog', Adapter);
 
       this.setProperties({ id: 1 });
 
       let yielded: any;
 
-      this.owner.register(
-        'helper:capture',
-        helper(([data]) => {
+      this.setProperties({
+        capture: helper(([data]) => {
           yielded = data;
 
           return;
-        })
-      );
+        }),
+      });
 
       await render(hbs`
         {{#let (query-record 'blog' (hash q=(hash id=this.id))) as |data|}}
-          {{capture data}}
+          {{this.capture data}}
         {{/let}}
       `);
 

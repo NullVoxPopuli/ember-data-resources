@@ -4,3 +4,6 @@
 /README.md
 /LICENSE.md
 *.tgz
+
+dist/
+dist-types/

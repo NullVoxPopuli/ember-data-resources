@@ -10,10 +10,13 @@
   "author": "NullVoxPopuli",
   "files": [
     "addon-main.cjs",
-    "dist"
+    "dist",
+    "dist-types"
   ],
   "scripts": {
-    "build": "rollup --config",
+    "build": "concurrently 'npm:build:*'",
+    "build:js": "rollup --config",
+    "build:types": "rm -rf dist-types; pnpm glint --build",
     "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
     "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
     "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
@@ -61,7 +64,7 @@
     "@types/ember__destroyable": "^4.0.2",
     "@types/ember__engine": "^4.0.0",
     "@types/ember__error": "^4.0.0",
-    "@types/ember__object": "^4.0.0",
+    "@types/ember__object": "^4.0.6",
     "@types/ember__polyfills": "^4.0.0",
     "@types/ember__routing": "^4.0.0",
     "@types/ember__runloop": "^4.0.0",
@@ -80,13 +83,15 @@
     "eslint-plugin-ember": "^11.8.0",
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "execa": "^7.1.1",
     "prettier": "^2.8.8",
     "prettier-plugin-ember-template-tag": "^0.3.2",
     "publint": "^0.1.12",
-    "rollup": "^3.25.1",
+    "rollup": "~3.21.0",
     "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-ts": "^3.2.0",
-    "typescript": "^5.0.4"
+    "typescript": "^4.9.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -106,9 +111,12 @@
     }
   },
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "types": "./dist-types/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./*": {
-      "types": "./dist/*.d.ts",
+      "types": "./dist-types/*.d.ts",
       "default": "./dist/*.js"
     },
     "./addon-main.js": "./addon-main.cjs"
@@ -116,7 +124,7 @@
   "typesVersions": {
     "*": {
       "*": [
-        "dist/*"
+        "dist-types/*"
       ]
     }
   },
