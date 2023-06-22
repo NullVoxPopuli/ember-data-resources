@@ -40,6 +40,7 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@ember/optional-features": "^2.0.0",
+    "@ember/string": "^3.1.1",
     "@ember/test-helpers": "^2.8.1",
     "@embroider/test-setup": "^1.8.3",
     "@glimmer/component": "^1.1.2",
