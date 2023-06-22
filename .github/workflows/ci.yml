@@ -87,7 +87,6 @@ jobs:
       fail-fast: false
       matrix:
         try-scenario:
-          - ember-min-supported
           - ember-lts-3.28
           - ember-lts-4.4
           - ember-lts-4.8

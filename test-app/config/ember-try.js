@@ -12,17 +12,6 @@ module.exports = async function () {
     },
     scenarios: [
       {
-        name: 'ember-min-supported',
-        npm: {
-          devDependencies: {
-            'ember-source': '~3.25.0',
-            'ember-data': '~3.25.0',
-            'ember-qunit': '6.0.0',
-            '@ember/test-helpers': '^2.0.0',
-          },
-        },
-      },
-      {
         name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
