@@ -10,6 +10,14 @@ module.exports = async function () {
     command: `pnpx turbo run test:ember --filter ${pkg.name}`,
     scenarios: [
       {
+        name: 'ember-resources-5.3',
+        npm: {
+          devDependencies: {
+            'ember-resources': '~5.3.0'
+          }
+        },
+      },
+      {
         name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
