@@ -40,6 +40,7 @@ module.exports = async function () {
             '@ember-data/adapter': '~4.8.8',
             '@ember-data/model': '~4.8.8',
             '@ember-data/serializer': '~4.8.8',
+            '@ember-data/tracking': '~4.8.8',
             '@ember-data/canary-features': '~4.8.8',
           },
         },
