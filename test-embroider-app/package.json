@@ -26,6 +26,7 @@
     "test:ember": "ember test"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.5",
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.1.1",
     "@ember/test-helpers": "^3.0.3",
@@ -85,6 +86,7 @@
     "ember-resolver": "^10.1.0",
     "ember-source": "~5.0.0",
     "ember-template-lint": "^5.10.1",
+    "ember-try": "^2.0.0",
     "ember-welcome-page": "^7.0.2",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
