@@ -9,7 +9,7 @@ module.exports = async function () {
     usePnpm: true,
     command: `pnpx turbo run test:ember --filter ${pkg.name}`,
     buildManagerOptions() {
-      return ['--ignore-scripts', '--no-frozen-lockfile'];
+      return ['--ignore-scripts'];
     },
     scenarios: [
       {

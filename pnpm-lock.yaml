@@ -717,6 +717,9 @@ importers:
       ember-source:
         specifier: ~5.0.0
         version: 5.0.0(@babel/core@7.22.5)(@glimmer/component@1.1.2)(@glint/template@1.0.2)(webpack@5.88.0)
+      ember-source-channel-url:
+        specifier: ^3.0.0
+        version: 3.0.0
       ember-template-imports:
         specifier: ^3.4.2
         version: 3.4.2
