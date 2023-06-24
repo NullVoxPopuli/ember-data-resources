@@ -13,7 +13,10 @@ module.exports = async function () {
         name: 'ember-resources-5.3',
         npm: {
           devDependencies: {
-            'ember-resources': '~5.3.0',
+            'ember-resources': '5.3.0',
+            'ember-source': '3.28.11',
+            'ember-data': '3.28.13',
+            '@ember-data/store': '3.28.3',
           },
         },
       },
