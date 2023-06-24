@@ -136,10 +136,16 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests
+        id: tests
         continue-on-error: ${{matrix.allow-failure}}
         run: pnpm turbo test:scenario --filter ${{ matrix.test-app }} --log-prefix none -- --skip-cleanup
         env:
           SCENARIO: ${{ matrix.try-scenario }}
+      - uses: mainmatter/continue-on-error-comment@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          outcome: ${{ steps.tests.outcome }}
+          test-id: "${{ matrix.test-app }} :: ${{ matrix.try-scenario }}"
 
   typecheck:
     name: '${{ matrix.typescript-scenario }}'
