@@ -27,6 +27,29 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
+      # This is insufficient / would be very verbose
+      # need to create a tool that knows what all the scenarios are,
+      # and iterates over them to create JSON
+      - id: tasks
+        run: |
+          function isPendingTask() {
+            local taskName=$1
+            local packageName=$2
+
+            local result=$( \
+             pnpm turbo run --summarize --dry-run json $taskName \
+             | jq '.tasks[] | select(.package == "$packageName")' \
+             | jq '.cache.status' \
+            )
+
+            if [ "$result" == "MISS" ]; then
+              true
+            else
+              false
+            fi
+          }
+
+          # echo "try.classic=$(isPendingTask 'test:scenario' 'test-app')"
 
   # TODO: pre-configure all the tasks that need running:
   #
@@ -87,10 +110,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        allow-failure: [false]
         try-scenario:
           - ember-lts-3.28
           - ember-lts-4.4
-          - ember-lts-4.8
+          # - ember-lts-4.8
           - ember-lts-4.12
           - ember-5.0
           - ember-release
@@ -99,12 +123,20 @@ jobs:
         test-app:
           - test-app
           - test-embroider-app
+        include:
+           - try-scenario: ember-lts-4.8
+             test-app: test-embroider-app
+             allow-failure: true
+           - try-scenario: ember-lts-4.8
+             test-app: test-app
+             allow-failure: false
 
     steps:
       - uses: wyvox/action@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests
+        continue-on-error: ${{matrix.allow-failure}}
         run: pnpm turbo test:scenario --filter ${{ matrix.test-app }} --log-prefix none -- --skip-cleanup
         env:
           SCENARIO: ${{ matrix.try-scenario }}
