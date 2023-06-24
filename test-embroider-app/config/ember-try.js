@@ -8,9 +8,6 @@ module.exports = async function () {
   return {
     usePnpm: true,
     command: `pnpx turbo run test:ember --filter ${pkg.name}`,
-    buildManagerOptions() {
-      return ['--ignore-scripts'];
-    },
     scenarios: [
       {
         name: 'ember-lts-3.28',
