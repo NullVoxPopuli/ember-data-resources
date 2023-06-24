@@ -97,7 +97,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests
-        run: pnpm turbo test:scenario --filter ${{ matrix.test-app }} -- --skip-cleanup
+        run: pnpm turbo test:scenario --filter ${{ matrix.test-app }} --log-prefix none -- --skip-cleanup
         env:
           SCENARIO: ${{ matrix.try-scenario }}
 
