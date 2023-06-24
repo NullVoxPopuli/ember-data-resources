@@ -5,8 +5,10 @@ Resources for reactive data fetching with ember-data
 
 ## Compatibility
 
-* ember-source v3.25 or above
+* ember-source v3.28 or above
+* ember-data v3.28 or above
 * ember-auto-import v2 or above
+* typescript v4.8 or above
 
 
 ## Installation
