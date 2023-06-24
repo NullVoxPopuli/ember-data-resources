@@ -88,7 +88,14 @@
     },
     "test:scenario": {
       "env": ["SCENARIO"],
-      "dependsOn": ["_syncPnpm"]
+      // This build here is throw away because test:scenario ends up running test:ember
+      // after dependencies are changed which invalidates the build.
+      // However, we need to depend on "something" so that we know what test:scenario
+      // is invalidated
+      //
+      // Here we don't run _syncPnpm, because we don't need to. We wire up the
+      // injected dependencies in test:ember before starting the tests.
+      "dependsOn": ["^build"]
     },
 
     /////////////////////////////////////////////////
