@@ -197,8 +197,8 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0
       ember-resources:
-        specifier: ^5.3.0
-        version: 5.3.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0)
+        specifier: ^6.0.0
+        version: 6.0.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0)
       ember-source:
         specifier: ~4.12.0
         version: 4.12.0(@babel/core@7.22.5)(@glimmer/component@1.1.2)(@glint/template@1.0.2)(webpack@5.88.0)
@@ -252,7 +252,7 @@ importers:
     dependencies:
       ember-data-resources:
         specifier: workspace:*
-        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@5.3.0)(ember-source@4.12.0)
+        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@6.0.0)(ember-source@4.12.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.22.5
@@ -438,8 +438,8 @@ importers:
         specifier: ^10.1.1
         version: 10.1.1(@ember/string@3.1.1)(ember-source@4.12.0)
       ember-resources:
-        specifier: ^5.3.0
-        version: 5.3.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0)
+        specifier: ^6.0.0
+        version: 6.0.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0)
       ember-source:
         specifier: ~4.12.0
         version: 4.12.0(@babel/core@7.22.5)(@glimmer/component@1.1.2)(@glint/template@1.0.2)(webpack@5.88.0)
@@ -523,7 +523,7 @@ importers:
     dependencies:
       ember-data-resources:
         specifier: workspace:*
-        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@5.3.0)(ember-source@5.0.0)
+        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@6.0.0)(ember-source@5.0.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.22.5
@@ -715,8 +715,8 @@ importers:
         specifier: ^10.1.0
         version: 10.1.1(@ember/string@3.1.1)(ember-source@5.0.0)
       ember-resources:
-        specifier: ^5.3.0
-        version: 5.3.0(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.0.0)
+        specifier: ^6.0.0
+        version: 6.0.0(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.0.0)
       ember-source:
         specifier: ~5.0.0
         version: 5.0.0(@babel/core@7.22.5)(@glimmer/component@1.1.2)(@glint/template@1.0.2)(webpack@5.88.0)
@@ -9178,19 +9178,22 @@ packages:
       - supports-color
     dev: true
 
-  /ember-resources@5.3.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0):
-    resolution: {integrity: sha512-MYFMIAZ8SjcoKxv7cMR8u22xBzyDw+Dw4L5a9/zYeGOiCjnxcFgQsNXnzyD2FmvWZ/9SJoyydQsYGdT7FKrELw==}
+  /ember-resources@6.0.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0):
+    resolution: {integrity: sha512-2jq1ZIZdzJfypstu+7qpXCd02hSkfpj2N2kfnRSNSomq7bihyLIPnzTkP07puLln+j3fssiAA5vkuZxuboLEpQ==}
     peerDependencies:
       '@ember/test-waiters': ^3.0.0
       '@glimmer/component': ^1.1.2
       '@glimmer/tracking': ^1.1.2
-      '@glint/template': '>= 0.8.3'
-      ember-concurrency: ^2.0.0
+      '@glint/template': ^1.0.0-beta.3 || ^1.0.0
+      ember-async-data: ^1.0.1
+      ember-concurrency: ^2.0.0 || ^3.0.0
       ember-source: '*'
     peerDependenciesMeta:
       '@ember/test-waiters':
         optional: true
       '@glimmer/component':
+        optional: true
+      ember-async-data:
         optional: true
       ember-concurrency:
         optional: true
@@ -9206,19 +9209,22 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /ember-resources@5.3.0(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.0.0):
-    resolution: {integrity: sha512-MYFMIAZ8SjcoKxv7cMR8u22xBzyDw+Dw4L5a9/zYeGOiCjnxcFgQsNXnzyD2FmvWZ/9SJoyydQsYGdT7FKrELw==}
+  /ember-resources@6.0.0(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.0.0):
+    resolution: {integrity: sha512-2jq1ZIZdzJfypstu+7qpXCd02hSkfpj2N2kfnRSNSomq7bihyLIPnzTkP07puLln+j3fssiAA5vkuZxuboLEpQ==}
     peerDependencies:
       '@ember/test-waiters': ^3.0.0
       '@glimmer/component': ^1.1.2
       '@glimmer/tracking': ^1.1.2
-      '@glint/template': '>= 0.8.3'
-      ember-concurrency: ^2.0.0
+      '@glint/template': ^1.0.0-beta.3 || ^1.0.0
+      ember-async-data: ^1.0.1
+      ember-concurrency: ^2.0.0 || ^3.0.0
       ember-source: '*'
     peerDependenciesMeta:
       '@ember/test-waiters':
         optional: true
       '@glimmer/component':
+        optional: true
+      ember-async-data:
         optional: true
       ember-concurrency:
         optional: true
@@ -17654,7 +17660,7 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
 
-  file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@5.3.0)(ember-source@4.12.0):
+  file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@6.0.0)(ember-source@4.12.0):
     resolution: {directory: ember-data-resources, type: directory}
     id: file:ember-data-resources
     name: ember-data-resources
@@ -17672,13 +17678,13 @@ packages:
       '@embroider/addon-shim': 1.8.5
       '@glimmer/tracking': 1.1.2
       ember-data: 5.0.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0)
-      ember-resources: 5.3.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0)
+      ember-resources: 6.0.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@4.12.0)
       ember-source: 4.12.0(@babel/core@7.22.5)(@glimmer/component@1.1.2)(@glint/template@1.0.2)(webpack@5.88.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@5.3.0)(ember-source@5.0.0):
+  file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.0.0)(ember-resources@6.0.0)(ember-source@5.0.0):
     resolution: {directory: ember-data-resources, type: directory}
     id: file:ember-data-resources
     name: ember-data-resources
@@ -17696,7 +17702,7 @@ packages:
       '@embroider/addon-shim': 1.8.5
       '@glimmer/tracking': 1.1.2
       ember-data: 5.0.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.0.0)
-      ember-resources: 5.3.0(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.0.0)
+      ember-resources: 6.0.0(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.0.0)
       ember-source: 5.0.0(@babel/core@7.22.5)(@glimmer/component@1.1.2)(@glint/template@1.0.2)(webpack@5.88.0)
     transitivePeerDependencies:
       - supports-color
