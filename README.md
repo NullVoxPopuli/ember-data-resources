@@ -39,7 +39,7 @@ Available properties:
  - {{this.blog.isLoading}}
  - {{this.blog.isSuccess}}
  - {{this.blog.isError}}
- - {{this.blog.hasRun}}
+ - {{this.blog.hasRan}}
 
 Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
@@ -63,7 +63,7 @@ Available methods:
    - {{blog.isLoading}}
    - {{blog.isSuccess}}
    - {{blog.isError}}
-   - {{blog.hasRun}}
+   - {{blog.hasRan}}
 
   Available methods:
    - <button {{on 'click' blog.retry}}>Retry</button>
@@ -104,7 +104,7 @@ Available properties:
  - {{this.blog.isLoading}}
  - {{this.blog.isSuccess}}
  - {{this.blog.isError}}
- - {{this.blog.hasRun}}
+ - {{this.blog.hasRan}}
 
 Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
@@ -129,7 +129,7 @@ Available methods:
    - {{blog.isLoading}}
    - {{blog.isSuccess}}
    - {{blog.isError}}
-   - {{blog.hasRun}}
+   - {{blog.hasRan}}
 
   Available methods:
    - <button {{on 'click' blog.retry}}>Retry</button>
@@ -168,7 +168,7 @@ Available properties:
  - {{this.blog.isLoading}}
  - {{this.blog.isSuccess}}
  - {{this.blog.isError}}
- - {{this.blog.hasRun}}
+ - {{this.blog.hasRan}}
 
 Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
@@ -192,7 +192,7 @@ Available methods:
    - {{blog.isLoading}}
    - {{blog.isSuccess}}
    - {{blog.isError}}
-   - {{blog.hasRun}}
+   - {{blog.hasRan}}
 
   Available methods:
    - <button {{on 'click' blog.retry}}>Retry</button>
@@ -234,7 +234,7 @@ Available properties:
  - {{this.blog.isLoading}}
  - {{this.blog.isSuccess}}
  - {{this.blog.isError}}
- - {{this.blog.hasRun}}
+ - {{this.blog.hasRan}}
 
 Available methods:
  - <button {{on 'click' this.blog.retry}}>Retry</button>
@@ -258,7 +258,7 @@ Available methods:
    - {{blog.isLoading}}
    - {{blog.isSuccess}}
    - {{blog.isError}}
-   - {{blog.hasRun}}
+   - {{blog.hasRan}}
 
   Available methods:
    - <button {{on 'click' blog.retry}}>Retry</button>
