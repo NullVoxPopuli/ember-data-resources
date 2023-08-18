@@ -252,7 +252,7 @@ importers:
     dependencies:
       ember-data-resources:
         specifier: workspace:*
-        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.1.0)(ember-resources@6.0.0)(ember-source@5.2.0)
+        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.2.0)(ember-resources@6.0.0)(ember-source@5.2.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.22.5
@@ -417,8 +417,8 @@ importers:
         specifier: ^4.0.2
         version: 4.0.2
       ember-data:
-        specifier: ~5.1.0
-        version: 5.1.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+        specifier: ~5.2.0
+        version: 5.2.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       ember-disable-prototype-extensions:
         specifier: ^1.1.3
         version: 1.1.3
@@ -523,7 +523,7 @@ importers:
     dependencies:
       ember-data-resources:
         specifier: workspace:*
-        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.1.0)(ember-resources@6.0.0)(ember-source@5.2.0)
+        version: file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.2.0)(ember-resources@6.0.0)(ember-source@5.2.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.22.5
@@ -691,8 +691,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       ember-data:
-        specifier: ~5.1.0
-        version: 5.1.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+        specifier: ~5.2.0
+        version: 5.2.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       ember-disable-prototype-extensions:
         specifier: ^1.1.3
         version: 1.1.3
@@ -2421,16 +2421,16 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /@ember-data/adapter@5.1.0(@ember-data/store@5.1.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2):
-    resolution: {integrity: sha512-xYyHnUCXjcV0DDaX3gN/VCpiDLfQW2GVK7Yo7mzQPPEKpDftRwiDPY6Kk/E6AtVX34/7PKou/TZlD8aydUcg8w==}
+  /@ember-data/adapter@5.2.0(@ember-data/store@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2):
+    resolution: {integrity: sha512-mu0AyQYsFTlXACJdRqMyHkCobdLKapqNgS1Rdl5vG5nJK1JwKHN8JV2SrDRDD3ZCsnwkq53hOS+3BZEAsDNtWA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
-      '@ember-data/store': 5.1.0
+      '@ember-data/store': 5.2.0
       '@ember/string': ^3.1.1
       ember-inflector: ^4.0.2
     dependencies:
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/store': 5.1.0(@babel/core@7.22.5)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/model@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/store': 5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       '@ember/string': 3.1.1
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       ember-cli-babel: 7.26.11
@@ -2440,13 +2440,15 @@ packages:
       - '@glint/template'
       - supports-color
 
-  /@ember-data/debug@5.1.0(@ember/string@3.1.1)(@glint/template@1.0.2):
-    resolution: {integrity: sha512-/aSjz4fh+Inml9ZYv/nHmsUSoGzbnRR4eo1jj41h83K/8uKDYniUp0fmPnPmO4msDIYFIfB40bYHwOWHr6XZUA==}
+  /@ember-data/debug@5.2.0(@ember-data/store@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2):
+    resolution: {integrity: sha512-YAO82gANeJ+WfCgexzGDw4Gyd17c7RG3Qbajusq1Lhqj7ffQHwv+uqTG/pHMX0Ps3t4A7YUabBwc0Kk63o+DGg==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
+      '@ember-data/store': 5.2.0
       '@ember/string': ^3.1.1
     dependencies:
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/store': 5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       '@ember/edition-utils': 1.2.0
       '@ember/string': 3.1.1
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
@@ -2461,14 +2463,14 @@ packages:
       - uglify-js
       - webpack-cli
 
-  /@ember-data/graph@5.1.0(@ember-data/store@5.1.0)(@glint/template@1.0.2):
-    resolution: {integrity: sha512-p1rjHQnnHwr+4z+GS6DuTCVbRbO55VCeDemg0PPN/9UmMVzJ96b2A0WatmWu4vfZgWbXo52lANn5W1mYPugzdg==}
+  /@ember-data/graph@5.2.0(@ember-data/store@5.2.0)(@glint/template@1.0.2):
+    resolution: {integrity: sha512-+txTmGKlQl09zqLX7dtPcfpNnVDO0693nKbHX6TV76KgXFJR/osQv711ECLJpAFgNJ1dcAIdnoaVwQ/0f4SzlQ==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
-      '@ember-data/store': 5.1.0
+      '@ember-data/store': 5.2.0
     dependencies:
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/store': 5.1.0(@babel/core@7.22.5)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/model@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/store': 5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       '@ember/edition-utils': 1.2.0
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       ember-cli-babel: 7.26.11
@@ -2476,16 +2478,16 @@ packages:
       - '@glint/template'
       - supports-color
 
-  /@ember-data/json-api@5.1.0(@ember-data/graph@5.1.0)(@ember-data/store@5.1.0)(@glint/template@1.0.2):
-    resolution: {integrity: sha512-Qcg6lXHjZKBtteGH+n+1Mh90fEYAEbrWHbAiZyyZ0yqOAfmHONhKuvYGD+Y0E2NmkRAjHlsvkjjYxEoQEVKeew==}
+  /@ember-data/json-api@5.2.0(@ember-data/graph@5.2.0)(@ember-data/store@5.2.0)(@glint/template@1.0.2):
+    resolution: {integrity: sha512-pvUlF9peHOlGEO8yKp81lTuiKPzU6z7+VuiE51sfWwSU0nZaA4LNU1Dpys8jeUMjXJffa/hjHAKYx8Dwlbi/2A==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
-      '@ember-data/graph': 5.1.0
-      '@ember-data/store': 5.1.0
+      '@ember-data/graph': 5.2.0
+      '@ember-data/store': 5.2.0
     dependencies:
-      '@ember-data/graph': 5.1.0(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/store': 5.1.0(@babel/core@7.22.5)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/model@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+      '@ember-data/graph': 5.2.0(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/store': 5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       '@ember/edition-utils': 1.2.0
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       ember-cli-babel: 7.26.11
@@ -2493,37 +2495,37 @@ packages:
       - '@glint/template'
       - supports-color
 
-  /@ember-data/legacy-compat@5.1.0(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@glint/template@1.0.2):
-    resolution: {integrity: sha512-UKyOZ5fB4KLw4HsPEDopNbeul8xLID1p/tLHjioRZaz7BRwbCuepzQHASpx9o+z5ZHrCibjEs6x2M0GvEVukTQ==}
+  /@ember-data/legacy-compat@5.2.0(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@glint/template@1.0.2):
+    resolution: {integrity: sha512-qWcdS2aGn89+TmF5QZcvFsl2wpL/hnNLuT7IrPpdqPrCJRusBxzUp1xyuk6MyauOmRQDVbyrvvX3wI+0vp6zhg==}
     engines: {node: 16.* || >= 18}
     peerDependencies:
-      '@ember-data/graph': 5.1.0
-      '@ember-data/json-api': 5.1.0
+      '@ember-data/graph': 5.2.0
+      '@ember-data/json-api': 5.2.0
     peerDependenciesMeta:
       '@ember-data/graph':
         optional: true
       '@ember-data/json-api':
         optional: true
     dependencies:
-      '@ember-data/graph': 5.1.0(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/json-api': 5.1.0(@ember-data/graph@5.1.0)(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
+      '@ember-data/graph': 5.2.0(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/json-api': 5.2.0(@ember-data/graph@5.2.0)(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       ember-cli-babel: 7.26.11
     transitivePeerDependencies:
       - '@glint/template'
       - supports-color
 
-  /@ember-data/model@5.1.0(@babel/core@7.22.5)(@ember-data/debug@5.1.0)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/store@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)(ember-source@5.2.0):
-    resolution: {integrity: sha512-WezKM2fVBn/+0Ei/J20RrfgWXn6lBF4lkVNc4UEy0rXGXAias52b1KUbYw5w0AF6K1GTb7i+8jihTA7n7AHBxg==}
+  /@ember-data/model@5.2.0(@babel/core@7.22.5)(@ember-data/debug@5.2.0)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/store@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)(ember-source@5.2.0):
+    resolution: {integrity: sha512-DoNGg4EyzHt9D/kTCMQSHOWD9oNlta6Ehivqu/S2Zileq5EEs3ZSYsALtVHYpAJUv0mx3pl0VYGBucj1/AMIog==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
-      '@ember-data/debug': 5.1.0
-      '@ember-data/graph': 5.1.0
-      '@ember-data/json-api': 5.1.0
-      '@ember-data/legacy-compat': 5.1.0
-      '@ember-data/store': 5.1.0
-      '@ember-data/tracking': 5.1.0
+      '@ember-data/debug': 5.2.0
+      '@ember-data/graph': 5.2.0
+      '@ember-data/json-api': 5.2.0
+      '@ember-data/legacy-compat': 5.2.0
+      '@ember-data/store': 5.2.0
+      '@ember-data/tracking': 5.2.0
       '@ember/string': ^3.1.1
       ember-inflector: ^4.0.2
     peerDependenciesMeta:
@@ -2536,13 +2538,13 @@ packages:
       '@ember-data/tracking':
         optional: true
     dependencies:
-      '@ember-data/debug': 5.1.0(@ember/string@3.1.1)(@glint/template@1.0.2)
-      '@ember-data/graph': 5.1.0(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/json-api': 5.1.0(@ember-data/graph@5.1.0)(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/legacy-compat': 5.1.0(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/store': 5.1.0(@babel/core@7.22.5)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/model@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
-      '@ember-data/tracking': 5.1.0
+      '@ember-data/debug': 5.2.0(@ember-data/store@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)
+      '@ember-data/graph': 5.2.0(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/json-api': 5.2.0(@ember-data/graph@5.2.0)(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/legacy-compat': 5.2.0(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/store': 5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+      '@ember-data/tracking': 5.2.0
       '@ember/edition-utils': 1.2.0
       '@ember/string': 3.1.1
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
@@ -2590,8 +2592,8 @@ packages:
       - '@glint/template'
       - supports-color
 
-  /@ember-data/private-build-infra@5.1.0(@glint/template@1.0.2):
-    resolution: {integrity: sha512-ihs/DOPK3y8JO5x87PywnORMolj0NbPDOZ9ZYbZEKz2+s0IYz7FZd0TJv3CTXsPoSqEuKSqygk3m5yxK9MIu7w==}
+  /@ember-data/private-build-infra@5.2.0(@glint/template@1.0.2):
+    resolution: {integrity: sha512-CW738Wrr41T1FTISdtzi7HeC0KFzeMyE+FXeJEcK3JL3oPWk7qpFFMz1KcKQoWHTvXWLGf4HPDNH6aWCCcxqxg==}
     engines: {node: 16.* || >= 18.*}
     dependencies:
       '@babel/core': 7.22.5(supports-color@8.1.1)
@@ -2622,11 +2624,11 @@ packages:
       - '@glint/template'
       - supports-color
 
-  /@ember-data/request@5.1.0(@glint/template@1.0.2):
-    resolution: {integrity: sha512-J3/6P+GIVzN5fMh9GH3WF6sxrDW0PuWodXRk+u2SJKgVfMl+bJ1euvllo4vILWZV8A6B+DNuxC8RgfgmF/J71Q==}
+  /@ember-data/request@5.2.0(@glint/template@1.0.2):
+    resolution: {integrity: sha512-aShqsSReptUa9DY2PCxO1z9RO4fm+mX6cO0v7TTyewvBadJHYYFSSIdPvhTFXGh4iuXgEM1Btr7XP9Xo5prqDA==}
     engines: {node: 16.* || >= 18}
     dependencies:
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
       '@ember/test-waiters': 3.0.2
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       ember-cli-babel: 7.26.11
@@ -2637,16 +2639,16 @@ packages:
   /@ember-data/rfc395-data@0.0.4:
     resolution: {integrity: sha512-tGRdvgC9/QMQSuSuJV45xoyhI0Pzjm7A9o/MVVA3HakXIImJbbzx/k/6dO9CUEQXIyS2y0fW6C1XaYOG7rY0FQ==}
 
-  /@ember-data/serializer@5.1.0(@ember-data/store@5.1.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2):
-    resolution: {integrity: sha512-i3V2ei6T3elSPuJSr8fXsPswLfXHlpEuxM2ydyyXz6ZwrANM97WYFmDpdJtl0QEe35H0DnTfpP7MeB7ev/XZLA==}
+  /@ember-data/serializer@5.2.0(@ember-data/store@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2):
+    resolution: {integrity: sha512-KkV2s5e0BVPNZpejbIdDxkro+OAZNVEe4yiUgOizxBh8hCR17Gvd8p7AkPqP+2pV9vADFTm0CXP4h9BFSNMCmA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
-      '@ember-data/store': 5.1.0
+      '@ember-data/store': 5.2.0
       '@ember/string': ^3.1.1
       ember-inflector: ^4.0.2
     dependencies:
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/store': 5.1.0(@babel/core@7.22.5)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/model@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/store': 5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       '@ember/string': 3.1.1
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       ember-cli-babel: 7.26.11
@@ -2692,15 +2694,15 @@ packages:
       - ember-source
       - supports-color
 
-  /@ember-data/store@5.1.0(@babel/core@7.22.5)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/model@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0):
-    resolution: {integrity: sha512-06xQxbimaMFfIZpN/8dnkTZn9CFanfjica/cY+55xeiZSD/IO5jPubK1q2UpicCJfBAV7F/uSByVDQWbPx8Uqg==}
+  /@ember-data/store@5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0):
+    resolution: {integrity: sha512-tLLoaEmSnyqAmKCBEtwswDH22BMHjg1anAJ8PfpPVQ/Npd6IKiVmvGea6nL6lOcN31HzTO9G/6YRFOzEG9r5SQ==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
-      '@ember-data/graph': 5.1.0
-      '@ember-data/json-api': 5.1.0
-      '@ember-data/legacy-compat': 5.1.0
-      '@ember-data/model': 5.1.0
-      '@ember-data/tracking': 5.1.0
+      '@ember-data/graph': 5.2.0
+      '@ember-data/json-api': 5.2.0
+      '@ember-data/legacy-compat': 5.2.0
+      '@ember-data/model': 5.2.0
+      '@ember-data/tracking': 5.2.0
       '@ember/string': ^3.1.1
       '@glimmer/tracking': ^1.1.2
     peerDependenciesMeta:
@@ -2715,12 +2717,12 @@ packages:
       '@ember-data/tracking':
         optional: true
     dependencies:
-      '@ember-data/graph': 5.1.0(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/json-api': 5.1.0(@ember-data/graph@5.1.0)(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/legacy-compat': 5.1.0(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/model': 5.1.0(@babel/core@7.22.5)(@ember-data/debug@5.1.0)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/store@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)(ember-source@5.2.0)
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/tracking': 5.1.0
+      '@ember-data/graph': 5.2.0(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/json-api': 5.2.0(@ember-data/graph@5.2.0)(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/legacy-compat': 5.2.0(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/model': 5.2.0(@babel/core@7.22.5)(@ember-data/debug@5.2.0)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/store@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)(ember-source@5.2.0)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/tracking': 5.2.0
       '@ember/string': 3.1.1
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       '@glimmer/tracking': 1.1.2
@@ -2740,8 +2742,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@ember-data/tracking@5.1.0:
-    resolution: {integrity: sha512-jsGKId0FeE0UsPH48EbpMYMpaQ3eoIl/XK8IY2EdaHGC6LW2HAQAD4kF3ZqOM3ivpHUtSIA5V1RoHbjip6Y2uA==}
+  /@ember-data/tracking@5.2.0:
+    resolution: {integrity: sha512-pe6o340TtAzV7CaerJ2wzYOS2zovbohusizhdXFfRI8QmyiB5w51LYmyXfuPtt4hNQ1miBtNaCZTvRvwjATP2w==}
     engines: {node: 16.* || >= 18}
     dependencies:
       ember-cli-babel: 7.26.11
@@ -3063,7 +3065,7 @@ packages:
       '@glint/template':
         optional: true
     dependencies:
-      '@embroider/macros': 1.11.1(@glint/template@1.0.2)
+      '@embroider/macros': 1.12.0(@glint/template@1.0.2)
       '@glint/environment-ember-loose': 1.0.2(@glimmer/component@1.1.2)(@glint/template@1.0.2)(@types/ember__array@4.0.4)(@types/ember__component@4.0.14)(@types/ember__controller@4.0.5)(@types/ember__object@4.0.6)(@types/ember__routing@4.0.13)(ember-cli-htmlbars@6.2.0)(ember-modifier@4.1.0)
       '@glint/template': 1.0.2
       broccoli-funnel: 3.0.8
@@ -9051,23 +9053,23 @@ packages:
       - '@babel/core'
       - supports-color
 
-  /ember-data@5.1.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0):
-    resolution: {integrity: sha512-rBCZDqiSX+auFx+74RbDj76gzqnc7eCjAAung8D0ySGJgRDuyuNEaTXrrz2DAWVuVX9juz/YOtzzL1wrRDfqWQ==}
+  /ember-data@5.2.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0):
+    resolution: {integrity: sha512-s32QJkq+3/FrNgCQTuNb92FTy++QW3MNLZl+f6/bsq8vO6lUzGQORk/hP0va+b5ftwpAOh8fhSibvrWQp4hTEw==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
       '@ember/string': ^3.1.1
     dependencies:
-      '@ember-data/adapter': 5.1.0(@ember-data/store@5.1.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)
-      '@ember-data/debug': 5.1.0(@ember/string@3.1.1)(@glint/template@1.0.2)
-      '@ember-data/graph': 5.1.0(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/json-api': 5.1.0(@ember-data/graph@5.1.0)(@ember-data/store@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/legacy-compat': 5.1.0(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@glint/template@1.0.2)
-      '@ember-data/model': 5.1.0(@babel/core@7.22.5)(@ember-data/debug@5.1.0)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/store@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)(ember-source@5.2.0)
-      '@ember-data/private-build-infra': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/request': 5.1.0(@glint/template@1.0.2)
-      '@ember-data/serializer': 5.1.0(@ember-data/store@5.1.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)
-      '@ember-data/store': 5.1.0(@babel/core@7.22.5)(@ember-data/graph@5.1.0)(@ember-data/json-api@5.1.0)(@ember-data/legacy-compat@5.1.0)(@ember-data/model@5.1.0)(@ember-data/tracking@5.1.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
-      '@ember-data/tracking': 5.1.0
+      '@ember-data/adapter': 5.2.0(@ember-data/store@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)
+      '@ember-data/debug': 5.2.0(@ember-data/store@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)
+      '@ember-data/graph': 5.2.0(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/json-api': 5.2.0(@ember-data/graph@5.2.0)(@ember-data/store@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/legacy-compat': 5.2.0(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@glint/template@1.0.2)
+      '@ember-data/model': 5.2.0(@babel/core@7.22.5)(@ember-data/debug@5.2.0)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/store@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)(ember-source@5.2.0)
+      '@ember-data/private-build-infra': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/request': 5.2.0(@glint/template@1.0.2)
+      '@ember-data/serializer': 5.2.0(@ember-data/store@5.2.0)(@ember/string@3.1.1)(@glint/template@1.0.2)(ember-inflector@4.0.2)
+      '@ember-data/store': 5.2.0(@babel/core@7.22.5)(@ember-data/graph@5.2.0)(@ember-data/json-api@5.2.0)(@ember-data/legacy-compat@5.2.0)(@ember-data/model@5.2.0)(@ember-data/tracking@5.2.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+      '@ember-data/tracking': 5.2.0
       '@ember/edition-utils': 1.2.0
       '@ember/string': 3.1.1
       '@embroider/macros': 1.12.0(@glint/template@1.0.2)
@@ -17668,7 +17670,7 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
 
-  file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.1.0)(ember-resources@6.0.0)(ember-source@5.2.0):
+  file:ember-data-resources(@ember-data/store@5.0.0)(@glimmer/tracking@1.1.2)(ember-data@5.2.0)(ember-resources@6.0.0)(ember-source@5.2.0):
     resolution: {directory: ember-data-resources, type: directory}
     id: file:ember-data-resources
     name: ember-data-resources
@@ -17684,7 +17686,7 @@ packages:
       '@ember/test-waiters': 3.0.2
       '@embroider/addon-shim': 1.8.5
       '@glimmer/tracking': 1.1.2
-      ember-data: 5.1.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
+      ember-data: 5.2.0(@babel/core@7.22.5)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       ember-resources: 6.0.0(@ember/test-waiters@3.0.2)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.2.0)
       ember-source: 5.2.0(@babel/core@7.22.5)(@glimmer/component@1.1.2)(@glint/template@1.0.2)(webpack@5.88.0)
     transitivePeerDependencies:
