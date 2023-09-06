@@ -86,8 +86,8 @@ importers:
         version: 1.0.0
     devDependencies:
       '@arethetypeswrong/cli':
-        specifier: ^0.9.0
-        version: 0.9.0
+        specifier: ^0.10.0
+        version: 0.10.1
       '@babel/core':
         specifier: ^7.22.5
         version: 7.22.5(supports-color@8.1.1)
@@ -818,11 +818,11 @@ packages:
     resolution: {integrity: sha512-hL80MHK3b++pEp6K23+Nl5r5D1F19DRagp2ruCBIv4McyCiLKq67vUNvEQY1aGCAKNZ8GxV23n5MhOm7RwO8Pg==}
     dev: true
 
-  /@arethetypeswrong/cli@0.9.0:
-    resolution: {integrity: sha512-QeT3TXtivqfH6LL0kPI2YcqH7IzQ2VKnCwJgVLxsmXKsd7ng8XhpInu0w69OIfEQ5qMaHAdVXyB0pI6NYpY3SQ==}
+  /@arethetypeswrong/cli@0.10.1:
+    resolution: {integrity: sha512-f+jcCWSBsQ5Cq5xMpGqEOQim9d+go1V5wsDDTtU5N1y8s+W72e6R+OC/bnV/p6whrwJSQbWgaWoxi74epTUzUA==}
     hasBin: true
     dependencies:
-      '@arethetypeswrong/core': 0.9.0
+      '@arethetypeswrong/core': 0.10.1
       chalk: 4.1.2
       cli-table3: 0.6.3
       commander: 10.0.1
@@ -833,8 +833,8 @@ packages:
       - encoding
     dev: true
 
-  /@arethetypeswrong/core@0.9.0:
-    resolution: {integrity: sha512-Bu6lLtGPBmj1psNwZCZi6avCewl/M+JZ6vGtHA/FkgGWz48vffWIa8d0i8t/QGwxda5WUnGeKaaARkvsivarRg==}
+  /@arethetypeswrong/core@0.10.1:
+    resolution: {integrity: sha512-G3YqYJ61XfuA/fSAf2UcjT3y7F35EnGAnV2zpnLimvCv/rwbYsLC0Ak4WJRe7bW0RQjEh8vJdt0tvLCxmGdB5g==}
     dependencies:
       '@andrewbranch/untar.js': 1.0.2
       fetch-ponyfill: 7.1.0
