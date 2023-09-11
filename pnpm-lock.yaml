@@ -432,8 +432,8 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       ember-qunit:
-        specifier: ^6.1.1
-        version: 6.1.1(@glint/template@1.0.2)(ember-source@5.2.0)(qunit@2.19.4)(webpack@5.88.0)
+        specifier: ^7.0.0
+        version: 7.0.0(@ember/test-helpers@3.2.0)(@glint/template@1.0.2)(ember-source@5.2.0)(qunit@2.19.4)(webpack@5.88.0)
       ember-resolver:
         specifier: ^11.0.0
         version: 11.0.0(ember-source@5.2.0)
@@ -709,8 +709,8 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       ember-qunit:
-        specifier: ^6.1.1
-        version: 6.1.1(@glint/template@1.0.2)(ember-source@5.2.0)(qunit@2.19.4)(webpack@5.88.0)
+        specifier: ^7.0.0
+        version: 7.0.0(@ember/test-helpers@3.2.0)(@glint/template@1.0.2)(ember-source@5.2.0)(qunit@2.19.4)(webpack@5.88.0)
       ember-resolver:
         specifier: ^11.0.0
         version: 11.0.0(ember-source@5.2.0)
@@ -1191,6 +1191,7 @@ packages:
   /@babel/plugin-proposal-private-methods@7.18.6(@babel/core@7.22.5):
     resolution: {integrity: sha512-nutsvktDItsNn4rpGItSNV2sz1XwS+nfU0Rg8aCx3W3NOKVzdMjJRu0O5OkgDp3ZGICSTbgRpxZoWsxoKRvbeA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -1211,6 +1212,7 @@ packages:
   /@babel/plugin-proposal-private-property-in-object@7.21.11(@babel/core@7.22.5):
     resolution: {integrity: sha512-0QZ8qP/3RLDVBwBFoWAwCtgcDZJVwA5LUJRZU8x2YFfKNuFq161wK3cuGrALu5yiPu+vzwTAg/sMWVNeWeNyaw==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -9205,13 +9207,15 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@6.1.1(@glint/template@1.0.2)(ember-source@5.2.0)(qunit@2.19.4)(webpack@5.88.0):
-    resolution: {integrity: sha512-3/jCpoecltFV6vm7GCtSDNRxBzWx96nP+QrbereJAnioSaGeLe+slKL3l80mGzMYDTvn7ESobZ+Ba+OQ1vMMKQ==}
-    engines: {node: 14.* || 16.* || >= 18}
+  /ember-qunit@7.0.0(@ember/test-helpers@3.2.0)(@glint/template@1.0.2)(ember-source@5.2.0)(qunit@2.19.4)(webpack@5.88.0):
+    resolution: {integrity: sha512-KhrndHYEXsHnXvmsGyJLJQ6VCudXaRs5dzPZBsdttZJIhsB6PmYAvq2Q+mh3GRDT/59T/sRDrB3FD3/lATS8aA==}
+    engines: {node: 16.* || >= 18}
     peerDependencies:
+      '@ember/test-helpers': '>=3.0.3'
       ember-source: '*'
       qunit: ^2.13.0
     dependencies:
+      '@ember/test-helpers': 3.2.0(@glint/template@1.0.2)(ember-source@5.2.0)(webpack@5.88.0)
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
