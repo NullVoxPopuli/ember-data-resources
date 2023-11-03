@@ -87,7 +87,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-ember-template-tag": "^0.3.2",
     "publint": "^0.2.0",
-    "rollup": "~4.2.0",
+    "rollup": "~4.3.0",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-ts": "^3.2.0",
