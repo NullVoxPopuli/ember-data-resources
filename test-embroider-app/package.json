@@ -92,7 +92,7 @@
     "ember-resources": "^6.0.0",
     "ember-source": "~5.4.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-template-imports": "^3.4.2",
+    "ember-template-imports": "^4.0.0",
     "ember-template-lint": "^5.10.1",
     "ember-try": "^3.0.0",
     "eslint": "^8.43.0",

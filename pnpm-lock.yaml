@@ -286,7 +286,7 @@ importers:
         version: 1.0.2(@glimmer/component@1.1.2)(@glint/template@1.0.2)(@types/ember__array@4.0.4)(@types/ember__component@4.0.14)(@types/ember__controller@4.0.5)(@types/ember__object@4.0.6)(@types/ember__routing@4.0.13)(ember-cli-htmlbars@6.2.0)(ember-modifier@4.1.0)
       '@glint/environment-ember-template-imports':
         specifier: ^1.0.2
-        version: 1.0.2(@glint/environment-ember-loose@1.0.2)(@glint/template@1.0.2)(@types/ember__component@4.0.14)(@types/ember__routing@4.0.13)(ember-template-imports@3.4.2)
+        version: 1.0.2(@glint/environment-ember-loose@1.0.2)(@glint/template@1.0.2)(@types/ember__component@4.0.14)(@types/ember__routing@4.0.13)(ember-template-imports@4.0.0)
       '@glint/template':
         specifier: ^1.0.2
         version: 1.0.2
@@ -447,8 +447,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       ember-template-imports:
-        specifier: ^3.4.2
-        version: 3.4.2
+        specifier: ^4.0.0
+        version: 4.0.0
       ember-template-lint:
         specifier: ^5.10.3
         version: 5.10.3
@@ -566,7 +566,7 @@ importers:
         version: 1.0.2(@glimmer/component@1.1.2)(@glint/template@1.0.2)(@types/ember__array@4.0.4)(@types/ember__component@4.0.14)(@types/ember__controller@4.0.5)(@types/ember__object@4.0.6)(@types/ember__routing@4.0.13)(ember-cli-htmlbars@6.2.0)(ember-modifier@4.1.0)
       '@glint/environment-ember-template-imports':
         specifier: ^1.0.2
-        version: 1.0.2(@glint/environment-ember-loose@1.0.2)(@glint/template@1.0.2)(@types/ember__component@4.0.14)(@types/ember__routing@4.0.13)(ember-template-imports@3.4.2)
+        version: 1.0.2(@glint/environment-ember-loose@1.0.2)(@glint/template@1.0.2)(@types/ember__component@4.0.14)(@types/ember__routing@4.0.13)(ember-template-imports@4.0.0)
       '@glint/template':
         specifier: ^1.0.2
         version: 1.0.2
@@ -724,8 +724,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       ember-template-imports:
-        specifier: ^3.4.2
-        version: 3.4.2
+        specifier: ^4.0.0
+        version: 4.0.0
       ember-template-lint:
         specifier: ^5.10.1
         version: 5.10.3
@@ -3392,7 +3392,7 @@ packages:
       ember-modifier: 4.1.0(ember-source@5.4.0)
     dev: true
 
-  /@glint/environment-ember-template-imports@1.0.2(@glint/environment-ember-loose@1.0.2)(@glint/template@1.0.2)(@types/ember__component@4.0.14)(@types/ember__routing@4.0.13)(ember-template-imports@3.4.2):
+  /@glint/environment-ember-template-imports@1.0.2(@glint/environment-ember-loose@1.0.2)(@glint/template@1.0.2)(@types/ember__component@4.0.14)(@types/ember__routing@4.0.13)(ember-template-imports@4.0.0):
     resolution: {integrity: sha512-PAH7obVGXPFU7gLb04JVlqiNtz/j7Q29BBTAyhS7EVy99Hc6CPe+nV6+xhUPKu/S5GOVn3MWehVt/6gXPJ+cnA==}
     peerDependencies:
       '@glint/environment-ember-loose': ^1.0.2
@@ -3416,7 +3416,7 @@ packages:
       '@glint/template': 1.0.2
       '@types/ember__component': 4.0.14(@babel/core@7.22.5)
       '@types/ember__routing': 4.0.13(@babel/core@7.22.5)
-      ember-template-imports: 3.4.2
+      ember-template-imports: 4.0.0
     dev: true
 
   /@glint/template@1.0.2:
@@ -7920,6 +7920,10 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
+  /content-tag@1.1.2:
+    resolution: {integrity: sha512-AZkfc6TUmW+/RbZJioPzOQPAHHXqyqK4B0GNckJDjBAPK3SyGrMfn21bfFky/qwi5uoLph5sjAHUkO3CL6/IgQ==}
+    dev: true
+
   /content-type@1.0.5:
     resolution: {integrity: sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==}
     engines: {node: '>= 0.6'}
@@ -9428,6 +9432,17 @@ packages:
       parse-static-imports: 1.1.0
       string.prototype.matchall: 4.0.8
       validate-peer-dependencies: 1.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /ember-template-imports@4.0.0:
+    resolution: {integrity: sha512-Kw1FnFX3MrBesfsjJDFvVgOf1mANOvMprAH1ngDd5SvdlkltNWCF2UKI9WXKQV3lw5noQC1+n6S80L9Q03D3Hw==}
+    engines: {node: 16.* || >= 18}
+    dependencies:
+      broccoli-stew: 3.0.0
+      content-tag: 1.1.2
+      ember-cli-version-checker: 5.1.2
     transitivePeerDependencies:
       - supports-color
     dev: true
