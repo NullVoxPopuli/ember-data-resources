@@ -5,6 +5,7 @@
   ],
   "automerge": true,
   "masterIssue": true,
+  "schedule": ["after 9pm on sunday"],
   "packageRules": [
     ////////////////////////////////////////
     // Grouping namespaced packages together
