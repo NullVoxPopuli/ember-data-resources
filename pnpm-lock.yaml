@@ -107,8 +107,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(@babel/core@7.22.5)(@ember-data/tracking@5.0.0)(@ember/string@3.1.1)(@glimmer/tracking@1.1.2)(@glint/template@1.0.2)(ember-source@5.4.0)
       '@embroider/addon-dev':
-        specifier: ^3.1.1
-        version: 3.1.1(@glint/template@1.0.2)(rollup@4.5.0)
+        specifier: ^4.0.0
+        version: 4.1.3(@glint/template@1.0.2)(rollup@4.5.0)
       '@glimmer/component':
         specifier: ^1.1.2
         version: 1.1.2(@babel/core@7.22.5)
@@ -2823,14 +2823,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@embroider/addon-dev@3.1.1(@glint/template@1.0.2)(rollup@4.5.0):
-    resolution: {integrity: sha512-Z04WwUCymsND96LBv8wSsvlCR2oF6iIb44N+GA0UXTanTJ8fXgMOTKiv1BFeoVXrWhds/00S/VG/L+2kA1BioA==}
+  /@embroider/addon-dev@4.1.3(@glint/template@1.0.2)(rollup@4.5.0):
+    resolution: {integrity: sha512-kng1dyDgM7Dh5lm2a4g/Pq1YEpxpCN3HfZqxSj2uUoWh2fd2es9ucMp+EVYp7Uk7UPULGvgANlf/2M0FtaGWyw==}
     engines: {node: 12.* || 14.* || >= 16}
     hasBin: true
     dependencies:
-      '@embroider/core': 3.0.2(@glint/template@1.0.2)
+      '@embroider/core': 3.4.3(@glint/template@1.0.2)
       '@rollup/pluginutils': 4.2.1
-      assert-never: 1.2.1
+      content-tag: 1.1.2
       fs-extra: 10.1.0
       minimatch: 3.1.2
       rollup-plugin-copy-assets: 2.0.3(rollup@4.5.0)
@@ -2971,6 +2971,42 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@embroider/core@3.4.3(@glint/template@1.0.2):
+    resolution: {integrity: sha512-mTcpB0fDtOdTqfJTznXgDspLjgF11WEvA0/vLo19TkYMQ0X4ZyBFP/wCiqYnXLDOYnnZDXSz0l3Z5PGx/iyt9Q==}
+    engines: {node: 12.* || 14.* || >= 16}
+    dependencies:
+      '@babel/core': 7.22.5(supports-color@8.1.1)
+      '@babel/parser': 7.22.5
+      '@babel/traverse': 7.22.5(supports-color@8.1.1)
+      '@embroider/macros': 1.13.4(@glint/template@1.0.2)
+      '@embroider/shared-internals': 2.5.1
+      assert-never: 1.2.1
+      babel-plugin-ember-template-compilation: 2.2.1
+      broccoli-node-api: 1.7.0
+      broccoli-persistent-filter: 3.1.3
+      broccoli-plugin: 4.0.7
+      broccoli-source: 3.0.1
+      debug: 4.3.4(supports-color@8.1.1)
+      fast-sourcemap-concat: 1.4.0
+      filesize: 10.0.7
+      fs-extra: 9.1.0
+      fs-tree-diff: 2.0.1
+      handlebars: 4.7.7
+      js-string-escape: 1.0.1
+      jsdom: 16.7.0(supports-color@8.1.1)
+      lodash: 4.17.21
+      resolve: 1.22.3
+      resolve-package-path: 4.0.3
+      typescript-memoize: 1.1.1
+      walk-sync: 3.0.0
+    transitivePeerDependencies:
+      - '@glint/template'
+      - bufferutil
+      - canvas
+      - supports-color
+      - utf-8-validate
+    dev: true
+
   /@embroider/hbs-loader@3.0.0(@embroider/core@3.0.2)(webpack@5.88.0):
     resolution: {integrity: sha512-PRPrliDeM7HzLNImZyfw+1h00oB8RqNn75fOA75gDsu3awygX8NR1fGZw7eJ6X+pd6km/SHPWcQJPwSlzAwcYA==}
     engines: {node: 12.* || 14.* || >= 16}
@@ -3027,6 +3063,28 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@embroider/macros@1.13.4(@glint/template@1.0.2):
+    resolution: {integrity: sha512-A6tXvfwnscx66QO0R3c2dIJwEltfsTL4ihsYjMtgP9ODCCmQlCaRlZDQYw5Drta0ER9Fj3nXntu4naV5Wt5XLA==}
+    engines: {node: 12.* || 14.* || >= 16}
+    peerDependencies:
+      '@glint/template': ^1.0.0
+    peerDependenciesMeta:
+      '@glint/template':
+        optional: true
+    dependencies:
+      '@embroider/shared-internals': 2.5.1
+      '@glint/template': 1.0.2
+      assert-never: 1.2.1
+      babel-import-util: 2.0.1
+      ember-cli-babel: 7.26.11
+      find-up: 5.0.0
+      lodash: 4.17.21
+      resolve: 1.22.3
+      semver: 7.5.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@embroider/shared-internals@1.8.3:
     resolution: {integrity: sha512-N5Gho6Qk8z5u+mxLCcMYAoQMbN4MmH+z2jXwQHVs859bxuZTxwF6kKtsybDAASCtd2YGxEmzcc1Ja/wM28824w==}
     engines: {node: 12.* || 14.* || >= 16}
@@ -3066,6 +3124,23 @@ packages:
       resolve-package-path: 4.0.3
       semver: 7.5.4
       typescript-memoize: 1.1.1
+
+  /@embroider/shared-internals@2.5.1:
+    resolution: {integrity: sha512-b+TWDBisH1p6HeTbJIO8pgu1WzfTP0ZSAlZBqjXwOyrS0ZxP1qNYRrEX+IxyzIibEFjXBxeLakiejz3DJvZX5A==}
+    engines: {node: 12.* || 14.* || >= 16}
+    dependencies:
+      babel-import-util: 2.0.1
+      debug: 4.3.4(supports-color@8.1.1)
+      ember-rfc176-data: 0.3.18
+      fs-extra: 9.1.0
+      js-string-escape: 1.0.1
+      lodash: 4.17.21
+      resolve-package-path: 4.0.3
+      semver: 7.5.4
+      typescript-memoize: 1.1.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@embroider/webpack@3.0.0(@embroider/core@3.0.2)(webpack@5.88.0):
     resolution: {integrity: sha512-+4P4fvwLpoKYrYS8S7CwBSVpFJlEvIbCd6XK313bqhrSUV0rBDVp5bbRZusVBeP4fMftzDmvZtqm6JtIEmJDtA==}
@@ -5876,6 +5951,11 @@ packages:
     resolution: {integrity: sha512-PPzUT17eAI18zn6ek1R3sB4Krc/MbnmT1MkZQFmyhjoaEGBVwNABhfVU9+EKcDSKrrOm9OIpGhjxukx1GCiy1g==}
     engines: {node: '>= 12.*'}
 
+  /babel-import-util@2.0.1:
+    resolution: {integrity: sha512-N1ZfNprtf/37x0R05J0QCW/9pCAcuI+bjZIK9tlu0JEkwEST7ssdD++gxHRbD58AiG5QE5OuNYhRoEFsc1wESw==}
+    engines: {node: '>= 12.*'}
+    dev: true
+
   /babel-loader@8.3.0(@babel/core@7.22.5)(webpack@5.88.0):
     resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
     engines: {node: '>= 8.9'}
@@ -5940,6 +6020,14 @@ packages:
     engines: {node: '>= 12.*'}
     dependencies:
       babel-import-util: 1.3.0
+
+  /babel-plugin-ember-template-compilation@2.2.1:
+    resolution: {integrity: sha512-alinprIQcLficqkuIyeKKfD4HQOpMOiHK6pt6Skj/yjoPoQYBuwAJ2BoPAlRe9k/URPeVkpMefbN3m6jEp7RsA==}
+    engines: {node: '>= 12.*'}
+    dependencies:
+      '@glimmer/syntax': 0.84.3
+      babel-import-util: 2.0.1
+    dev: true
 
   /babel-plugin-filter-imports@4.0.0:
     resolution: {integrity: sha512-jDLlxI8QnfKd7PtieH6pl4tZJzymzfCDCPGdTq/grgbiYAikwDPp/oL0IlFJn0HQjLpcLkyYhPKkUVneRESw5w==}
@@ -7918,6 +8006,10 @@ packages:
     engines: {node: '>= 0.6'}
     dependencies:
       safe-buffer: 5.2.1
+    dev: true
+
+  /content-tag@1.1.2:
+    resolution: {integrity: sha512-AZkfc6TUmW+/RbZJioPzOQPAHHXqyqK4B0GNckJDjBAPK3SyGrMfn21bfFky/qwi5uoLph5sjAHUkO3CL6/IgQ==}
     dev: true
 
   /content-type@1.0.5:
