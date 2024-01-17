@@ -114,6 +114,7 @@ jobs:
         allow-failure: [false]
         try-scenario:
           - ember-resources-5.3
+          - ember-resources-7
           - ember-lts-3.28
           - ember-lts-4.4
           # - ember-lts-4.8
