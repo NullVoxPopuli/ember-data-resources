@@ -6,23 +6,31 @@
   "license": "MIT",
   "author": "NullVoxPopuli",
   "scripts": {
-    "release": "changeset publish",
-    "build": "turbo run build --output-logs errors-only",
-    "start": "pnpm build; concurrently 'npm:_start:*' --prefix ' ' --restart-after 5000 --restart-tries -1",
     "_start:docs": "pnpm --filter docs-app start",
-    "_start:tests": "pnpm --filter test-app start",
     "_start:package": "pnpm --filter 'ember-primitives' start --no-watch.clearScreen",
-    "test": "turbo run test --output-logs errors-only",
+    "_start:tests": "pnpm --filter test-app start",
+    "build": "turbo run build --output-logs errors-only",
+    "lint": "turbo run _:lint --output-logs errors-only",
     "lint:fix": "turbo run _:lint:fix --output-logs errors-only",
-    "lint": "turbo run _:lint --output-logs errors-only"
+    "start": "pnpm build; concurrently 'npm:_start:*' --prefix ' ' --restart-after 5000 --restart-tries -1",
+    "test": "turbo run test --output-logs errors-only"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.1",
     "@nullvoxpopuli/dev": "workspace:*",
     "concurrently": "^8.2.0",
     "prettier": "^2.8.8",
     "prettier-plugin-ember-template-tag": "^0.3.2",
+    "release-plan": "^0.6.0",
     "turbo": "^1.10.5"
+  },
+  "engines": {
+    "node": ">= 18.*",
+    "npm": "use pnpm",
+    "yarn": "use pnpm"
+  },
+  "volta": {
+    "node": "20.10.0",
+    "pnpm": "8.10.5"
   },
   "pnpm": {
     "overrides": {
@@ -38,14 +46,5 @@
         "@ember-data/tracking"
       ]
     }
-  },
-  "volta": {
-    "node": "20.10.0",
-    "pnpm": "8.10.5"
-  },
-  "engines": {
-    "node": ">= 18.*",
-    "yarn": "use pnpm",
-    "npm": "use pnpm"
   }
 }
