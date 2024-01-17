@@ -20,7 +20,7 @@ QUnit.done(async () => {
 });
 
 export function setupMockData(hooks: NestedHooks) {
-  hooks.beforeEach(async function() {
+  hooks.beforeEach(async function () {
     const data = [
       { id: '1', type: 'blog', attributes: { name: `name:1` } },
       { id: '2', type: 'blog', attributes: { name: `name:2` } },
@@ -51,7 +51,6 @@ export function setupMockData(hooks: NestedHooks) {
       // The return type here is obnoxious... I'd argue not flexible enough.
       // any it is.
       http.get('/blogs/:id', ({ params }): any => {
-
         const { id } = params;
 
         const record = data.find((datum) => datum.id === id);
@@ -60,12 +59,15 @@ export function setupMockData(hooks: NestedHooks) {
           return HttpResponse.json({ data: record });
         }
 
-        return HttpResponse.json({ errors: [{ status: '404', detail: 'Blog not found' }] }, { status: 404 });
+        return HttpResponse.json(
+          { errors: [{ status: '404', detail: 'Blog not found' }] },
+          { status: 404 }
+        );
       })
     );
   });
 
-  hooks.afterEach(function() {
+  hooks.afterEach(function () {
     worker?.resetHandlers();
   });
 }
