@@ -26,8 +26,8 @@
     "_syncPnpm": "DEBUG=sync-pnpm pnpm sync-dependencies-meta-injected"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/eslint-parser": "^7.22.5",
+    "@babel/core": "^7.23.7",
+    "@babel/eslint-parser": "^7.23.3",
     "@ember-data/store": "^5.0.0",
     "@ember-data/tracking": "^5.0.0",
     "@ember/optional-features": "^2.0.0",
