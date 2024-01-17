@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as QUnit from 'qunit';
 
-import { rest, setupWorker } from 'msw';
+import { http, HttpResponse } from 'msw';
+import { setupWorker } from 'msw/browser';
 
 let worker: ReturnType<typeof setupWorker>;
 
@@ -9,16 +11,16 @@ QUnit.begin(async () => {
   await worker.start();
   // artificial timeout "just in case" worker takes a bit to boot
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  worker.printHandlers();
+  console.debug(worker.listHandlers());
 });
 
 QUnit.done(async () => {
-  worker.printHandlers();
+  console.debug(worker.listHandlers());
   worker?.stop();
 });
 
 export function setupMockData(hooks: NestedHooks) {
-  hooks.beforeEach(async function () {
+  hooks.beforeEach(async function() {
     const data = [
       { id: '1', type: 'blog', attributes: { name: `name:1` } },
       { id: '2', type: 'blog', attributes: { name: `name:2` } },
@@ -31,36 +33,39 @@ export function setupMockData(hooks: NestedHooks) {
     worker.resetHandlers();
 
     worker.use(
-      rest.get('/blogs', (req, res, ctx) => {
-        const id = req.url.searchParams.get('q[id]');
+      // The return type here is obnoxious... I'd argue not flexible enough.
+      // any it is.
+      http.get('/blogs', ({ request }): any => {
+        let search = new URLSearchParams(request.url);
+        const id = search.get('q[id]');
 
         if (id) {
           const record = data.find((datum) => datum.id === id);
 
-          return res(ctx.json({ data: record }));
+          return HttpResponse.json({ data: record });
         }
 
-        return res(ctx.json({ data }));
+        return HttpResponse.json({ data });
       }),
 
-      rest.get('/blogs/:id', (req, res, ctx) => {
-        const { id } = req.params;
+      // The return type here is obnoxious... I'd argue not flexible enough.
+      // any it is.
+      http.get('/blogs/:id', ({ params }): any => {
+
+        const { id } = params;
 
         const record = data.find((datum) => datum.id === id);
 
         if (record) {
-          return res(ctx.json({ data: record }));
+          return HttpResponse.json({ data: record });
         }
 
-        return res(
-          ctx.status(404),
-          ctx.json({ errors: [{ status: '404', detail: 'Blog not found' }] })
-        );
+        return HttpResponse.json({ errors: [{ status: '404', detail: 'Blog not found' }] }, { status: 404 });
       })
     );
   });
 
-  hooks.afterEach(function () {
+  hooks.afterEach(function() {
     worker?.resetHandlers();
   });
 }
