@@ -9,6 +9,13 @@ module.exports = function (defaults) {
     },
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
+      disableDecoratorTransforms: true,
+    },
+    babel: {
+      plugins: [
+        // add the new transform.
+        require.resolve('decorator-transforms'),
+      ],
     },
   });
 
