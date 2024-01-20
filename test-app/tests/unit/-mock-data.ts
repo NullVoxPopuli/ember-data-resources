@@ -61,9 +61,9 @@ export function setupMockData(hooks: NestedHooks) {
 
         return HttpResponse.json(
           { errors: [{ status: '404', detail: 'Blog not found' }] },
-          { status: 404 }
+          { status: 404 },
         );
-      })
+      }),
     );
   });
 
