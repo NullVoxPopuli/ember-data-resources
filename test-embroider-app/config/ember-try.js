@@ -3,11 +3,11 @@
 const getChannelURL = require('ember-source-channel-url');
 
 module.exports = async function () {
-  let pkg = require('../package.json');
+  // let pkg = require('../package.json');
 
   return {
     usePnpm: true,
-    command: `pnpm dedupe && pnpx turbo run test:ember --filter ${pkg.name}`,
+    // command: `pnpm dedupe && pnpx turbo run test:ember --filter ${pkg.name}`,
     buildManagerOptions() {
       return ['--ignore-scripts', '--no-frozen-lockfile'];
     },
