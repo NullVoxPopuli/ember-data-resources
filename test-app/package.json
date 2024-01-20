@@ -73,7 +73,6 @@
     "ember-auto-import": "^2.7.2",
     "ember-cli": "~5.5.0",
     "ember-cli-babel": "^8.2.0",
-    "ember-cli-deprecation-workflow": "^2.2.0",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-disable-prototype-extensions": "^1.1.3",

@@ -7,7 +7,8 @@ module.exports = async function () {
 
   return {
     usePnpm: true,
-    command: `pnpx turbo run test:ember --filter ${pkg.name}`,
+    // command: `pnpx turbo run test:ember --filter ${pkg.name}`,
+    command: `pnpx test:ember`,
     scenarios: [
       {
         name: 'ember-resources-5.3',
