@@ -118,6 +118,7 @@ jobs:
           - ember-lts-3.28
           - ember-lts-4.4
           # - ember-lts-4.8
+          # - ember-data @ 4.8 has incorrect peers, so we can't test it
           - ember-lts-4.12
           - ember-5.0
           - ember-lts-5.4
@@ -128,18 +129,13 @@ jobs:
         test-app:
           - test-app
           - test-embroider-app
-        include:
-           - try-scenario: ember-lts-4.8
-             test-app: test-embroider-app
-           - try-scenario: ember-lts-4.8
-             test-app: test-app
 
     steps:
       - uses: wyvox/action@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests
-        id: tests
+        id: testsconst { Octokit } = require("@octokit/rest");
         run: pnpm turbo test:scenario --filter ${{ matrix.test-app }} --log-prefix none -- --skip-cleanup
         env:
           SCENARIO: ${{ matrix.try-scenario }}

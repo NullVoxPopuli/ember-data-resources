@@ -95,7 +95,7 @@ module.exports = async function () {
             'ember-cli': '~4.12.1',
             'ember-data': '~4.12.0',
             '@ember-data/adapter': '~4.12.8',
-            '@ember-data/canary-features': '~4.12.0',
+            // '@ember-data/canary-features': '~4.12.0',
             '@ember-data/model': '~4.12.0',
             '@ember-data/serializer': '~4.12.0',
             '@ember-data/store': '~4.12.0',
