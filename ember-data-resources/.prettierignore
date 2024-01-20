@@ -2,3 +2,10 @@ dist/
 dist-types/
 node_modules/
 *.md
+
+*.yml
+*.yaml
+*.md
+*.json5
+dist/
+node_modules/
