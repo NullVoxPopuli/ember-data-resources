@@ -16,6 +16,8 @@ module.exports = async function () {
         name: 'ember-resources-5.3',
         npm: {
           devDependencies: {
+            'ember-qunit': '^7.0.0',
+            '@ember/test-helpers': '~3.0.3',
             'ember-resources': '~5.3.0',
             'ember-source': '~3.28.11',
             'ember-cli': '~4.12.1',
@@ -32,6 +34,8 @@ module.exports = async function () {
         name: 'ember-resources-7',
         npm: {
           devDependencies: {
+            'ember-qunit': '^7.0.0',
+            '@ember/test-helpers': '~3.0.3',
             'ember-resources': '^7.0.0',
             'ember-source': '~3.28.11',
             'ember-cli': '~4.12.1',
@@ -48,6 +52,8 @@ module.exports = async function () {
         name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
+            'ember-qunit': '^7.0.0',
+            '@ember/test-helpers': '~3.0.3',
             'ember-source': '~3.28.11',
             'ember-cli': '~4.12.1',
             'ember-data': '~3.28.3',
@@ -63,6 +69,8 @@ module.exports = async function () {
         name: 'ember-lts-4.4',
         npm: {
           devDependencies: {
+            'ember-qunit': '^7.0.0',
+            '@ember/test-helpers': '~3.0.3',
             'ember-source': '~4.4.4',
             'ember-cli': '~4.12.1',
             'ember-data': '~4.4.1',
@@ -78,6 +86,8 @@ module.exports = async function () {
         name: 'ember-lts-4.8',
         npm: {
           devDependencies: {
+            'ember-qunit': '^7.0.0',
+            '@ember/test-helpers': '~3.0.3',
             'ember-source': '~4.8.4',
             'ember-cli': '~4.12.1',
             'ember-data': '~4.8.8',
@@ -94,11 +104,12 @@ module.exports = async function () {
         name: 'ember-lts-4.12',
         npm: {
           devDependencies: {
+            'ember-qunit': '^7.0.0',
+            '@ember/test-helpers': '~3.0.3',
             'ember-source': '~4.12.1',
             'ember-cli': '~4.12.1',
             'ember-data': '~4.12.0',
             '@ember-data/adapter': '~4.12.8',
-            // '@ember-data/canary-features': '~4.12.0',
             '@ember-data/model': '~4.12.0',
             '@ember-data/serializer': '~4.12.0',
             '@ember-data/store': '~4.12.0',
