@@ -15,7 +15,7 @@ type FindRecordThunkResult = Id | [Id] | [Id, FindRecordOptions];
 export function findRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
-  thunk: () => FindRecordThunkResult
+  thunk: () => FindRecordThunkResult,
 ) {
   return FindRecord.from(destroyable, () => {
     const reified = thunk();
@@ -45,7 +45,7 @@ type FindAllThunkResult = { options: FindAllOptions } | FindAllOptions | void;
 export function findAll<Model = unknown>(
   destroyable: object,
   modelName: string,
-  thunk?: () => FindAllThunkResult
+  thunk?: () => FindAllThunkResult,
 ) {
   return FindAll.from(destroyable, () => {
     const reified = thunk?.() || {};
@@ -66,7 +66,7 @@ type QueryThunkResult = QueryQuery | [QueryQuery] | [QueryQuery, QueryOptions];
 export function query<Model = unknown>(
   destroyable: object,
   modelName: string,
-  thunk: () => QueryThunkResult
+  thunk: () => QueryThunkResult,
 ) {
   return Query.from(destroyable, () => {
     const reified = thunk();
@@ -100,7 +100,7 @@ type QueryRecordThunkResult =
 export function queryRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
-  thunk: () => QueryRecordThunkResult
+  thunk: () => QueryRecordThunkResult,
 ) {
   return QueryRecord.from(destroyable, () => {
     const reified = thunk();

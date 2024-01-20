@@ -42,7 +42,7 @@ export class Request<Args> extends Resource<Args> {
 
   async __WRAPPED_FUNCTION__(
     _positional: ExpandArgs<Args>['Positional'],
-    _named: ExpandArgs<Args>['Named']
+    _named: ExpandArgs<Args>['Named'],
   ) {
     throw new Error('Not Implemented');
   }
@@ -58,14 +58,14 @@ export class Request<Args> extends Resource<Args> {
   get records(): unknown | undefined {
     return assert(
       `The resource for ${this.constructor.name} does not have a records property. ` +
-        `You might be looking for .record instead.`
+        `You might be looking for .record instead.`,
     );
   }
 
   get record(): unknown | undefined {
     return assert(
       `The resource for ${this.constructor.name} does not have a record property. ` +
-        `You might be looking for .records instead.`
+        `You might be looking for .records instead.`,
     );
   }
 
@@ -78,7 +78,7 @@ export class Request<Args> extends Resource<Args> {
   @waitFor
   async __REQUEST_FUNCTION__(
     _positional: ExpandArgs<Args>['Positional'],
-    _named: ExpandArgs<Args>['Named']
+    _named: ExpandArgs<Args>['Named'],
   ) {
     /**
      * Args are already consumed, but let's delay doing anything
