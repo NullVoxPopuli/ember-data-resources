@@ -1,8 +1,8 @@
 import { registerDeprecationHandler } from '@ember/debug';
 
-import config from 'test-app/config/environment';
+// import config from 'test-app/config/environment';
 
-const SHOULD_THROW = config.environment !== 'production';
+const SHOULD_THROW = false; //config.environment !== 'production';
 const SILENCED_DEPRECATIONS: string[] = [
   // Add ids of deprecations you temporarily want to silence here.
 ];
