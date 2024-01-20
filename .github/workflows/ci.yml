@@ -150,8 +150,36 @@ jobs:
           outcome: ${{ steps.tests.outcome }}
           test-id: "${{ matrix.test-app }} :: ${{ matrix.try-scenario }}"
 
-  typecheck:
-    name: '${{ matrix.typescript-scenario }}'
+  typecheck_v4:
+    name: '4.* ${{ matrix.typescript-scenario }}'
+    runs-on: ubuntu-latest
+    # if: ${{ fromJSON(needs.setup.outputs.pending).atAll.typecheck }}
+    timeout-minutes: 2
+    needs: [test]
+    continue-on-error: true
+    strategy:
+      fail-fast: true
+      matrix:
+        typescript-scenario:
+          - typescript@4.8
+          - typescript@4.9
+
+    steps:
+      - uses: wyvox/action@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Change TS to ${{ matrix.typescript-scenario }}'
+        run: |
+          pnpm add --save-dev ${{ matrix.typescript-scenario}}
+          pnpm remove @tsconfig/ember
+          pnpm add @tsconfig/ember@^2.0.0
+        working-directory: ./test-app
+      - name: 'Type checking'
+        run: pnpm turbo --filter 'test-app' lint:types
+
+
+  typecheck_v5:
+    name: '5.* ${{ matrix.typescript-scenario }}'
     runs-on: ubuntu-latest
     # if: ${{ fromJSON(needs.setup.outputs.pending).atAll.typecheck }}
     timeout-minutes: 2
@@ -164,6 +192,9 @@ jobs:
           - typescript@4.8
           - typescript@4.9
           - typescript@5.0
+          - typescript@5.1
+          - typescript@5.2
+          - typescript@5.3
           - typescript@rc
           - typescript@next
 
