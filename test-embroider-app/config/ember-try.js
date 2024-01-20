@@ -7,17 +7,24 @@ module.exports = async function () {
 
   return {
     usePnpm: true,
-    command: `pnpx turbo run test:ember --filter ${pkg.name}`,
-    // command: `pnpx test:ember`,
+    command: `pnpm dedupe && pnpx turbo run test:ember --filter ${pkg.name}`,
+    buildManagerOptions() {
+      return ['--ignore-scripts', '--no-frozen-lockfile'];
+    },
     scenarios: [
       {
         name: 'ember-resources-5.3',
         npm: {
           devDependencies: {
-            'ember-resources': '5.3.0',
-            'ember-source': '3.28.11',
-            'ember-data': '3.28.13',
-            '@ember-data/store': '3.28.3',
+            'ember-resources': '~5.3.0',
+            'ember-source': '~3.28.11',
+            'ember-cli': '~4.12.1',
+            'ember-data': '~3.28.3',
+            '@ember-data/adapter': '~3.28.3',
+            '@ember-data/canary-features': '~3.28.3',
+            '@ember-data/model': '~3.28.13',
+            '@ember-data/serializer': '~3.28.3',
+            '@ember-data/store': '~3.28.3',
           },
         },
       },
@@ -27,7 +34,12 @@ module.exports = async function () {
           devDependencies: {
             'ember-resources': '^7.0.0',
             'ember-source': '~3.28.11',
-            'ember-data': '~3.28.13',
+            'ember-cli': '~4.12.1',
+            'ember-data': '~3.28.3',
+            '@ember-data/adapter': '~3.28.3',
+            '@ember-data/canary-features': '~3.28.3',
+            '@ember-data/model': '~3.28.13',
+            '@ember-data/serializer': '~3.28.3',
             '@ember-data/store': '~3.28.3',
           },
         },
@@ -37,7 +49,12 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~3.28.11',
-            'ember-data': '~3.28.13',
+            'ember-cli': '~4.12.1',
+            'ember-data': '~3.28.3',
+            '@ember-data/adapter': '~3.28.3',
+            '@ember-data/canary-features': '~3.28.3',
+            '@ember-data/model': '~3.28.13',
+            '@ember-data/serializer': '~3.28.3',
             '@ember-data/store': '~3.28.3',
           },
         },
@@ -47,7 +64,12 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~4.4.4',
+            'ember-cli': '~4.12.1',
             'ember-data': '~4.4.1',
+            '@ember-data/adapter': '~4.4.1',
+            '@ember-data/canary-features': '~4.4.1',
+            '@ember-data/model': '~4.4.1',
+            '@ember-data/serializer': '~4.4.1',
             '@ember-data/store': '~4.4.1',
           },
         },
@@ -57,14 +79,14 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~4.8.4',
+            'ember-cli': '~4.12.1',
             'ember-data': '~4.8.8',
-            'ember-inflector': '^4.0.2',
-            '@ember-data/store': '~4.8.8',
             '@ember-data/adapter': '~4.8.8',
+            '@ember-data/canary-features': '~4.8.8',
             '@ember-data/model': '~4.8.8',
             '@ember-data/serializer': '~4.8.8',
+            '@ember-data/store': '~4.8.8',
             '@ember-data/tracking': '~4.8.8',
-            '@ember-data/canary-features': '~4.8.8',
           },
         },
       },
@@ -73,8 +95,14 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~4.12.1',
+            'ember-cli': '~4.12.1',
             'ember-data': '~4.12.0',
+            '@ember-data/adapter': '~4.12.8',
+            // '@ember-data/canary-features': '~4.12.0',
+            '@ember-data/model': '~4.12.0',
+            '@ember-data/serializer': '~4.12.0',
             '@ember-data/store': '~4.12.0',
+            '@ember-data/tracking': '~4.12.0',
           },
         },
       },
@@ -90,13 +118,18 @@ module.exports = async function () {
         },
       },
       {
+        name: 'ember-lts-5.4',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.4.0',
+          },
+        },
+      },
+      {
         name: 'ember-release',
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('release'),
-            'ember-data': '~5.0.0',
-            'ember-qunit': '^7.0.0',
-            '@ember/test-helpers': '^3.0.3',
           },
         },
       },
@@ -105,9 +138,6 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('beta'),
-            'ember-data': '~5.0.0',
-            'ember-qunit': '^7.0.0',
-            '@ember/test-helpers': '^3.0.3',
           },
         },
       },
@@ -116,9 +146,6 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('canary'),
-            'ember-data': '~5.0.0',
-            'ember-qunit': '^7.0.0',
-            '@ember/test-helpers': '^3.0.3',
           },
         },
       },

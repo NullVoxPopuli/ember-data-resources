@@ -8,6 +8,9 @@ module.exports = async function () {
   return {
     usePnpm: true,
     command: `pnpm dedupe && pnpx turbo run test:ember --filter ${pkg.name}`,
+    buildManagerOptions() {
+      return ['--ignore-scripts', '--no-frozen-lockfile'];
+    },
     scenarios: [
       {
         name: 'ember-resources-5.3',
