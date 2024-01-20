@@ -89,7 +89,7 @@ jobs:
       - uses: wyvox/action@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: pnpm turbo test --filter test-app
+      - run: pnpm turbo test:ember --filter test-app
 
   floating:
     name: "Floating Dependencies"
@@ -101,7 +101,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pnpm-args: --no-lockfile
-      - run: pnpm turbo test --filter test-app
+      - run: pnpm turbo test:ember --filter test-app
 
   try-scenarios:
     name: "${{ matrix.try-scenario }} ${{ matrix.test-app == 'test-app' && '(Classic)' || '(Embroider)' }}"
