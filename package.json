@@ -43,6 +43,7 @@
       ],
       "ignoreMissing": [
         "webpack",
+        "rsvp",
         "@ember-data/tracking"
       ]
     }

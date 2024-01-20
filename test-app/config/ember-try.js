@@ -16,7 +16,7 @@ module.exports = async function () {
         name: 'ember-resources-5.3',
         npm: {
           devDependencies: {
-            'ember-qunit': '^7.0.0',
+            'ember-qunit': '^6.0.0',
             '@ember/test-helpers': '~3.0.3',
             'ember-resources': '~5.3.0',
             'ember-source': '~3.28.11',
@@ -34,7 +34,7 @@ module.exports = async function () {
         name: 'ember-resources-7',
         npm: {
           devDependencies: {
-            'ember-qunit': '^7.0.0',
+            'ember-qunit': '^6.0.0',
             '@ember/test-helpers': '~3.0.3',
             'ember-resources': '^7.0.0',
             'ember-source': '~3.28.11',
@@ -52,7 +52,7 @@ module.exports = async function () {
         name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
-            'ember-qunit': '^7.0.0',
+            'ember-qunit': '^6.0.0',
             '@ember/test-helpers': '~3.0.3',
             'ember-source': '~3.28.11',
             'ember-cli': '~4.12.1',
