@@ -68,7 +68,7 @@ module('findAll', function (hooks) {
       await settled();
 
       const odd = instance.blog.records?.filter(
-        (record) => parseInt(record.name?.split(':')[1] || '') % 2 === 1
+        (record) => parseInt(record.name?.split(':')[1] || '') % 2 === 1,
       );
 
       assert.strictEqual(odd?.length, 2);
@@ -136,7 +136,7 @@ module('findAll', function (hooks) {
       `);
 
       const odd = yielded.records.filter(
-        (record: any) => parseInt(record.name.split(':')[1]) % 2 === 1
+        (record: any) => parseInt(record.name.split(':')[1]) % 2 === 1,
       );
 
       assert.strictEqual(odd.length, 2);
