@@ -142,5 +142,8 @@
     "workerDirectory": [
       "public"
     ]
+  },
+  "volta": {
+    "node": "18.17.1"
   }
 }
