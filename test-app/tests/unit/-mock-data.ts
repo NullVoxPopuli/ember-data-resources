@@ -36,7 +36,7 @@ export function setupMockData(hooks: NestedHooks) {
       // The return type here is obnoxious... I'd argue not flexible enough.
       // any it is.
       http.get('/blogs', ({ request }): any => {
-        let search = new URLSearchParams(request.url);
+        let search = new URLSearchParams(request.url.split('?')[1]);
         const id = search.get('q[id]');
 
         if (id) {

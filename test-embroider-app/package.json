@@ -138,6 +138,10 @@
       "injected": true
     }
   },
+  "pnpm": { "overrides": {
+
+      "broccoli": "3.5.2"
+      } },
   "msw": {
     "workerDirectory": [
       "public"
