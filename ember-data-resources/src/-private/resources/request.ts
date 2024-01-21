@@ -39,10 +39,7 @@ export class Request<Args> extends Resource<Args> {
     });
   }
 
-  async __WRAPPED_FUNCTION__(
-    _positional: unknown[],
-    _named: object,
-  ) {
+  async __WRAPPED_FUNCTION__(_positional: unknown[], _named: object) {
     throw new Error('Not Implemented');
   }
 
@@ -75,10 +72,7 @@ export class Request<Args> extends Resource<Args> {
 
   @action
   @waitFor
-  async __REQUEST_FUNCTION__(
-    _positional: unknown[],
-    _named: object,
-  ) {
+  async __REQUEST_FUNCTION__(_positional: unknown[], _named: object) {
     /**
      * Args are already consumed, but let's delay doing anything
      * until we can get out of a tracking frame.
