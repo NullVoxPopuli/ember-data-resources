@@ -89,7 +89,7 @@ jobs:
       - uses: wyvox/action@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: pnpm turbo test --filter test-app
+      - run: pnpm turbo test:ember --filter test-app
 
   floating:
     name: "Floating Dependencies"
@@ -101,7 +101,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pnpm-args: --no-lockfile
-      - run: pnpm turbo test --filter test-app
+      - run: pnpm turbo test:ember --filter test-app
 
   try-scenarios:
     name: "${{ matrix.try-scenario }} ${{ matrix.test-app == 'test-app' && '(Classic)' || '(Embroider)' }}"
@@ -114,11 +114,14 @@ jobs:
         allow-failure: [false]
         try-scenario:
           - ember-resources-5.3
+          - ember-resources-7
           - ember-lts-3.28
           - ember-lts-4.4
           # - ember-lts-4.8
+          # - ember-data @ 4.8 has incorrect peers, so we can't test it
           - ember-lts-4.12
           - ember-5.0
+          - ember-lts-5.4
 
           - ember-release
           - ember-beta
@@ -126,29 +129,15 @@ jobs:
         test-app:
           - test-app
           - test-embroider-app
-        include:
-           - try-scenario: ember-lts-4.8
-             test-app: test-embroider-app
-             allow-failure: true
-           - try-scenario: ember-lts-4.8
-             test-app: test-app
-             allow-failure: false
 
     steps:
       - uses: wyvox/action@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests
-        id: tests
-        continue-on-error: ${{matrix.allow-failure}}
         run: pnpm turbo test:scenario --filter ${{ matrix.test-app }} --log-prefix none -- --skip-cleanup
         env:
           SCENARIO: ${{ matrix.try-scenario }}
-      - uses: mainmatter/continue-on-error-comment@v1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          outcome: ${{ steps.tests.outcome }}
-          test-id: "${{ matrix.test-app }} :: ${{ matrix.try-scenario }}"
 
   typecheck_v4:
     name: '4.* ${{ matrix.typescript-scenario }}'

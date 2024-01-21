@@ -5,10 +5,9 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { waitFor, waitForPromise } from '@ember/test-waiters';
 
-import { Resource } from 'ember-resources';
+import { Resource } from 'ember-modify-based-class-resource';
 
 import type Store from '@ember-data/store';
-import type { ExpandArgs } from 'ember-resources';
 
 export type FindRecordOptions = Parameters<Store['findRecord']>[2];
 
@@ -22,12 +21,12 @@ export class Request<Args> extends Resource<Args> {
   /**
    * Args saved, untracked, for retrying
    */
-  declare positional: ExpandArgs<Args>['Positional'];
-  declare named: ExpandArgs<Args>['Named'];
+  declare positional: unknown[];
+  declare named: object;
 
-  modify(positional: ExpandArgs<Args>['Positional'], named: ExpandArgs<Args>['Named']) {
-    this.positional = positional;
-    this.named = named;
+  modify(positional?: unknown[], named?: object) {
+    this.positional = positional || [];
+    this.named = named || {};
 
     /**
      * We need to consume all arguments here so that we correctly respond to updates to
@@ -35,15 +34,12 @@ export class Request<Args> extends Resource<Args> {
      *
      * e.g.: when an id changes that is passed to findRecord, we re-fetch.
      */
-    this.__REQUEST_FUNCTION__([...(positional as unknown[])] as ExpandArgs<Args>['Positional'], {
+    this.__REQUEST_FUNCTION__([...(positional as unknown[])], {
       ...named,
     });
   }
 
-  async __WRAPPED_FUNCTION__(
-    _positional: ExpandArgs<Args>['Positional'],
-    _named: ExpandArgs<Args>['Named'],
-  ) {
+  async __WRAPPED_FUNCTION__(_positional: unknown[], _named: object) {
     throw new Error('Not Implemented');
   }
 
@@ -76,10 +72,7 @@ export class Request<Args> extends Resource<Args> {
 
   @action
   @waitFor
-  async __REQUEST_FUNCTION__(
-    _positional: ExpandArgs<Args>['Positional'],
-    _named: ExpandArgs<Args>['Named'],
-  ) {
+  async __REQUEST_FUNCTION__(_positional: unknown[], _named: object) {
     /**
      * Args are already consumed, but let's delay doing anything
      * until we can get out of a tracking frame.

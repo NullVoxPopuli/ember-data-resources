@@ -27,5 +27,18 @@ module.exports = function (defaults) {
         package: 'qunit',
       },
     ],
+    extraPublicTrees: [],
+    staticAddonTrees: true,
+    staticAddonTestSupportTrees: true,
+    staticHelpers: true,
+    staticModifiers: true,
+    staticComponents: true,
+    staticEmberSource: true,
+    implicitModulesStrategy: 'packageNames',
+    packagerOptions: {
+      webpackConfig: {
+        devtool: 'source-map',
+      },
+    },
   });
 };

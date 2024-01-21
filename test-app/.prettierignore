@@ -1,3 +1,9 @@
+*.yml
+*.yaml
+*.md
+*.json5
+dist/
+node_modules/
 # unconventional js
 /blueprints/*/files/
 /vendor/
