@@ -1,5 +1,35 @@
 # Changelog
 
+## Release (2024-02-09)
+
+ember-data-resources 5.1.0 (minor)
+
+#### :rocket: Enhancement
+* `@nullvoxpopuli/dev`, `ember-data-resources`, `test-app`, `test-embroider-app`
+  * [#392](https://github.com/NullVoxPopuli/ember-data-resources/pull/392) Test against ember-resources@v7 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* Other
+  * [#394](https://github.com/NullVoxPopuli/ember-data-resources/pull/394) Support broader TypeScript Range (increasing to 4.8 - 5.3) ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* Other
+  * [#398](https://github.com/NullVoxPopuli/ember-data-resources/pull/398) Remove invalid turbo config field ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#397](https://github.com/NullVoxPopuli/ember-data-resources/pull/397) Upgrade release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#384](https://github.com/NullVoxPopuli/ember-data-resources/pull/384) Switch to release plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* `@nullvoxpopuli/dev`, `ember-data-resources`, `test-app`, `test-embroider-app`
+  * [#393](https://github.com/NullVoxPopuli/ember-data-resources/pull/393) Update test dev dependencies ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#389](https://github.com/NullVoxPopuli/ember-data-resources/pull/389) Upgrade babel deps ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* `test-app`, `test-embroider-app`
+  * [#391](https://github.com/NullVoxPopuli/ember-data-resources/pull/391) Use decorator transform for easier local debugging ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#388](https://github.com/NullVoxPopuli/ember-data-resources/pull/388) Upgrade ember-qunit ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#385](https://github.com/NullVoxPopuli/ember-data-resources/pull/385) Upgrade to MSW 2 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#386](https://github.com/NullVoxPopuli/ember-data-resources/pull/386) Upgrade ember-cli-babel ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* `test-embroider-app`
+  * [#390](https://github.com/NullVoxPopuli/ember-data-resources/pull/390) Upgrade embroider deps ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 2
+- Jonas Metzener ([@anehx](https://github.com/anehx))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## 5.0.0
 
 ### Major Changes
