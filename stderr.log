@@ -1,0 +1,8 @@
+Warning: unknown package "test-embroider-app"
+# Unlabeled Changes
+
+* `ember-data-resources`, `test-app`, `test-embroider-app`
+  * [#379](https://github.com/NullVoxPopuli/ember-data-resources/pull/379) Update devDependencies ([@renovate[bot]](https://github.com/apps/renovate))
+
+
+*Cannot plan release until the above changes are labeled*.
