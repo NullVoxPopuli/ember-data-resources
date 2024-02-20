@@ -12,6 +12,9 @@ import type { Id } from './-private/resources/types';
 
 type FindRecordThunkResult = Id | [Id] | [Id, FindRecordOptions];
 
+/**
+ * Wrapper around store.findRecord
+ */
 export function findRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
@@ -42,6 +45,9 @@ export function findRecord<Model = unknown>(
 
 type FindAllThunkResult = { options: FindAllOptions } | FindAllOptions | void;
 
+/**
+ * Wrapper around store.findAll
+ */
 export function findAll<Model = unknown>(
   destroyable: object,
   modelName: string,
@@ -63,6 +69,9 @@ export function findAll<Model = unknown>(
 
 type QueryThunkResult = QueryQuery | [QueryQuery] | [QueryQuery, QueryOptions];
 
+/**
+ * Wrapper around store.query
+ */
 export function query<Model = unknown>(
   destroyable: object,
   modelName: string,
@@ -97,6 +106,9 @@ type QueryRecordThunkResult =
   | [QueryRecordQuery]
   | [QueryRecordQuery, QueryRecordOptions];
 
+/**
+ * Wrapper around store.queryRecord
+ */
 export function queryRecord<Model = unknown>(
   destroyable: object,
   modelName: string,
