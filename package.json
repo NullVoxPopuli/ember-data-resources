@@ -6,8 +6,9 @@
   "license": "MIT",
   "author": "NullVoxPopuli",
   "scripts": {
+    "prepare": "pnpm --filter 'ember-data-resources' build",
     "_start:docs": "pnpm --filter docs-app start",
-    "_start:package": "pnpm --filter 'ember-primitives' start --no-watch.clearScreen",
+    "_start:package": "pnpm --filter 'ember-data-resources' start --no-watch.clearScreen",
     "_start:tests": "pnpm --filter test-app start",
     "build": "turbo run build --output-logs errors-only",
     "lint": "turbo run _:lint --output-logs errors-only",
