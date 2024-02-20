@@ -1,8 +1,25 @@
 {
   "solution": {
     "ember-data-resources": {
-      "oldVersion": "5.1.0"
+      "impact": "minor",
+      "oldVersion": "5.1.0",
+      "newVersion": "5.2.0",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./ember-data-resources/package.json"
     }
   },
-  "description": "\n\n\n\n"
+  "description": "## Release (2024-02-20)\n\nember-data-resources 5.2.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-data-resources`\n  * [#404](https://github.com/NullVoxPopuli/ember-data-resources/pull/404) Add some jsdoc for the JS helpers ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#405](https://github.com/NullVoxPopuli/ember-data-resources/pull/405) Delete empty files ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* Other\n  * [#403](https://github.com/NullVoxPopuli/ember-data-resources/pull/403) Update readme to test release automation ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `ember-data-resources`, `test-app`, `test-embroider-app`\n  * [#379](https://github.com/NullVoxPopuli/ember-data-resources/pull/379) Update devDependencies ([@renovate[bot]](https://github.com/apps/renovate))\n* `test-embroider-app`\n  * [#382](https://github.com/NullVoxPopuli/ember-data-resources/pull/382) Update Node.js to v20.11.1 ([@renovate[bot]](https://github.com/apps/renovate))\n* Other\n  * [#400](https://github.com/NullVoxPopuli/ember-data-resources/pull/400) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n\n#### Committers: 2\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n- [@github-actions[bot]](https://github.com/apps/github-actions)\n"
 }
