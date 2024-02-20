@@ -2,6 +2,17 @@
 
 ## Release (2024-02-20)
 
+ember-data-resources 5.2.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-data-resources`
+  * [#408](https://github.com/NullVoxPopuli/ember-data-resources/pull/408) Add publish to the release workflow ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
+## Release (2024-02-20)
+
 ember-data-resources 5.2.0 (minor)
 
 #### :rocket: Enhancement
