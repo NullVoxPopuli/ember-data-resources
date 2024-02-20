@@ -1,5 +1,31 @@
 # Changelog
 
+## Release (2024-02-20)
+
+ember-data-resources 5.2.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-data-resources`
+  * [#404](https://github.com/NullVoxPopuli/ember-data-resources/pull/404) Add some jsdoc for the JS helpers ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :bug: Bug Fix
+* `ember-data-resources`
+  * [#405](https://github.com/NullVoxPopuli/ember-data-resources/pull/405) Delete empty files ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* Other
+  * [#403](https://github.com/NullVoxPopuli/ember-data-resources/pull/403) Update readme to test release automation ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `ember-data-resources`, `test-app`, `test-embroider-app`
+  * [#379](https://github.com/NullVoxPopuli/ember-data-resources/pull/379) Update devDependencies ([@renovate[bot]](https://github.com/apps/renovate))
+* `test-embroider-app`
+  * [#382](https://github.com/NullVoxPopuli/ember-data-resources/pull/382) Update Node.js to v20.11.1 ([@renovate[bot]](https://github.com/apps/renovate))
+* Other
+  * [#400](https://github.com/NullVoxPopuli/ember-data-resources/pull/400) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))
+
+#### Committers: 2
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+- [@github-actions[bot]](https://github.com/apps/github-actions)
+
 
 
 
