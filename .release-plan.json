@@ -1,17 +1,8 @@
 {
   "solution": {
     "ember-data-resources": {
-      "impact": "patch",
-      "oldVersion": "5.2.0",
-      "newVersion": "5.2.1",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        }
-      ],
-      "pkgJSONPath": "./ember-data-resources/package.json"
+      "oldVersion": "5.2.1"
     }
   },
-  "description": "## Release (2024-02-20)\n\nember-data-resources 5.2.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#408](https://github.com/NullVoxPopuli/ember-data-resources/pull/408) Add publish to the release workflow ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "\n\n\n\n"
 }
