@@ -176,7 +176,7 @@ Available methods:
 **in a template**
 
 ```hbs
-{{#let (query 'blog' query=(hash ...)) as |blogs|}}
+{{#let (query 'blog' (hash ...)) as |blogs|}}
   {{#if blogs.isLoading}}
       ...
   {{else if blogs.isError}}
@@ -206,7 +206,7 @@ See: [First-class Component Templates](https://github.com/emberjs/rfcs/pull/779)
 import { Query } from 'ember-data-resources';
 
 <template>
-  {{#let (Query 'blog' query=(hash ...)) as |blogs|}}
+  {{#let (Query 'blog' (hash ...)) as |blogs|}}
     ...
   {{/let}}
 </template>
@@ -242,7 +242,7 @@ Available methods:
 **in a template**
 
 ```hbs
-{{#let (query-record 'blog' query=(hash ...)) as |blog|}}
+{{#let (query-record 'blog' (hash ...)) as |blog|}}
   {{#if blog.isLoading}}
       ...
   {{else if blog.isError}}
@@ -273,7 +273,7 @@ See: [First-class Component Templates](https://github.com/emberjs/rfcs/pull/779)
 import { QueryRecord } from 'ember-data-resources';
 
 <template>
-  {{#let (QueryRecord 'blog' query=(hash ...)) as |blog|}}
+  {{#let (QueryRecord 'blog' (hash ...)) as |blog|}}
     ...
   {{/let}}
 </template>
