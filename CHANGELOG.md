@@ -1,5 +1,25 @@
 # Changelog
 
+## Release (2025-05-05)
+
+* ember-data-resources 5.2.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-data-resources`
+  * [#434](https://github.com/NullVoxPopuli/ember-data-resources/pull/434) Remove deprecation warning when switching to Ember 6 ([@jbescoyez](https://github.com/jbescoyez))
+
+#### :memo: Documentation
+* [#420](https://github.com/NullVoxPopuli/ember-data-resources/pull/420) fix query usage docs ([@Yelinz](https://github.com/Yelinz))
+
+#### :house: Internal
+* `ember-data-resources`
+  * [#435](https://github.com/NullVoxPopuli/ember-data-resources/pull/435) Update release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 3
+- Jean-Baptiste Escoyez ([@jbescoyez](https://github.com/jbescoyez))
+- Yelin Zhang ([@Yelinz](https://github.com/Yelinz))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-02-20)
 
 ember-data-resources 5.2.1 (patch)
