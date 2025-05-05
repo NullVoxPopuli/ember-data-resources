@@ -6,13 +6,13 @@
   "license": "MIT",
   "author": "NullVoxPopuli",
   "scripts": {
-    "prepare": "pnpm --filter 'ember-data-resources' build",
     "_start:docs": "pnpm --filter docs-app start",
     "_start:package": "pnpm --filter 'ember-data-resources' start --no-watch.clearScreen",
     "_start:tests": "pnpm --filter test-app start",
     "build": "turbo run build --output-logs errors-only",
     "lint": "turbo run _:lint --output-logs errors-only",
     "lint:fix": "turbo run _:lint:fix --output-logs errors-only",
+    "prepare": "pnpm --filter 'ember-data-resources' build",
     "start": "pnpm build; concurrently 'npm:_start:*' --prefix ' ' --restart-after 5000 --restart-tries -1",
     "test": "turbo run test --output-logs errors-only"
   },
@@ -21,9 +21,10 @@
     "concurrently": "^8.2.0",
     "prettier": "^3.2.4",
     "prettier-plugin-ember-template-tag": "^2.0.0",
-    "release-plan": "^0.8.0",
+    "release-plan": "^0.16.0",
     "turbo": "^1.11.3"
   },
+  "packageManager": "8.15.8",
   "engines": {
     "node": ">= 18.*",
     "npm": "use pnpm",
@@ -34,9 +35,6 @@
     "pnpm": "8.15.8"
   },
   "pnpm": {
-    "overrides": {
-      "@types/eslint": "^8.0.0"
-    },
     "peerDependencyRules": {
       "allowAny": [
         "typescript",
@@ -47,6 +45,9 @@
         "rsvp",
         "@ember-data/tracking"
       ]
+    },
+    "overrides": {
+      "@types/eslint": "^8.0.0"
     }
   }
 }

@@ -2,8 +2,8 @@ import { tracked } from '@glimmer/tracking';
 import { assert } from '@ember/debug';
 import { isDestroyed, isDestroying } from '@ember/destroyable';
 import { action } from '@ember/object';
-
 import * as emberService from '@ember/service';
+
 const service = emberService.service ?? emberService.inject;
 
 import { waitFor, waitForPromise } from '@ember/test-waiters';
