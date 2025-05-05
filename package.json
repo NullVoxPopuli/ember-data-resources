@@ -29,6 +29,7 @@
     "npm": "use pnpm",
     "yarn": "use pnpm"
   },
+  "packageManager": "8.15.8",
   "volta": {
     "node": "20.12.2",
     "pnpm": "8.15.8"
