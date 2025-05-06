@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { FindAll } from './-private/resources/find-all';
-import { FindRecord } from './-private/resources/find-record';
-import { Query } from './-private/resources/query';
-import { QueryRecord } from './-private/resources/query-record';
+import { FindAll } from './-private/resources/find-all.ts';
+import { FindRecord } from './-private/resources/find-record.ts';
+import { Query } from './-private/resources/query.ts';
+import { QueryRecord } from './-private/resources/query-record.ts';
 
 import type { FindAllOptions } from './-private/resources/find-all';
 import type { FindRecordOptions } from './-private/resources/find-record';

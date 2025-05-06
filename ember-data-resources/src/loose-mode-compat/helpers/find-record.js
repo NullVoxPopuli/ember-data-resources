@@ -1,3 +1,3 @@
-import { FindRecord } from '../../index';
+import { FindRecord } from '../../index.ts';
 
 export default FindRecord;

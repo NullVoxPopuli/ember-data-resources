@@ -2,7 +2,7 @@ import { tracked } from '@glimmer/tracking';
 import { isDestroyed, isDestroying } from '@ember/destroyable';
 import { action } from '@ember/object';
 
-import { Request } from './request';
+import { Request } from './request.ts';
 
 import type Store from '@ember-data/store';
 
