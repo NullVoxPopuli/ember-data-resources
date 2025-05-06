@@ -6,7 +6,7 @@
   "compilerOptions": {
     "declarationDir": "dist-types",
     "allowJs": true,
-    "lib": ["dom", "es2023"]
+    "lib": ["dom", "es2023"],
   },
   "include": ["src/**/*", "unpublished-development-types/**/*"],
 }
