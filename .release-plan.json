@@ -2,21 +2,17 @@
   "solution": {
     "ember-data-resources": {
       "impact": "patch",
-      "oldVersion": "5.2.1",
-      "newVersion": "5.2.2",
+      "oldVersion": "5.2.2",
+      "newVersion": "5.2.3",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember-data-resources/package.json"
     }
   },
-  "description": "## Release (2025-05-05)\n\n* ember-data-resources 5.2.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#434](https://github.com/NullVoxPopuli/ember-data-resources/pull/434) Remove deprecation warning when switching to Ember 6 ([@jbescoyez](https://github.com/jbescoyez))\n\n#### :memo: Documentation\n* [#420](https://github.com/NullVoxPopuli/ember-data-resources/pull/420) fix query usage docs ([@Yelinz](https://github.com/Yelinz))\n\n#### :house: Internal\n* `ember-data-resources`\n  * [#435](https://github.com/NullVoxPopuli/ember-data-resources/pull/435) Update release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 3\n- Jean-Baptiste Escoyez ([@jbescoyez](https://github.com/jbescoyez))\n- Yelin Zhang ([@Yelinz](https://github.com/Yelinz))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-05-06)\n\n* ember-data-resources 5.2.3 (patch)\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#436](https://github.com/NullVoxPopuli/ember-data-resources/pull/436) Fix publish ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }

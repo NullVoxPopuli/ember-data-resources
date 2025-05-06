@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-05-06)
+
+* ember-data-resources 5.2.3 (patch)
+
+#### :bug: Bug Fix
+* `ember-data-resources`
+  * [#436](https://github.com/NullVoxPopuli/ember-data-resources/pull/436) Fix publish ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-05)
 
 * ember-data-resources 5.2.2 (patch)
