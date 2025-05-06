@@ -9,7 +9,6 @@ const addon = new Addon({
 
 export default {
   output: addon.output(),
-
   plugins: [
     addon.publicEntrypoints(['index.js', '**/*.js']),
     addon.appReexports(['loose-mode-compat/**/*.js'], {
