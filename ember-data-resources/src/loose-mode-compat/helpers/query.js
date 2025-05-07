@@ -1,3 +1,3 @@
-import { Query } from '../../index';
+import { Query } from '../../index.ts';
 
 export default Query;

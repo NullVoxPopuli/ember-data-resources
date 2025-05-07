@@ -8,7 +8,7 @@ Resources for reactive data fetching with ember-data's `store` service.
 * ember-data v3.28 or above
 * ember-auto-import v2 or above
 * ember-resources v5.3 or above
-* typescript v4.8 or above
+* typescript v5 or above
 
 ## Installation
 

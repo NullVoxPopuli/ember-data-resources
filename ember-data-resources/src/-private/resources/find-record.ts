@@ -3,10 +3,10 @@ import { isDestroyed, isDestroying } from '@ember/destroyable';
 import { action } from '@ember/object';
 import { waitFor } from '@ember/test-waiters';
 
-import { IdRequiredError, IdTypeError } from './errors';
-import { Request } from './request';
+import { IdRequiredError, IdTypeError } from './errors.ts';
+import { Request } from './request.ts';
 
-import type { Id } from './types';
+import type { Id } from './types.ts';
 import type Store from '@ember-data/store';
 
 export type FindRecordOptions = Parameters<Store['findRecord']>[2];

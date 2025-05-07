@@ -1,3 +1,3 @@
-import { QueryRecord } from '../../index';
+import { QueryRecord } from '../../index.ts';
 
 export default QueryRecord;

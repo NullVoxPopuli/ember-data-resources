@@ -1,9 +1,20 @@
 {
-  "presets": [["@babel/preset-typescript"]],
   "plugins": [
-    "@embroider/addon-dev/template-colocation-plugin",
-    ["@babel/plugin-transform-typescript", { "allowDeclareFields": true }],
-    ["@babel/plugin-proposal-decorators", { "version": "legacy" }],
-    "@babel/plugin-proposal-class-properties"
+    [
+      "@babel/plugin-transform-typescript",
+      {
+        "allExtensions": true,
+        "allowDeclareFields": true,
+        "onlyRemoveTypeImports": true
+      }
+    ],
+    [
+      "module:decorator-transforms",
+      {
+        "runtime": {
+          "import": "decorator-transforms/runtime-esm"
+        }
+      }
+    ]
   ]
 }

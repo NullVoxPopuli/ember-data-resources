@@ -1,6 +1,6 @@
-import typescript from 'rollup-plugin-ts';
 import copy from 'rollup-plugin-copy';
 import { Addon } from '@embroider/addon-dev/rollup';
+import { babel } from '@rollup/plugin-babel';
 
 const addon = new Addon({
   srcDir: 'src',
@@ -17,11 +17,11 @@ export default {
       },
     }),
     addon.dependencies(),
-    typescript({
-      transpiler: 'babel',
-      browserslist: ['last 1 firefox versions'],
-      transpileOnly: true,
+    babel({
+      extensions: ['.js', '.gjs', '.ts', '.gts'],
+      babelHelpers: 'bundled',
     }),
+    addon.declarations('dist-types'),
     addon.clean(),
     copy({
       targets: [
