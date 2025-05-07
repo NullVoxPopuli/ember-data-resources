@@ -5,6 +5,7 @@
     // layout, which is not resolvable with the Node resolution algorithm, to
     // work with TypeScript.
     "baseUrl": ".",
+    "target": "esnext",
     "paths": {
       "test-app/tests/*": ["tests/*"],
       "test-app/*": ["app/*"],

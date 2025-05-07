@@ -1,12 +1,12 @@
 {
   "extends": "@ember/library-tsconfig",
   "glint": {
-    "environment": ["ember-loose"],
+    "environment": ["ember-loose"]
   },
   "compilerOptions": {
     "declarationDir": "dist-types",
     "allowJs": true,
-    "lib": ["dom", "es2023"],
+    "lib": ["dom", "es2023"]
   },
-  "include": ["src/**/*", "unpublished-development-types/**/*"],
+  "include": ["src/**/*", "unpublished-development-types/**/*"]
 }
