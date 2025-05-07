@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-05-07)
+
+* ember-data-resources 5.3.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-data-resources`
+  * [#438](https://github.com/NullVoxPopuli/ember-data-resources/pull/438) Upgrade addon-dev, drop TS < v5 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :bug: Bug Fix
+* `ember-data-resources`
+  * [#438](https://github.com/NullVoxPopuli/ember-data-resources/pull/438) Upgrade addon-dev, drop TS < v5 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-06)
 
 * ember-data-resources 5.2.3 (patch)

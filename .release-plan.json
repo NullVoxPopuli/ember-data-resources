@@ -1,11 +1,15 @@
 {
   "solution": {
     "ember-data-resources": {
-      "impact": "patch",
-      "oldVersion": "5.2.2",
-      "newVersion": "5.2.3",
+      "impact": "minor",
+      "oldVersion": "5.2.3",
+      "newVersion": "5.3.0",
       "tagName": "latest",
       "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
@@ -14,5 +18,5 @@
       "pkgJSONPath": "./ember-data-resources/package.json"
     }
   },
-  "description": "## Release (2025-05-06)\n\n* ember-data-resources 5.2.3 (patch)\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#436](https://github.com/NullVoxPopuli/ember-data-resources/pull/436) Fix publish ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-05-07)\n\n* ember-data-resources 5.3.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-data-resources`\n  * [#438](https://github.com/NullVoxPopuli/ember-data-resources/pull/438) Upgrade addon-dev, drop TS < v5 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#438](https://github.com/NullVoxPopuli/ember-data-resources/pull/438) Upgrade addon-dev, drop TS < v5 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
