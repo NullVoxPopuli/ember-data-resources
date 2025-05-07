@@ -78,6 +78,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
+      - run: pnpm i -f # injected deps
       - run: pnpm lint
 
 
@@ -91,6 +92,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
+      - run: pnpm i -f # injected deps
       - run: pnpm turbo test:ember --filter test-app
 
   floating:
@@ -104,6 +106,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pnpm-args: --no-lockfile
       - run: pnpm build
+      - run: pnpm i -f # injected deps
       - run: pnpm turbo test:ember --filter test-app
 
   try-scenarios:
@@ -138,6 +141,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
+      - run: pnpm i -f # injected deps
       - name: Run Tests
         run: pnpm turbo test:scenario --filter ${{ matrix.test-app }} --log-prefix none -- --skip-cleanup
         env:
@@ -162,6 +166,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
+      - run: pnpm i -f # injected deps
       - name: 'Change TS to ${{ matrix.typescript-scenario }}'
         run: |
           pnpm add --save-dev ${{ matrix.typescript-scenario}}
@@ -195,6 +200,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
+      - run: pnpm i -f # injected deps
       - name: 'Change TS to ${{ matrix.typescript-scenario }}'
         run: 'pnpm add --save-dev ${{ matrix.typescript-scenario}}'
         working-directory: ./test-app
