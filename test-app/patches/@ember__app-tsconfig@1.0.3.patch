@@ -1,0 +1,13 @@
+diff --git a/tsconfig.json b/tsconfig.json
+index 476467e753c3644e38858358e3751b4d66a024bb..f823bab424ed1f8e3ca10b1dc5c37d2f874771c7 100644
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -8,7 +8,7 @@
+   // via Ember CLI (e.g. ember-cli-typescript's blueprint), it additionally has
+   // `compilerOptions.baseUrl`, `compilerOptions.paths`, and `include` set.
+   "compilerOptions": {
+-    "target": "es2023",
++    "target": "es2022",
+     "module": "esnext",
+     "moduleResolution": "bundler",
+ 

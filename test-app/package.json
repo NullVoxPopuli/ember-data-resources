@@ -137,5 +137,10 @@
     "workerDirectory": [
       "public"
     ]
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@ember/app-tsconfig@1.0.3": "patches/@ember__app-tsconfig@1.0.3.patch"
+    }
   }
 }

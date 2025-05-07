@@ -7,6 +7,11 @@ settings:
 overrides:
   broccoli: 3.5.2
 
+patchedDependencies:
+  '@ember/app-tsconfig@1.0.3':
+    hash: dtljsxy3jlhrcww2ijoxc7mzfy
+    path: patches/@ember__app-tsconfig@1.0.3.patch
+
 dependencies:
   '@ember-data/adapter':
     specifier: ^5.3.0
@@ -54,7 +59,7 @@ devDependencies:
     version: 7.23.3(@babel/core@7.23.7)(eslint@8.56.0)
   '@ember/app-tsconfig':
     specifier: ^1.0.3
-    version: 1.0.3
+    version: 1.0.3(patch_hash=dtljsxy3jlhrcww2ijoxc7mzfy)
   '@ember/optional-features':
     specifier: ^2.0.0
     version: 2.0.0
@@ -1934,9 +1939,10 @@ packages:
       - supports-color
     dev: false
 
-  /@ember/app-tsconfig@1.0.3:
+  /@ember/app-tsconfig@1.0.3(patch_hash=dtljsxy3jlhrcww2ijoxc7mzfy):
     resolution: {integrity: sha512-dw+/F68xvBw8JYLpyFmAcnF5d/vZqlP6GkEde+XIuPPPn6PIakrh0jtP0/tPxBw8tVuc6eD+H+8CWSsSFrGuiA==}
     dev: true
+    patched: true
 
   /@ember/edition-utils@1.2.0:
     resolution: {integrity: sha512-VmVq/8saCaPdesQmftPqbFtxJWrzxNGSQ+e8x8LLe3Hjm36pJ04Q8LeORGZkAeOhldoUX9seLGmSaHeXkIqoog==}
@@ -4512,9 +4518,6 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0
       webpack: '>=2'
-    peerDependenciesMeta:
-      webpack:
-        optional: true
     dependencies:
       '@babel/core': 7.23.7(supports-color@8.1.1)
       find-cache-dir: 3.3.2
@@ -6491,9 +6494,6 @@ packages:
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
-    peerDependenciesMeta:
-      webpack:
-        optional: true
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.33)
       loader-utils: 2.0.4
@@ -11001,9 +11001,6 @@ packages:
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
-    peerDependenciesMeta:
-      webpack:
-        optional: true
     dependencies:
       schema-utils: 4.2.0
       webpack: 5.89.0
@@ -12527,9 +12524,6 @@ packages:
     peerDependencies:
       route-recognizer: ^0.3.4
       rsvp: ^4.8.5
-    peerDependenciesMeta:
-      rsvp:
-        optional: true
     dependencies:
       '@glimmer/env': 0.1.7
       route-recognizer: 0.3.4
@@ -13240,9 +13234,6 @@ packages:
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
-    peerDependenciesMeta:
-      webpack:
-        optional: true
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0

@@ -142,6 +142,9 @@
   "pnpm": {
     "overrides": {
       "broccoli": "3.5.2"
+    },
+    "patchedDependencies": {
+      "@ember/app-tsconfig@1.0.3": "patches/@ember__app-tsconfig@1.0.3.patch"
     }
   },
   "msw": {
