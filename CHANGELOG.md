@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-11-20)
+
+* ember-data-resources 5.3.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-data-resources`
+  * [#444](https://github.com/NullVoxPopuli/ember-data-resources/pull/444) Remove unneded peer deps ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-07)
 
 * ember-data-resources 5.3.0 (minor)
