@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-12-23)
+
+* ember-data-resources 5.3.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-data-resources`
+  * [#450](https://github.com/NullVoxPopuli/ember-data-resources/pull/450) Widen allowed dependencies ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-11-20)
 
 * ember-data-resources 5.3.1 (patch)
