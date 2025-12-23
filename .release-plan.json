@@ -2,8 +2,8 @@
   "solution": {
     "ember-data-resources": {
       "impact": "patch",
-      "oldVersion": "5.3.0",
-      "newVersion": "5.3.1",
+      "oldVersion": "5.3.1",
+      "newVersion": "5.3.2",
       "tagName": "latest",
       "constraints": [
         {
@@ -14,5 +14,5 @@
       "pkgJSONPath": "./ember-data-resources/package.json"
     }
   },
-  "description": "## Release (2025-11-20)\n\n* ember-data-resources 5.3.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#444](https://github.com/NullVoxPopuli/ember-data-resources/pull/444) Remove unneded peer deps ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-12-23)\n\n* ember-data-resources 5.3.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-data-resources`\n  * [#450](https://github.com/NullVoxPopuli/ember-data-resources/pull/450) Widen allowed dependencies ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
