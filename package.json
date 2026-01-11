@@ -21,7 +21,7 @@
     "concurrently": "^9.1.2",
     "prettier": "^3.5.3",
     "prettier-plugin-ember-template-tag": "^2.0.5",
-    "release-plan": "^0.16.0",
+    "release-plan": "^0.17.0",
     "turbo": "^1.11.3"
   },
   "packageManager": "pnpm@8.15.8",
