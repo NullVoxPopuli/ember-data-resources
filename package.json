@@ -22,7 +22,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-ember-template-tag": "^2.0.5",
     "release-plan": "^0.16.0",
-    "turbo": "^1.11.3"
+    "turbo": "^2.0.0"
   },
   "packageManager": "pnpm@8.15.8",
   "engines": {
